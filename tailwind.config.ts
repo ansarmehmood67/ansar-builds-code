@@ -69,19 +69,14 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
-			backgroundImage: {
-				'hero-gradient': 'var(--hero-gradient)',
-				'card-gradient': 'var(--card-gradient)',
-				'text-gradient': 'var(--text-gradient)'
-			},
 			boxShadow: {
-				'elegant': 'var(--shadow-elegant)',
-				'glow': 'var(--shadow-glow)',
-				'card': 'var(--shadow-card)'
+				'subtle': 'var(--shadow-subtle)',
+				'medium': 'var(--shadow-medium)',
+				'large': 'var(--shadow-large)'
 			},
 			transitionTimingFunction: {
 				'smooth': 'var(--transition-smooth)',
-				'bounce': 'var(--transition-bounce)'
+				'spring': 'var(--transition-spring)'
 			},
 			keyframes: {
 				'accordion-down': {
@@ -92,30 +87,25 @@ export default {
 					from: { height: 'var(--radix-accordion-content-height)' },
 					to: { height: '0' }
 				},
-				'float': {
-					'0%, 100%': { transform: 'translateY(0px)' },
-					'50%': { transform: 'translateY(-10px)' }
-				},
 				'fade-in-up': {
-					'0%': { opacity: '0', transform: 'translateY(30px)' },
+					'0%': { opacity: '0', transform: 'translateY(40px)' },
 					'100%': { opacity: '1', transform: 'translateY(0)' }
 				},
-				'scale-in': {
-					'0%': { opacity: '0', transform: 'scale(0.9)' },
-					'100%': { opacity: '1', transform: 'scale(1)' }
+				'slide-in-left': {
+					'0%': { opacity: '0', transform: 'translateX(-40px)' },
+					'100%': { opacity: '1', transform: 'translateX(0)' }
 				},
-				'gradient-shift': {
-					'0%, 100%': { backgroundPosition: '0% 50%' },
-					'50%': { backgroundPosition: '100% 50%' }
+				'slide-in-right': {
+					'0%': { opacity: '0', transform: 'translateX(40px)' },
+					'100%': { opacity: '1', transform: 'translateX(0)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'float': 'float 6s ease-in-out infinite',
-				'fade-in-up': 'fade-in-up 0.6s ease-out',
-				'scale-in': 'scale-in 0.3s ease-out',
-				'gradient-shift': 'gradient-shift 3s ease infinite'
+				'fade-in-up': 'fade-in-up 0.8s ease-out',
+				'slide-in-left': 'slide-in-left 0.8s ease-out',
+				'slide-in-right': 'slide-in-right 0.8s ease-out'
 			}
 		}
 	},

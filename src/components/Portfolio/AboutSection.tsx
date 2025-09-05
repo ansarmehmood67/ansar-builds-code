@@ -1,96 +1,69 @@
 import aboutImage from "@/assets/about-image.png";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const AboutSection = () => {
-  const stats = [
-    { label: "Years Experience", value: "3+" },
-    { label: "Projects Completed", value: "15+" },
-    { label: "Technologies", value: "10+" },
-    { label: "Happy Clients", value: "20+" }
-  ];
+  const sectionRef = useScrollAnimation();
 
   return (
-    <section id="about" className="py-20 px-4">
+    <section ref={sectionRef} id="about" className="py-32 px-6 opacity-0">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-            About <span className="bg-text-gradient bg-clip-text text-transparent">Me</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Get to know more about my journey, skills, and passion for creating digital solutions
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Image on the left */}
-          <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-elegant">
+          <div className="relative animate-on-scroll">
+            <div className="relative overflow-hidden">
               <img 
                 src={aboutImage} 
                 alt="Ansar Mehmood - About"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover rounded-lg shadow-large"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
             </div>
-            {/* Floating decorative elements */}
-            <div className="absolute -top-6 -right-6 w-20 h-20 bg-card-gradient rounded-2xl shadow-card animate-float" style={{ animationDelay: '1s' }} />
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-primary/20 rounded-xl shadow-glow animate-float" style={{ animationDelay: '3s' }} />
           </div>
 
           {/* Content on the right */}
-          <div className="space-y-6">
-            <div className="space-y-4">
-              <h3 className="text-2xl lg:text-3xl font-bold text-foreground">
-                Motivated Software Engineer
-              </h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a passionate junior software engineer specializing in React and Django development. 
-                With hands-on experience deploying live projects and working with cloud platforms like AWS EC2, 
-                I'm committed to continuous learning and delivering scalable solutions.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Currently working at Sales On Demand, I contribute to web platforms and AI-driven tools, 
-                spanning frontend development, backend systems, and intelligent automation. My goal is to 
-                support organizational growth through innovative technical contributions.
+          <div className="space-y-8">
+            <div className="space-y-6 animate-on-scroll">
+              <h2 className="text-5xl lg:text-6xl font-light text-foreground">
+                About
+              </h2>
+              
+              <div className="w-12 h-1 bg-primary"></div>
+              
+              <p className="text-xl text-muted-foreground leading-relaxed font-light">
+                I'm a software engineer who bridges the gap between innovative ideas and robust digital solutions.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="space-y-2">
-                <p className="text-sm text-muted-foreground">Location</p>
-                <p className="font-semibold">Lahore, Pakistan</p>
+            <div className="space-y-6 animate-on-scroll">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Currently working at Sales On Demand, I specialize in building web platforms and AI-driven tools 
+                that solve real business challenges. My expertise spans React, TypeScript, Django, and cloud technologies.
+              </p>
+              
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                With hands-on experience in deploying live projects and working with platforms like AWS EC2, 
+                I'm passionate about creating scalable solutions that make a difference.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-8 pt-8 animate-on-scroll">
+              <div className="space-y-3">
+                <p className="text-sm uppercase tracking-wider text-muted-foreground">Location</p>
+                <p className="text-lg font-medium">Lahore, Pakistan</p>
               </div>
-              <div className="space-y-2">
-                <p className="text-sm text-muted-foreground">Education</p>
-                <p className="font-semibold">Bachelor's in IT</p>
+              <div className="space-y-3">
+                <p className="text-sm uppercase tracking-wider text-muted-foreground">Focus</p>
+                <p className="text-lg font-medium">Full Stack Development</p>
               </div>
-              <div className="space-y-2">
-                <p className="text-sm text-muted-foreground">Focus</p>
-                <p className="font-semibold">Full Stack Development</p>
+              <div className="space-y-3">
+                <p className="text-sm uppercase tracking-wider text-muted-foreground">Experience</p>
+                <p className="text-lg font-medium">3+ Years</p>
               </div>
-              <div className="space-y-2">
-                <p className="text-sm text-muted-foreground">Availability</p>
-                <p className="font-semibold text-green-400">Open to Work</p>
+              <div className="space-y-3">
+                <p className="text-sm uppercase tracking-wider text-muted-foreground">Status</p>
+                <p className="text-lg font-medium text-primary">Available</p>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Stats Section */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {stats.map((stat, index) => (
-            <div 
-              key={stat.label}
-              className="text-center p-6 bg-card-gradient rounded-2xl border border-border/50 shadow-card hover:shadow-glow transition-all duration-300 animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="text-3xl lg:text-4xl font-bold bg-text-gradient bg-clip-text text-transparent mb-2">
-                {stat.value}
-              </div>
-              <div className="text-sm text-muted-foreground">
-                {stat.label}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
