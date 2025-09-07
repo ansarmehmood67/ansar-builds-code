@@ -1,11 +1,12 @@
 import Navigation from "@/components/Portfolio/Navigation";
-import HeroSection from "@/components/Portfolio/HeroSection";
-import AboutSection from "@/components/Portfolio/AboutSection";
-import SkillsSection from "@/components/Portfolio/SkillsSection";
-import ProjectsSection from "@/components/Portfolio/ProjectsSection";
-import ExperienceSection from "@/components/Portfolio/ExperienceSection";
-import ContactSection from "@/components/Portfolio/ContactSection";
 import Footer from "@/components/Portfolio/Footer";
+import HeroSection from "@/components/Portfolio/HeroSection";
+import WhatIDoSection from "@/components/Portfolio/WhatIDoSection";
+import FeaturedProjectsSection from "@/components/Portfolio/FeaturedProjectsSection";
+import MetricsSection from "@/components/Portfolio/MetricsSection";
+import TestimonialsSection from "@/components/Portfolio/TestimonialsSection";
+import TechStackSection from "@/components/Portfolio/TechStackSection";
+import FinalCTASection from "@/components/Portfolio/FinalCTASection";
 
 const Index = () => {
   return (
@@ -13,11 +14,12 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
-        <AboutSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <ExperienceSection />
-        <ContactSection />
+        <WhatIDoSection />
+        <FeaturedProjectsSection />
+        <MetricsSection />
+        <TestimonialsSection />
+        <TechStackSection />
+        <FinalCTASection />
       </main>
       <Footer />
     </div>
