@@ -18,31 +18,37 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-background/10" />
       
       {/* Content Container - Left side only */}
-      <div className="relative z-10 max-w-7xl px-6 lg:px-12">
-        <div className="max-w-2xl">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex items-center min-h-screen">
+        <div className="max-w-3xl pt-20">
           {/* Main Headline - Personal and portfolio focused */}
-          <h1 className="text-6xl lg:text-8xl font-bold leading-tight mb-6 drop-shadow-lg">
-            <span className="block text-foreground">Hi, I'm</span>
-            <span className="block text-primary">Alex</span>
-          </h1>
+          <div className="mb-8">
+            <h1 className="text-7xl lg:text-9xl font-black leading-none mb-4">
+              <span className="block text-foreground drop-shadow-2xl animate-fade-in-up">Hi, I'm</span>
+              <span className="block bg-hero-gradient bg-clip-text text-transparent drop-shadow-2xl animate-fade-in-up animate-stagger-1">Alex</span>
+            </h1>
+            <div className="h-2 w-32 bg-hero-gradient rounded-full animate-fade-in-up animate-stagger-2" />
+          </div>
           
-          {/* 1-line subcopy */}
-          <p className="text-xl lg:text-2xl text-muted-foreground mb-8 max-w-xl drop-shadow-md">
-            Full-Stack Developer specializing in modern web apps, AI automation, and seamless user experiences.
+          {/* Enhanced subcopy */}
+          <p className="text-2xl lg:text-3xl text-foreground/90 mb-4 font-light leading-relaxed drop-shadow-lg animate-fade-in-up animate-stagger-3 max-w-2xl">
+            Full-Stack Developer crafting
+          </p>
+          <p className="text-xl lg:text-2xl text-primary font-semibold mb-12 drop-shadow-lg animate-fade-in-up animate-stagger-4">
+            exceptional digital experiences with AI & modern web technologies
           </p>
           
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          {/* Enhanced CTAs */}
+          <div className="flex flex-col sm:flex-row gap-6 animate-fade-in-up animate-stagger-5">
             <Button 
               size="lg" 
               onClick={() => {
                 const element = document.getElementById('contact');
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="group bg-hero-gradient hover:bg-primary-hover text-white shadow-glow hover:shadow-xl transition-all duration-300"
+              className="group bg-hero-gradient hover:scale-110 text-white shadow-glow hover:shadow-xl transition-all duration-500 font-bold text-lg px-12 py-4 rounded-2xl"
             >
-              Start a project
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              Let's Build Something Amazing
+              <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
             </Button>
             <Button 
               variant="outline" 
@@ -51,9 +57,9 @@ const HeroSection = () => {
                 const element = document.getElementById('portfolio');
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="border-border/50 hover:border-primary/50 backdrop-blur-sm text-foreground"
+              className="border-2 border-foreground/30 hover:border-primary/50 backdrop-blur-md text-foreground hover:text-primary hover:scale-105 transition-all duration-500 font-semibold text-lg px-8 py-4 rounded-2xl bg-background/10"
             >
-              See work
+              View My Work
             </Button>
           </div>
         </div>

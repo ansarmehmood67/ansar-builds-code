@@ -1,13 +1,13 @@
 import Navigation from "@/components/Portfolio/Navigation";
 import Footer from "@/components/Portfolio/Footer";
 import HeroSection from "@/components/Portfolio/HeroSection";
-import AboutSection from "@/components/Portfolio/AboutSection";
-import QuickNavRow from "@/components/Portfolio/QuickNavRow";
-import SkillsSection from "@/components/Portfolio/SkillsSection";
+import ModernAboutSection from "@/components/Portfolio/ModernAboutSection";
+import ModernQuickNav from "@/components/Portfolio/ModernQuickNav";
+import ModernSkillsSection from "@/components/Portfolio/ModernSkillsSection";
 import CreativeDivider from "@/components/Portfolio/CreativeDivider";
-import ExperienceSection from "@/components/Portfolio/ExperienceSection";
-import PortfolioSection from "@/components/Portfolio/PortfolioSection";
-import ContactSection from "@/components/Portfolio/ContactSection";
+import ModernExperienceSection from "@/components/Portfolio/ModernExperienceSection";
+import ModernPortfolioSection from "@/components/Portfolio/ModernPortfolioSection";
+import ModernContactSection from "@/components/Portfolio/ModernContactSection";
 
 const Index = () => {
   return (
@@ -15,13 +15,13 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
-        <AboutSection />
-        <QuickNavRow />
-        <SkillsSection />
+        <ModernAboutSection />
+        <ModernQuickNav />
+        <ModernSkillsSection />
         <CreativeDivider />
-        <ExperienceSection />
-        <PortfolioSection />
-        <ContactSection />
+        <ModernExperienceSection />
+        <ModernPortfolioSection />
+        <ModernContactSection />
       </main>
       <Footer />
     </div>
