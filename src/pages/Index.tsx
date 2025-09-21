@@ -1,6 +1,6 @@
-import Navigation from "@/components/Portfolio/Navigation";
+import CreativeNavigation from "@/components/Portfolio/CreativeNavigation";
 import Footer from "@/components/Portfolio/Footer";
-import HeroSection from "@/components/Portfolio/HeroSection";
+import CreativeHero from "@/components/Portfolio/CreativeHero";
 import WhatIDoSection from "@/components/Portfolio/WhatIDoSection";
 import FeaturedProjectsSection from "@/components/Portfolio/FeaturedProjectsSection";
 import MetricsSection from "@/components/Portfolio/MetricsSection";
@@ -11,9 +11,9 @@ import FinalCTASection from "@/components/Portfolio/FinalCTASection";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <CreativeNavigation />
       <main>
-        <HeroSection />
+        <CreativeHero />
         <WhatIDoSection />
         <FeaturedProjectsSection />
         <MetricsSection />
