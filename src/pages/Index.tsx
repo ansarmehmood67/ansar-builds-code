@@ -1,12 +1,11 @@
 import CreativeNavigation from "@/components/Portfolio/CreativeNavigation";
 import Footer from "@/components/Portfolio/Footer";
 import CreativeHero from "@/components/Portfolio/CreativeHero";
-import WhatIDoSection from "@/components/Portfolio/WhatIDoSection";
-import FeaturedProjectsSection from "@/components/Portfolio/FeaturedProjectsSection";
-import MetricsSection from "@/components/Portfolio/MetricsSection";
-import TestimonialsSection from "@/components/Portfolio/TestimonialsSection";
+import CreativeServices from "@/components/Portfolio/CreativeServices";
+import CreativeProjects from "@/components/Portfolio/CreativeProjects";
+import CreativeMetrics from "@/components/Portfolio/CreativeMetrics";
 import TechStackSection from "@/components/Portfolio/TechStackSection";
-import FinalCTASection from "@/components/Portfolio/FinalCTASection";
+import CreativeCTA from "@/components/Portfolio/CreativeCTA";
 
 const Index = () => {
   return (
@@ -14,12 +13,11 @@ const Index = () => {
       <CreativeNavigation />
       <main>
         <CreativeHero />
-        <WhatIDoSection />
-        <FeaturedProjectsSection />
-        <MetricsSection />
-        <TestimonialsSection />
+        <CreativeServices />
+        <CreativeProjects />
+        <CreativeMetrics />
         <TechStackSection />
-        <FinalCTASection />
+        <CreativeCTA />
       </main>
       <Footer />
     </div>

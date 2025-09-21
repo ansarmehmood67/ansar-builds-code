@@ -159,7 +159,7 @@ const CreativeHero = () => {
       
       {/* Floating Elements */}
       <motion.div
-        className="absolute top-20 left-20 w-32 h-32 rounded-full bg-electric/10 blur-xl"
+        className="absolute top-20 left-20 w-32 h-32 rounded-full bg-brand-blue/10 blur-xl"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.6, 0.3],
@@ -172,7 +172,7 @@ const CreativeHero = () => {
       />
       
       <motion.div
-        className="absolute bottom-32 right-32 w-24 h-24 rounded-full bg-cyber/10 blur-xl"
+        className="absolute bottom-32 right-32 w-24 h-24 rounded-full bg-brand-gold/10 blur-xl"
         animate={{
           scale: [1.2, 1, 1.2],
           opacity: [0.4, 0.7, 0.4],
@@ -196,11 +196,11 @@ const CreativeHero = () => {
           >
             <div className="inline-flex items-center space-x-2 glass-card px-6 py-3 rounded-full
                           shadow-glow border border-glass-border">
-              <Sparkles className="w-4 h-4 text-electric animate-pulse" />
+              <Sparkles className="w-4 h-4 text-brand-blue animate-pulse" />
               <span className="text-sm font-medium text-muted-foreground">
                 Award-Winning Developer
               </span>
-              <Zap className="w-4 h-4 text-cyber animate-bounce" />
+              <Zap className="w-4 h-4 text-brand-gold animate-bounce" />
             </div>
           </motion.div>
 
@@ -253,8 +253,8 @@ const CreativeHero = () => {
               >
                 <Button 
                   size="lg" 
-                  className="relative overflow-hidden bg-hero-gradient hover:bg-cosmic-gradient 
-                           text-white shadow-glow hover:shadow-cyber transition-all duration-500
+                  className="relative overflow-hidden bg-brand-gradient hover:bg-hero-gradient 
+                           text-white shadow-brand hover:shadow-gold transition-all duration-500
                            text-lg px-8 py-6 rounded-2xl border border-glass-border"
                 >
                   <motion.div 
@@ -284,7 +284,7 @@ const CreativeHero = () => {
                   variant="outline" 
                   size="lg"
                   className="glass-card hover:bg-glass-bg text-foreground 
-                           border-glass-border shadow-soft hover:shadow-glow
+                           border-glass-border shadow-soft hover:shadow-brand
                            text-lg px-8 py-6 rounded-2xl transition-all duration-500"
                 >
                   <motion.div 
@@ -344,7 +344,7 @@ const CreativeHero = () => {
           className="flex flex-col items-center space-y-2 text-muted-foreground"
         >
           <span className="text-xs font-medium">Scroll to explore</span>
-          <div className="w-0.5 h-8 bg-gradient-to-b from-electric to-transparent rounded-full" />
+          <div className="w-0.5 h-8 bg-gradient-to-b from-brand-blue to-transparent rounded-full" />
         </motion.div>
       </motion.div>
     </section>

@@ -53,13 +53,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))',
 				},
-				
-				// Electric Colors
-				electric: 'hsl(var(--electric-purple))',
-				cyber: 'hsl(var(--cyber-cyan))',
-				neon: 'hsl(var(--neon-green))',
-				cosmic: 'hsl(var(--cosmic-blue))',
-				plasma: 'hsl(var(--plasma-pink))',
+				// Professional Colors
+				brand: {
+					blue: 'hsl(var(--brand-blue))',
+					gold: 'hsl(var(--brand-gold))',
+					slate: 'hsl(var(--brand-slate))',
+					charcoal: 'hsl(var(--brand-charcoal))',
+					steel: 'hsl(var(--brand-steel))',
+				},
 				
 				// Glass Effects
 				glass: {
@@ -74,9 +75,8 @@ export default {
 			},
 			boxShadow: {
 				elegant: 'var(--shadow-elegant)',
-				glow: 'var(--shadow-glow)',
-				cyber: 'var(--shadow-cyber)',
-				neon: 'var(--shadow-neon)',
+				brand: 'var(--shadow-brand)',
+				gold: 'var(--shadow-gold)',
 				soft: 'var(--shadow-soft)',
 				medium: 'var(--shadow-medium)',
 				strong: 'var(--shadow-strong)',
@@ -84,10 +84,10 @@ export default {
 			},
 			backgroundImage: {
 				'hero-gradient': 'var(--hero-gradient)',
-				'cosmic-gradient': 'var(--cosmic-gradient)',
+				'brand-gradient': 'var(--brand-gradient)',
 				'text-gradient': 'var(--text-gradient)',
 				'card-gradient': 'var(--card-gradient)',
-				'glow-gradient': 'var(--glow-gradient)',
+				'subtle-gradient': 'var(--subtle-gradient)',
 				'mesh-gradient': 'var(--mesh-gradient)',
 			},
 			transitionTimingFunction: {

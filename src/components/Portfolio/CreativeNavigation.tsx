@@ -89,8 +89,8 @@ const CreativeNavigation = () => {
                     <span className={`
                       font-medium transition-all duration-300
                       ${location.pathname === link.href 
-                        ? 'text-electric' 
-                        : 'text-foreground hover:text-cyber'
+                        ? 'text-brand-blue' 
+                        : 'text-foreground hover:text-brand-gold'
                       }
                     `}>
                       {link.name}
@@ -98,7 +98,7 @@ const CreativeNavigation = () => {
                     
                     {/* Magnetic underline effect */}
                     <motion.div
-                      className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-electric to-cyber"
+                      className="absolute bottom-0 left-0 h-0.5 bg-brand-gradient"
                       initial={{ width: 0 }}
                       animate={{ 
                         width: location.pathname === link.href ? "100%" : 0 
@@ -119,8 +119,8 @@ const CreativeNavigation = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Button 
-                    className="relative overflow-hidden bg-cosmic-gradient hover:bg-hero-gradient 
-                             text-white shadow-glow hover:shadow-cyber transition-all duration-500
+                    className="relative overflow-hidden bg-brand-gradient hover:bg-hero-gradient 
+                             text-white shadow-brand hover:shadow-gold transition-all duration-500
                              border border-glass-border"
                   >
                     <motion.div 
@@ -185,7 +185,7 @@ const CreativeNavigation = () => {
                     className="flex items-center space-x-3 p-3 rounded-xl
                              glass hover:bg-glass-bg transition-all duration-300"
                   >
-                    <span className="text-electric">{link.icon}</span>
+                    <span className="text-brand-blue">{link.icon}</span>
                     <span className="font-medium text-foreground">{link.name}</span>
                   </Link>
                 </motion.div>
@@ -201,7 +201,7 @@ const CreativeNavigation = () => {
                 className="pt-4"
               >
                 <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Button className="w-full bg-cosmic-gradient text-white shadow-glow">
+                  <Button className="w-full bg-brand-gradient text-white shadow-brand">
                     <span className="flex items-center justify-center space-x-2">
                       <span>Start Project</span>
                       <ArrowRight className="w-4 h-4" />

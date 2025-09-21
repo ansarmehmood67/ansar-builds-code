@@ -6,58 +6,57 @@
 
 @layer base {
   :root {
-    --background: 220 15% 3%;
-    --foreground: 220 10% 98%;
-    --card: 220 13% 6%;
-    --card-foreground: 220 10% 95%;
-    --popover: 220 13% 8%;
-    --popover-foreground: 220 10% 95%;
+    --background: 8 12% 8%;
+    --foreground: 210 40% 95%;
+    --card: 8 12% 12%;
+    --card-foreground: 210 40% 92%;
+    --popover: 8 12% 15%;
+    --popover-foreground: 210 40% 90%;
     
-    /* Rich Color Palette */
-    --primary: 270 60% 60%;
-    --primary-foreground: 220 15% 3%;
-    --primary-hover: 270 60% 70%;
-    --secondary: 180 78% 50%;
-    --secondary-foreground: 220 15% 3%;
-    --accent: 142 76% 36%;
-    --accent-foreground: 220 15% 3%;
-    --muted: 220 13% 15%;
-    --muted-foreground: 220 10% 70%;
+    /* Professional Solid Colors */
+    --primary: 217 91% 60%;
+    --primary-foreground: 8 12% 8%;
+    --primary-hover: 217 91% 70%;
+    --secondary: 215 25% 27%;
+    --secondary-foreground: 210 40% 92%;
+    --accent: 43 96% 56%;
+    --accent-foreground: 8 12% 8%;
+    --muted: 8 12% 18%;
+    --muted-foreground: 210 40% 65%;
     --destructive: 0 84% 60%;
-    --destructive-foreground: 220 10% 95%;
-    --border: 220 13% 18%;
-    --input: 220 13% 18%;
-    --ring: 270 60% 60%;
+    --destructive-foreground: 210 40% 95%;
+    --border: 8 12% 20%;
+    --input: 8 12% 18%;
+    --ring: 217 91% 60%;
     --radius: 1rem;
     
-    /* Electric Accent Colors */
-    --electric-purple: 272 87% 70%;
-    --cyber-cyan: 189 94% 43%;
-    --neon-green: 142 76% 36%;
-    --cosmic-blue: 226 71% 40%;
-    --plasma-pink: 320 84% 65%;
+    /* Professional Accent Colors */
+    --brand-blue: 217 91% 60%;
+    --brand-gold: 43 96% 56%;
+    --brand-slate: 215 25% 27%;
+    --brand-charcoal: 210 11% 15%;
+    --brand-steel: 215 15% 40%;
     
-    /* Advanced Gradients */
-    --hero-gradient: linear-gradient(135deg, hsl(270 60% 20%), hsl(226 71% 15%), hsl(189 94% 20%));
-    --cosmic-gradient: linear-gradient(45deg, hsl(272 87% 30%), hsl(226 71% 30%), hsl(189 94% 30%));
-    --text-gradient: linear-gradient(135deg, hsl(272 87% 70%), hsl(189 94% 60%));
-    --card-gradient: linear-gradient(135deg, hsl(220 13% 8% / 0.8), hsl(220 13% 12% / 0.9));
-    --glow-gradient: radial-gradient(circle at 50% 50%, hsl(270 60% 60% / 0.2), transparent 70%);
-    --mesh-gradient: conic-gradient(from 0deg at 50% 50%, hsl(270 60% 20%), hsl(189 94% 20%), hsl(142 76% 20%), hsl(270 60% 20%));
+    /* Sophisticated Gradients */
+    --hero-gradient: linear-gradient(135deg, hsl(8 12% 8%), hsl(215 25% 15%), hsl(217 91% 20%));
+    --brand-gradient: linear-gradient(45deg, hsl(217 91% 60%), hsl(43 96% 56%));
+    --text-gradient: linear-gradient(135deg, hsl(217 91% 70%), hsl(43 96% 60%));
+    --card-gradient: linear-gradient(135deg, hsl(8 12% 12% / 0.95), hsl(8 12% 16% / 0.9));
+    --subtle-gradient: radial-gradient(circle at 50% 50%, hsl(217 91% 60% / 0.1), transparent 70%);
+    --mesh-gradient: linear-gradient(45deg, hsl(8 12% 8%), hsl(215 25% 12%), hsl(8 12% 10%));
     
     /* Glass Effects */
-    --glass-bg: hsl(220 13% 12% / 0.1);
-    --glass-border: hsl(220 10% 95% / 0.1);
-    --glass-shadow: 0 8px 32px hsl(220 15% 5% / 0.3);
+    --glass-bg: hsl(8 12% 15% / 0.6);
+    --glass-border: hsl(210 40% 95% / 0.1);
+    --glass-shadow: 0 8px 32px hsl(8 12% 4% / 0.4);
     
-    /* Advanced Shadows */
-    --shadow-elegant: 0 25px 50px -12px hsl(270 60% 20% / 0.4);
-    --shadow-glow: 0 0 80px hsl(270 60% 60% / 0.3);
-    --shadow-cyber: 0 0 40px hsl(189 94% 43% / 0.4);
-    --shadow-neon: 0 0 30px hsl(142 76% 36% / 0.5);
-    --shadow-soft: 0 10px 25px hsl(220 15% 5% / 0.5);
-    --shadow-medium: 0 15px 35px hsl(220 15% 5% / 0.6);
-    --shadow-strong: 0 25px 50px hsl(220 15% 5% / 0.8);
+    /* Professional Shadows */
+    --shadow-elegant: 0 25px 50px -12px hsl(8 12% 4% / 0.6);
+    --shadow-brand: 0 0 60px hsl(217 91% 60% / 0.2);
+    --shadow-gold: 0 0 40px hsl(43 96% 56% / 0.15);
+    --shadow-soft: 0 10px 25px hsl(8 12% 4% / 0.4);
+    --shadow-medium: 0 15px 35px hsl(8 12% 4% / 0.5);
+    --shadow-strong: 0 25px 50px hsl(8 12% 4% / 0.7);
     
     /* Animation Curves */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
