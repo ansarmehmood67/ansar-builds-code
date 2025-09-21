@@ -10,25 +10,25 @@ const HeroSection = () => {
       style={{
         backgroundImage: `url(${heroBg})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'right center',
         backgroundRepeat: 'no-repeat'
       }}
     >
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-background/40" />
+      {/* Subtle overlay for text contrast */}
+      <div className="absolute inset-0 bg-background/10" />
       
       {/* Content Container - Left side only */}
       <div className="relative z-10 max-w-7xl px-6 lg:px-12">
         <div className="max-w-2xl">
-          {/* Main Headline - 2 lines as requested */}
-          <h1 className="text-6xl lg:text-8xl font-bold leading-tight mb-6">
-            <span className="block text-foreground">Build. Ship.</span>
-            <span className="block text-primary">Scale.</span>
+          {/* Main Headline - Personal and portfolio focused */}
+          <h1 className="text-6xl lg:text-8xl font-bold leading-tight mb-6 drop-shadow-lg">
+            <span className="block text-foreground">Hi, I'm</span>
+            <span className="block text-primary">Alex</span>
           </h1>
           
           {/* 1-line subcopy */}
-          <p className="text-xl lg:text-2xl text-muted-foreground mb-8 max-w-xl">
-            I help businesses grow with modern web apps, AI automation, and seamless user experiences.
+          <p className="text-xl lg:text-2xl text-muted-foreground mb-8 max-w-xl drop-shadow-md">
+            Full-Stack Developer specializing in modern web apps, AI automation, and seamless user experiences.
           </p>
           
           {/* CTAs */}
