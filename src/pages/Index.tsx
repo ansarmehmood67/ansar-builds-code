@@ -1,25 +1,27 @@
 import Navigation from "@/components/Portfolio/Navigation";
 import Footer from "@/components/Portfolio/Footer";
 import HeroSection from "@/components/Portfolio/HeroSection";
-import WhatIDoSection from "@/components/Portfolio/WhatIDoSection";
-import FeaturedProjectsSection from "@/components/Portfolio/FeaturedProjectsSection";
-import MetricsSection from "@/components/Portfolio/MetricsSection";
-import TestimonialsSection from "@/components/Portfolio/TestimonialsSection";
-import TechStackSection from "@/components/Portfolio/TechStackSection";
-import FinalCTASection from "@/components/Portfolio/FinalCTASection";
+import AboutSection from "@/components/Portfolio/AboutSection";
+import QuickNavRow from "@/components/Portfolio/QuickNavRow";
+import SkillsSection from "@/components/Portfolio/SkillsSection";
+import CreativeDivider from "@/components/Portfolio/CreativeDivider";
+import ExperienceSection from "@/components/Portfolio/ExperienceSection";
+import PortfolioSection from "@/components/Portfolio/PortfolioSection";
+import ContactSection from "@/components/Portfolio/ContactSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Navigation />
       <main>
         <HeroSection />
-        <WhatIDoSection />
-        <FeaturedProjectsSection />
-        <MetricsSection />
-        <TestimonialsSection />
-        <TechStackSection />
-        <FinalCTASection />
+        <AboutSection />
+        <QuickNavRow />
+        <SkillsSection />
+        <CreativeDivider />
+        <ExperienceSection />
+        <PortfolioSection />
+        <ContactSection />
       </main>
       <Footer />
     </div>

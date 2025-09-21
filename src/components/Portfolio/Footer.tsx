@@ -1,125 +1,56 @@
-import { Github, Linkedin, Mail, Globe, Heart } from "lucide-react";
-
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    {
-      icon: Github,
-      href: "https://github.com/ansarmehmood67",
-      label: "GitHub"
-    },
-    {
-      icon: Linkedin,
-      href: "https://linkedin.com/in/ansarmehmood67",
-      label: "LinkedIn"
-    },
-    {
-      icon: Mail,
-      href: "mailto:ansarmemhood.dev@gmail.com",
-      label: "Email"
-    },
-    {
-      icon: Globe,
-      href: "https://ansarmehmood.com",
-      label: "Website"
+  const scrollToSection = (sectionId: string) => {
+    if (sectionId === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
     }
-  ];
-
-  const quickLinks = [
-    { label: "About", href: "#about" },
-    { label: "Skills", href: "#skills" },
-    { label: "Projects", href: "#projects" },
-    { label: "Experience", href: "#experience" },
-    { label: "Contact", href: "#contact" }
-  ];
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
+    
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
+  const navItems = [
+    { label: "Home", section: "home" },
+    { label: "About", section: "about" },
+    { label: "Skills", section: "skills" },
+    { label: "Experience", section: "experience" },
+    { label: "Portfolio", section: "portfolio" },
+    { label: "Contact", section: "contact" }
+  ];
+
   return (
-    <footer className="bg-card-gradient border-t border-border/50">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
-          {/* Brand Section */}
-          <div className="md:col-span-2 space-y-4">
-            <h3 className="text-2xl font-bold bg-text-gradient bg-clip-text text-transparent">
-              Ansar Mehmood
-            </h3>
-            <p className="text-muted-foreground max-w-md leading-relaxed">
-              Software Engineer passionate about creating modern web applications 
-              and AI-driven solutions that make a real impact.
-            </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((link) => {
-                const IconComponent = link.icon;
-                return (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 bg-background/50 hover:bg-primary/10 rounded-lg border border-border/50 hover:border-primary/50 transition-all duration-300 group"
-                    aria-label={link.label}
-                  >
-                    <IconComponent className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                  </a>
-                );
-              })}
-            </div>
+    <footer className="py-8 border-t border-border/50 theme-dark">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="flex flex-col md:flex-row items-center justify-between">
+          {/* Logo */}
+          <div className="mb-4 md:mb-0">
+            <button
+              onClick={() => scrollToSection('home')}
+              className="text-xl font-bold bg-text-gradient bg-clip-text text-transparent hover:scale-105 transition-transform"
+            >
+              Ansar.dev
+            </button>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-foreground">Quick Links</h4>
-            <div className="space-y-2">
-              {quickLinks.map((link) => (
-                <button
-                  key={link.label}
-                  onClick={() => scrollToSection(link.href)}
-                  className="block text-muted-foreground hover:text-primary transition-colors text-left"
-                >
-                  {link.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-foreground">Get in Touch</h4>
-            <div className="space-y-2 text-sm text-muted-foreground">
-              <p>Mandi Usman Wala, Kasur</p>
-              <p>Pakistan</p>
-              <a 
-                href="mailto:ansarmemhood.dev@gmail.com"
-                className="block hover:text-primary transition-colors"
+          {/* Navigation */}
+          <nav className="flex flex-wrap items-center gap-6 mb-4 md:mb-0">
+            {navItems.map((item) => (
+              <button
+                key={item.label}
+                onClick={() => scrollToSection(item.section)}
+                className="text-muted-foreground hover:text-primary transition-colors relative group"
               >
-                ansarmemhood.dev@gmail.com
-              </a>
-              <a 
-                href="tel:+923227555459"
-                className="block hover:text-primary transition-colors"
-              >
-                +92 3227555459
-              </a>
-            </div>
-          </div>
-        </div>
+                {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+              </button>
+            ))}
+          </nav>
 
-        {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-border/50">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground text-center md:text-left">
-              © {currentYear} Ansar Mehmood. All rights reserved.
-            </p>
-            <p className="text-sm text-muted-foreground flex items-center gap-1">
-              Made with <Heart className="h-4 w-4 text-red-400 fill-current" /> in Pakistan
-            </p>
+          {/* Copyright */}
+          <div className="text-sm text-muted-foreground">
+            © 2024 Ansar Mehmood. All rights reserved.
           </div>
         </div>
       </div>

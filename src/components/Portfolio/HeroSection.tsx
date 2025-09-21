@@ -33,17 +33,28 @@ const HeroSection = () => {
           
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/contact">
-              <Button size="lg" className="group bg-hero-gradient hover:bg-primary-hover text-white shadow-glow hover:shadow-xl transition-all duration-300">
-                Start a project
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-            <Link to="/work">
-              <Button variant="outline" size="lg" className="border-border/50 hover:border-primary/50 backdrop-blur-sm text-foreground">
-                See work
-              </Button>
-            </Link>
+            <Button 
+              size="lg" 
+              onClick={() => {
+                const element = document.getElementById('contact');
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="group bg-hero-gradient hover:bg-primary-hover text-white shadow-glow hover:shadow-xl transition-all duration-300"
+            >
+              Start a project
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              onClick={() => {
+                const element = document.getElementById('portfolio');
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="border-border/50 hover:border-primary/50 backdrop-blur-sm text-foreground"
+            >
+              See work
+            </Button>
           </div>
         </div>
       </div>

@@ -1,67 +1,67 @@
-import aboutImage from "@/assets/about-image.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import aboutImage from "@/assets/about-image.png";
 
 const AboutSection = () => {
-  const sectionRef = useScrollAnimation();
+  const ref = useScrollAnimation();
 
   return (
-    <section ref={sectionRef} id="about" className="py-32 px-6 opacity-0">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Image on the left */}
-          <div className="relative animate-on-scroll">
-            <div className="relative overflow-hidden">
-              <img 
-                src={aboutImage} 
-                alt="Ansar Mehmood - About"
-                className="w-full h-auto object-cover rounded-lg shadow-large"
-              />
+    <section 
+      id="about"
+      ref={ref as React.RefObject<HTMLElement>}
+      className="py-20 theme-light"
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Content - Left Side */}
+          <div className="animate-on-scroll">
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+              About Me
+            </h2>
+            <div className="space-y-6 text-lg text-slate-600">
+              <p>
+                I'm a passionate software engineer with expertise in building modern web applications, 
+                AI-powered solutions, and automation systems that help businesses scale efficiently.
+              </p>
+              <p>
+                With experience ranging from freelance projects to enterprise-level applications, 
+                I focus on creating solutions that are not just technically sound but also deliver 
+                real business value.
+              </p>
+              <p>
+                Currently working as a Software Engineer at SalesOnDemand, where I build full-stack 
+                React + Django systems and develop innovative automation solutions.
+              </p>
+            </div>
+            
+            {/* Key Stats */}
+            <div className="grid grid-cols-3 gap-6 mt-8 pt-8 border-t border-slate-200">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary">15k+</div>
+                <div className="text-sm text-slate-500">Earned Freelancing</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary">30+</div>
+                <div className="text-sm text-slate-500">Projects Completed</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary">3+</div>
+                <div className="text-sm text-slate-500">Years Experience</div>
+              </div>
             </div>
           </div>
 
-          {/* Content on the right */}
-          <div className="space-y-8">
-            <div className="space-y-6 animate-on-scroll">
-              <h2 className="text-5xl lg:text-6xl font-light text-foreground">
-                About
-              </h2>
-              
-              <div className="w-12 h-1 bg-primary"></div>
-              
-              <p className="text-xl text-muted-foreground leading-relaxed font-light">
-                I'm a software engineer who bridges the gap between innovative ideas and robust digital solutions.
-              </p>
-            </div>
-
-            <div className="space-y-6 animate-on-scroll">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Currently working at Sales On Demand, I specialize in building web platforms and AI-driven tools 
-                that solve real business challenges. My expertise spans React, TypeScript, Django, and cloud technologies.
-              </p>
-              
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                With hands-on experience in deploying live projects and working with platforms like AWS EC2, 
-                I'm passionate about creating scalable solutions that make a difference.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-8 pt-8 animate-on-scroll">
-              <div className="space-y-3">
-                <p className="text-sm uppercase tracking-wider text-muted-foreground">Location</p>
-                <p className="text-lg font-medium">Lahore, Pakistan</p>
+          {/* Image - Right Side */}
+          <div className="animate-on-scroll lg:order-last">
+            <div className="relative">
+              <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src={aboutImage} 
+                  alt="Ansar Mehmood - Software Engineer"
+                  className="w-full h-full object-cover filter brightness-110 contrast-105"
+                />
               </div>
-              <div className="space-y-3">
-                <p className="text-sm uppercase tracking-wider text-muted-foreground">Focus</p>
-                <p className="text-lg font-medium">Full Stack Development</p>
-              </div>
-              <div className="space-y-3">
-                <p className="text-sm uppercase tracking-wider text-muted-foreground">Experience</p>
-                <p className="text-lg font-medium">3+ Years</p>
-              </div>
-              <div className="space-y-3">
-                <p className="text-sm uppercase tracking-wider text-muted-foreground">Status</p>
-                <p className="text-lg font-medium text-primary">Available</p>
-              </div>
+              {/* Decorative element */}
+              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-primary/10 rounded-full blur-xl"></div>
             </div>
           </div>
         </div>

@@ -8,11 +8,24 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
+  const scrollToSection = (sectionId: string) => {
+    if (sectionId === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const navItems = [
-    { label: "Work", href: "/work" },
-    { label: "Services", href: "/services" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" }
+    { label: "About", section: "about" },
+    { label: "Skills", section: "skills" },
+    { label: "Experience", section: "experience" },
+    { label: "Portfolio", section: "portfolio" },
+    { label: "Contact", section: "contact" }
   ];
 
   useEffect(() => {
@@ -33,43 +46,36 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link
-            to="/"
+          <button
+            onClick={() => scrollToSection('home')}
             className="text-xl font-bold bg-text-gradient bg-clip-text text-transparent hover:scale-105 transition-transform"
           >
             Ansar.dev
-          </Link>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
+              <button
                 key={item.label}
-                to={item.href}
-                className={`transition-colors relative group ${
-                  location.pathname === item.href
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-primary"
-                }`}
+                onClick={() => scrollToSection(item.section)}
+                className="text-muted-foreground hover:text-primary transition-colors relative group"
               >
                 {item.label}
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                  location.pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
-                }`} />
-              </Link>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+              </button>
             ))}
           </div>
 
           {/* Desktop CTA */}
           <div className="hidden md:flex">
-            <Link to="/contact">
-              <Button 
-                size="sm"
-                className="bg-hero-gradient hover:bg-primary-hover text-white shadow-glow transition-all duration-300"
-              >
-                Start a project
-              </Button>
-            </Link>
+            <Button 
+              size="sm"
+              onClick={() => scrollToSection('contact')}
+              className="bg-hero-gradient hover:bg-primary-hover text-white shadow-glow transition-all duration-300"
+            >
+              Start a project
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -90,28 +96,28 @@ const Navigation = () => {
           <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border/50 shadow-elegant">
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
-                <Link
+                <button
                   key={item.label}
-                  to={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block w-full text-left transition-colors py-2 ${
-                    location.pathname === item.href
-                      ? "text-primary"
-                      : "text-muted-foreground hover:text-primary"
-                  }`}
+                  onClick={() => {
+                    scrollToSection(item.section);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="block w-full text-left transition-colors py-2 text-muted-foreground hover:text-primary"
                 >
                   {item.label}
-                </Link>
+                </button>
               ))}
               <div className="pt-4">
-                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Button 
-                    size="sm"
-                    className="w-full bg-hero-gradient hover:bg-primary-hover text-white shadow-glow"
-                  >
-                    Start a project
-                  </Button>
-                </Link>
+                <Button 
+                  size="sm"
+                  onClick={() => {
+                    scrollToSection('contact');
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="w-full bg-hero-gradient hover:bg-primary-hover text-white shadow-glow"
+                >
+                  Start a project
+                </Button>
               </div>
             </div>
           </div>
