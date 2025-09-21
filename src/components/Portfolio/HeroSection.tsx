@@ -18,12 +18,12 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-background/40" />
       
       {/* Content Container - Left side only */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="relative z-10 max-w-7xl px-6 lg:px-12">
         <div className="max-w-2xl">
           {/* Main Headline - 2 lines as requested */}
           <h1 className="text-6xl lg:text-8xl font-bold leading-tight mb-6">
             <span className="block text-foreground">Build. Ship.</span>
-            <span className="block bg-text-gradient bg-clip-text text-transparent">Scale.</span>
+            <span className="block text-primary">Scale.</span>
           </h1>
           
           {/* 1-line subcopy */}
