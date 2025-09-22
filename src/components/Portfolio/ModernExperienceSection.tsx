@@ -56,7 +56,7 @@ const ModernExperienceSection = () => {
     <section 
       id="experience"
       ref={ref as React.RefObject<HTMLElement>}
-      className="py-24 bg-gray-50"
+      className="py-24 theme-light"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div ref={ref as any} className="animate-on-scroll">
@@ -88,7 +88,7 @@ const ModernExperienceSection = () => {
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   {/* Timeline Node */}
-                  <div className="absolute left-4 transform -translate-x-1/2 w-16 h-16 bg-primary rounded-full shadow-lg shadow-primary/20 flex items-center justify-center z-10 hidden lg:flex">
+                  <div className="absolute left-8 transform -translate-x-1/2 w-16 h-16 bg-primary rounded-full shadow-lg shadow-primary/20 flex items-center justify-center z-10 hidden lg:flex">
                     <exp.icon className="w-8 h-8 text-white" />
                   </div>
 
