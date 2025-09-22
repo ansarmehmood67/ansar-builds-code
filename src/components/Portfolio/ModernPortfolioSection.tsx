@@ -13,13 +13,8 @@ const ModernPortfolioSection = () => {
   const navigate = useNavigate();
   const [selectedProject, setSelectedProject] = useState<any>(null);
 
-  // Get featured projects - one of each type
-  const featuredProjects = [
-    projects.find(p => p.type === "Website"),
-    projects.find(p => p.type === "Chatbot"), 
-    projects.find(p => p.type === "Automation"),
-    projects[3] // Get one more for 4 total
-  ].filter(Boolean);
+  // Get all 4 featured projects
+  const featuredProjects = projects;
 
   const handleQuickView = (project: any) => {
     setSelectedProject(project);
@@ -30,7 +25,7 @@ const ModernPortfolioSection = () => {
   };
 
   const handleCaseStudy = (slug: string) => {
-    navigate(`/work/${slug}`);
+    navigate(`/projects/${slug}`);
   };
 
   const projectTypes = {
@@ -83,115 +78,80 @@ const ModernPortfolioSection = () => {
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid lg:grid-cols-2 gap-12">
+        {/* Creative Projects Grid */}
+        <div className="grid lg:grid-cols-2 gap-8">
           {featuredProjects.map((project, index) => {
             const typeStyle = projectTypes[project.type as keyof typeof projectTypes];
+            const isLargeCard = index === 0 || index === 3;
             
             return (
               <Card 
                 key={project.slug}
-                className="group overflow-hidden bg-white/80 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl transition-all duration-700 hover:scale-105 animate-on-scroll"
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className={`group overflow-hidden bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-700 hover:-translate-y-2 animate-on-scroll ${
+                  isLargeCard ? 'lg:row-span-2' : ''
+                }`}
+                style={{ animationDelay: `${index * 0.15}s` }}
               >
                 {/* Project Image */}
-                <div className="relative aspect-video overflow-hidden">
+                <div className={`relative overflow-hidden ${isLargeCard ? 'aspect-[4/3]' : 'aspect-video'}`}>
                   <img 
                     src={project.coverImage} 
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  {/* Overlay on hover */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500 flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex space-x-4">
-                      <Button 
-                        size="sm"
-                        onClick={() => handleCaseStudy(project.slug)}
-                        className="bg-white text-slate-900 hover:bg-white/90 font-semibold shadow-lg"
-                      >
-                        Case Study
-                        <ExternalLink className="ml-2 h-4 w-4" />
-                      </Button>
-                      <Button 
-                        size="sm"
-                        variant="outline"
-                        onClick={() => handleQuickView(project)}
-                        className="bg-white/90 border-white text-slate-900 hover:bg-white font-semibold"
-                      >
-                        <Eye className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   {/* Type Badge */}
                   <div className="absolute top-4 left-4">
                     <Badge 
-                      className={`${typeStyle.bgColor} ${typeStyle.textColor} border-0 font-semibold px-3 py-2 text-sm`}
+                      className={`${typeStyle.bgColor} ${typeStyle.textColor} border-0 font-semibold px-3 py-1.5 text-sm backdrop-blur-sm`}
                     >
-                      <span className="mr-2">{typeStyle.icon}</span>
+                      <span className="mr-1.5">{typeStyle.icon}</span>
                       {project.type}
                     </Badge>
                   </div>
 
-                  {/* Date Badge */}
-                  <div className="absolute top-4 right-4">
-                    <Badge variant="secondary" className="bg-black/50 text-white border-0">
-                      {project.date}
-                    </Badge>
+                  {/* Hover Actions */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="flex space-x-3">
+                      <Button 
+                        size="sm"
+                        onClick={() => handleCaseStudy(project.slug)}
+                        className="bg-white text-slate-900 hover:bg-white/90 font-semibold shadow-xl border-0"
+                      >
+                        View Details
+                        <ArrowUpRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
                   </div>
                 </div>
 
-                <CardContent className="p-8">
+                <CardContent className={`p-6 ${isLargeCard ? 'lg:p-8' : ''}`}>
                   {/* Project Title */}
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-primary transition-colors line-clamp-2">
+                  <h3 className={`font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors ${
+                    isLargeCard ? 'text-2xl' : 'text-xl'
+                  }`}>
                     {project.title}
                   </h3>
                   
                   {/* Project Summary */}
-                  <p className="text-slate-600 mb-6 leading-relaxed line-clamp-3">
+                  <p className={`text-slate-600 mb-4 leading-relaxed ${
+                    isLargeCard ? 'text-base line-clamp-4' : 'text-sm line-clamp-2'
+                  }`}>
                     {project.summary}
                   </p>
                   
-                  {/* Key Results */}
-                  <div className="mb-6 p-4 rounded-xl bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/20">
-                    <div className="text-primary font-bold text-lg">{project.outcome}</div>
-                  </div>
-                  
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {project.tags.slice(0, 4).map((tag) => (
-                      <Badge 
-                        key={tag}
-                        variant="secondary" 
-                        className="bg-slate-100 text-slate-700 hover:bg-slate-200 font-medium px-3 py-1"
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
-                    {project.tags.length > 4 && (
-                      <Badge variant="secondary" className="bg-slate-100 text-slate-500">
-                        +{project.tags.length - 4} more
-                      </Badge>
-                    )}
-                  </div>
-                  
-                  {/* Action Buttons */}
-                  <div className="flex gap-4">
-                    <Button 
-                      onClick={() => handleCaseStudy(project.slug)}
-                      className="flex-1 bg-gradient-to-r from-primary to-primary-hover text-white font-semibold hover:scale-105 transition-all duration-300 shadow-lg"
-                    >
-                      Full Case Study
-                      <ArrowUpRight className="ml-2 h-4 w-4" />
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      onClick={() => handleQuickView(project)}
-                      className="border-slate-300 text-slate-700 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all duration-300"
-                    >
-                      <Eye className="h-4 w-4" />
-                    </Button>
-                  </div>
+                  {/* Action Button */}
+                  <Button 
+                    onClick={() => handleCaseStudy(project.slug)}
+                    variant="outline"
+                    size={isLargeCard ? "default" : "sm"}
+                    className="w-full border-primary/20 text-primary hover:bg-primary hover:text-white transition-all duration-300 font-medium"
+                  >
+                    View Details
+                    <ArrowUpRight className="ml-2 h-4 w-4" />
+                  </Button>
                 </CardContent>
               </Card>
             );
