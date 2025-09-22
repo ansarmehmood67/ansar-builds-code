@@ -1,11 +1,7 @@
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Code, Monitor, Settings, Database, Cloud, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
 const ModernSkillsSection = () => {
-  const ref = useScrollAnimation();
-
   const skillCategories = [
     {
       title: "Frontend",
@@ -35,52 +31,47 @@ const ModernSkillsSection = () => {
   ];
 
   return (
-    <section 
-      id="skills"
-      ref={ref as React.RefObject<HTMLElement>}
-      className="py-24 theme-light relative overflow-hidden"
-    >
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+    <section id="skills" className="py-20 bg-background">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-on-scroll">
-          <div className="flex items-center justify-center mb-6">
-            <Code className="h-8 w-8 text-primary mr-3" />
-            <span className="text-primary font-semibold text-lg tracking-wide uppercase">Technical Expertise</span>
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center mb-4">
+            <Code className="h-6 w-6 text-primary mr-2" />
+            <span className="text-primary font-medium text-sm tracking-wider uppercase">Technical Expertise</span>
           </div>
-          <h2 className="text-5xl lg:text-6xl font-black text-slate-900 mb-6 leading-tight">
-            Skills That Drive Innovation
+          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            Skills & Technologies
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A comprehensive toolkit of modern technologies and frameworks
           </p>
         </div>
 
-        {/* Skills Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((category, index) => (
-            <Card 
-              key={category.title}
-              className="animate-on-scroll bg-white border border-slate-200 hover:border-primary/30 transition-all duration-300 hover:shadow-lg group"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {skillCategories.map((category) => (
+            <Card key={category.title} className="group hover:shadow-md transition-all duration-300">
               <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="p-2 bg-primary/10 rounded-lg mr-3 group-hover:bg-primary/20 transition-colors">
-                    <category.icon className="h-5 w-5 text-primary" />
+                {/* Category Header */}
+                <div className="flex items-center mb-6">
+                  <div className="p-3 bg-primary/10 rounded-xl mr-4 group-hover:bg-primary/15 transition-colors">
+                    <category.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-800 group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-semibold text-foreground">
                     {category.title}
                   </h3>
                 </div>
-                <div className="flex flex-wrap gap-2">
+                
+                {/* Skills List */}
+                <div className="space-y-2">
                   {category.skills.map((skill) => (
-                    <Badge 
-                      key={skill}
-                      variant="secondary"
-                      className="text-xs bg-slate-100 text-slate-700 hover:bg-primary/10 hover:text-primary transition-colors border-0"
+                    <div 
+                      key={skill} 
+                      className="flex items-center py-2 px-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
                     >
-                      {skill}
-                    </Badge>
+                      <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0" />
+                      <span className="text-foreground font-medium">{skill}</span>
+                    </div>
                   ))}
                 </div>
               </CardContent>
