@@ -20,6 +20,16 @@ const Navigation = () => {
     }
   };
 
+  const downloadResume = () => {
+    // Create a link element and trigger download
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; // Assumes resume.pdf is in public folder
+    link.download = 'Ansar_Mehmood_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const navItems = [
     { label: "About", section: "about" },
     { label: "Skills", section: "skills" },
@@ -76,10 +86,10 @@ const Navigation = () => {
           <div className="hidden md:flex">
             <Button 
               size="lg"
-              onClick={() => scrollToSection('contact')}
+              onClick={downloadResume}
               className="bg-primary hover:scale-105 text-white shadow-glow hover:shadow-xl transition-all duration-300 font-semibold px-8 py-3 text-lg rounded-2xl"
             >
-              Let's Talk
+              Download Resume
             </Button>
           </div>
 
@@ -116,12 +126,12 @@ const Navigation = () => {
                 <Button 
                   size="lg"
                   onClick={() => {
-                    scrollToSection('contact');
+                    downloadResume();
                     setIsMobileMenuOpen(false);
                   }}
                   className="w-full bg-primary hover:scale-105 text-white shadow-glow font-semibold py-4 text-lg rounded-2xl"
                 >
-                  Let's Talk
+                  Download Resume
                 </Button>
               </div>
             </div>
