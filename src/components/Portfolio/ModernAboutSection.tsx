@@ -19,8 +19,7 @@ const ModernAboutSection = () => {
             About Me
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Passionate developer crafting digital experiences that combine creativity, 
-            technical excellence, and real business impact
+            Full-Stack Developer | React • Django • TypeScript
           </p>
         </div>
 
@@ -42,20 +41,15 @@ const ModernAboutSection = () => {
           <div className="space-y-8 animate-on-scroll">
             <div className="space-y-6">
               <p className="text-xl text-slate-800 leading-relaxed">
-                Hey there! I'm Ansar Mehmood, a passionate full-stack developer with over 3 years of experience 
-                turning innovative ideas into powerful digital solutions. My journey began with curiosity 
-                about how technology can solve real-world problems.
+                I'm Ansar Mehmood, a software engineer passionate about building user-friendly interfaces and scalable backend systems. Over the last few years, I've worked with clients internationally as a freelance full-stack developer and currently contribute to enterprise projects at SalesOnDemand, where I build modern React + Django solutions.
               </p>
               
               <p className="text-lg text-slate-600 leading-relaxed">
-                Currently pursuing my Computer Science degree while working as a Software Engineer at 
-                SalesOnDemand, I've successfully delivered projects ranging from e-commerce platforms 
-                to AI-powered automation systems.
+                My experience includes deploying live applications, integrating APIs, and managing cloud infrastructure on AWS EC2. I enjoy bridging the gap between frontend and backend, ensuring products are not only technically strong but also deliver real business value.
               </p>
 
               <p className="text-lg text-slate-600 leading-relaxed">
-                What drives me is the intersection of creativity and technology—building solutions that 
-                not only work flawlessly but also delight users and drive business growth.
+                I'm continuously learning, refining my craft, and always open to exciting opportunities where I can grow, collaborate, and make an impact.
               </p>
             </div>
 
