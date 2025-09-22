@@ -78,67 +78,58 @@ const ModernPortfolioSection = () => {
           </p>
         </div>
 
-        {/* Creative Projects Grid */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        {/* Stylish Single Row Projects Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {featuredProjects.map((project, index) => {
             const typeStyle = projectTypes[project.type as keyof typeof projectTypes];
-            const isLargeCard = index === 0 || index === 3;
             
             return (
               <Card 
                 key={project.slug}
-                className={`group overflow-hidden bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-700 hover:-translate-y-2 animate-on-scroll ${
-                  isLargeCard ? 'lg:row-span-2' : ''
-                }`}
+                className="group overflow-hidden bg-white border border-slate-200/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 animate-on-scroll"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
-                {/* Project Image */}
-                <div className={`relative overflow-hidden ${isLargeCard ? 'aspect-[4/3]' : 'aspect-video'}`}>
+                {/* Project Image with consistent aspect ratio */}
+                <div className="relative overflow-hidden aspect-[4/3]">
                   <img 
                     src={project.coverImage} 
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  {/* Subtle overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   {/* Type Badge */}
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute top-3 left-3">
                     <Badge 
-                      className={`${typeStyle.bgColor} ${typeStyle.textColor} border-0 font-semibold px-3 py-1.5 text-sm backdrop-blur-sm`}
+                      className={`${typeStyle.bgColor} ${typeStyle.textColor} border-0 font-medium px-2.5 py-1 text-xs backdrop-blur-sm`}
                     >
-                      <span className="mr-1.5">{typeStyle.icon}</span>
+                      <span className="mr-1">{typeStyle.icon}</span>
                       {project.type}
                     </Badge>
                   </div>
 
-                  {/* Hover Actions */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-                    <div className="flex space-x-3">
-                      <Button 
-                        size="sm"
-                        onClick={() => handleCaseStudy(project.slug)}
-                        className="bg-white text-slate-900 hover:bg-white/90 font-semibold shadow-xl border-0"
-                      >
-                        View Details
-                        <ArrowUpRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </div>
+                  {/* Hover Action */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <Button 
+                      size="sm"
+                      onClick={() => handleCaseStudy(project.slug)}
+                      className="bg-white/95 text-slate-900 hover:bg-white font-medium shadow-lg border-0 backdrop-blur-sm"
+                    >
+                      View Details
+                      <ArrowUpRight className="ml-1.5 h-3.5 w-3.5" />
+                    </Button>
                   </div>
                 </div>
 
-                <CardContent className={`p-6 ${isLargeCard ? 'lg:p-8' : ''}`}>
+                <CardContent className="p-5">
                   {/* Project Title */}
-                  <h3 className={`font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors ${
-                    isLargeCard ? 'text-2xl' : 'text-xl'
-                  }`}>
+                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors text-lg leading-tight">
                     {project.title}
                   </h3>
                   
-                  {/* Project Summary */}
-                  <p className={`text-slate-600 mb-4 leading-relaxed ${
-                    isLargeCard ? 'text-base line-clamp-4' : 'text-sm line-clamp-2'
-                  }`}>
+                  {/* Project Summary - exactly 1 line */}
+                  <p className="text-slate-600 mb-4 leading-relaxed text-sm line-clamp-2 min-h-[2.5rem]">
                     {project.summary}
                   </p>
                   
@@ -146,11 +137,11 @@ const ModernPortfolioSection = () => {
                   <Button 
                     onClick={() => handleCaseStudy(project.slug)}
                     variant="outline"
-                    size={isLargeCard ? "default" : "sm"}
-                    className="w-full border-primary/20 text-primary hover:bg-primary hover:text-white transition-all duration-300 font-medium"
+                    size="sm"
+                    className="w-full border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-primary/30 hover:text-primary transition-all duration-300 font-medium text-sm"
                   >
                     View Details
-                    <ArrowUpRight className="ml-2 h-4 w-4" />
+                    <ArrowUpRight className="ml-1.5 h-3.5 w-3.5" />
                   </Button>
                 </CardContent>
               </Card>
