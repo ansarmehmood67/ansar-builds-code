@@ -79,7 +79,7 @@ const ModernPortfolioSection = () => {
         </div>
 
         {/* Stylish Single Row Projects Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredProjects.map((project, index) => (
             <Card 
               key={project.slug} 
@@ -104,7 +104,7 @@ const ModernPortfolioSection = () => {
                 <div className="flex flex-wrap gap-2 mb-6">
                   <Badge variant="secondary">{project.type}</Badge>
                   {project.tags.slice(0, 2).map((tag) => (
-                    <Badge key={tag} variant="outline" className="text-xs">
+                    <Badge key={tag} variant="default" className="text-xs">
                       {tag}
                     </Badge>
                   ))}
