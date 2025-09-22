@@ -1,7 +1,7 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { MapPin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import aboutImage from "@/assets/about-image.png";
+import aboutImage from "@/assets/ansar-about-image.png";
 
 const ModernAboutSection = () => {
   const ref = useScrollAnimation();
