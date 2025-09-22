@@ -53,9 +53,9 @@ const HeroSection = () => {
       
       {/* Content Container - Creative Left Layout Only */}
       <div className="relative z-10 w-full pl-8 lg:pl-16 pr-4 flex items-center min-h-screen">
-        <div className="pt-20 max-w-2xl w-full">
+        <div className="pt-20 max-w-3xl w-full">
           {/* Main Content Stack */}
-          <div className="space-y-8">
+          <div className="space-y-12">
             {/* Main Headline - Improved Typography */}
             <div>
               <h1 className="text-4xl lg:text-6xl font-black leading-tight">
