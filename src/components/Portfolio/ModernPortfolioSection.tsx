@@ -61,7 +61,7 @@ const ModernPortfolioSection = () => {
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="relative z-10 container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-20 animate-on-scroll">
           <div className="flex items-center justify-center mb-6">
