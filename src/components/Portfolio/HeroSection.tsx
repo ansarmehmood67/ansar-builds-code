@@ -55,17 +55,17 @@ const HeroSection = () => {
       <div className="relative z-10 w-full pl-8 lg:pl-16 pr-4 flex items-center min-h-screen">
         <div className="pt-20 max-w-3xl w-full">
           {/* Main Content Stack */}
-          <div className="space-y-12">
+          <div className="space-y-8">
             {/* Main Headline - Improved Typography */}
-            <div>
-              <h1 className="text-4xl lg:text-6xl font-black leading-tight">
+            <div className="mb-4">
+              <h1 className="text-5xl lg:text-7xl font-black leading-tight">
                 <span className="block text-foreground drop-shadow-2xl animate-fade-in-up tracking-tight">Ansar Mehmood</span>
               </h1>
             </div>
             
             {/* Enhanced Role with Better Hierarchy */}
-            <div className="ml-4 lg:ml-8">
-              <p className="text-2xl lg:text-4xl font-semibold leading-relaxed drop-shadow-lg animate-fade-in-up animate-stagger-1">
+            <div className="ml-4 lg:ml-8 mb-6">
+              <p className="text-3xl lg:text-5xl font-semibold leading-relaxed drop-shadow-lg animate-fade-in-up animate-stagger-1">
                 <span className="bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">Full Stack Developer</span><br />
                 <span className="bg-gradient-to-r from-primary via-primary to-primary-glow bg-clip-text text-transparent font-bold">& Software Engineer</span>
               </p>
@@ -89,7 +89,7 @@ const HeroSection = () => {
             {/* Elegant Social Icons - Compact Layout */}
             <div className="ml-4 mt-8 animate-fade-in-up animate-stagger-3">
               <div className="flex items-center space-x-6">
-                <p className="text-sm text-foreground/60 font-medium">Connect with me</p>
+                <p className="text-base text-foreground/60 font-medium">Connect with me</p>
                 <div className="flex items-center space-x-3">
                   {socialLinks.map((social, index) => (
                     <a
@@ -97,11 +97,11 @@ const HeroSection = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group w-9 h-9 rounded-lg bg-background/20 backdrop-blur-sm border border-foreground/10 flex items-center justify-center hover:bg-primary hover:border-primary hover:scale-110 hover:-translate-y-0.5 transition-all duration-300"
+                      className="group w-11 h-11 rounded-lg bg-background/20 backdrop-blur-sm border border-foreground/10 flex items-center justify-center hover:bg-primary hover:border-primary hover:scale-110 hover:-translate-y-0.5 transition-all duration-300"
                       style={{ animationDelay: `${index * 50}ms` }}
                       aria-label={social.label}
                     >
-                      <social.icon className="h-4 w-4 text-foreground/70 group-hover:text-white transition-colors" />
+                      <social.icon className="h-5 w-5 text-foreground/70 group-hover:text-white transition-colors" />
                     </a>
                   ))}
                 </div>
