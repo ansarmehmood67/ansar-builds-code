@@ -80,73 +80,53 @@ const ModernPortfolioSection = () => {
 
         {/* Stylish Single Row Projects Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-          {featuredProjects.map((project, index) => {
-            const typeStyle = projectTypes[project.type as keyof typeof projectTypes];
-            
-            return (
-              <Card 
-                key={project.slug}
-                className="group overflow-hidden bg-white border border-slate-200/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 animate-on-scroll"
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                {/* Project Image with consistent aspect ratio */}
-                <div className="relative overflow-hidden aspect-[4/3]">
-                  <img 
-                    src={project.coverImage} 
-                    alt={project.title}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                  {/* Subtle overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
-                  {/* Type Badge */}
-                  <div className="absolute top-3 left-3">
-                    <Badge 
-                      className={`${typeStyle.bgColor} ${typeStyle.textColor} border-0 font-medium px-2.5 py-1 text-xs backdrop-blur-sm`}
-                    >
-                      <span className="mr-1">{typeStyle.icon}</span>
-                      {project.type}
+          {featuredProjects.map((project, index) => (
+            <Card 
+              key={project.slug} 
+              className="group hover:shadow-2xl transition-all duration-300 bg-white border border-slate-200/50 animate-on-scroll"
+              style={{ animationDelay: `${index * 0.15}s` }}
+            >
+              <div className="relative overflow-hidden rounded-t-xl">
+                <img
+                  src={project.coverImage}
+                  alt={project.title}
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-slate-600 mb-4">
+                  {project.summary}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <Badge variant="secondary">{project.type}</Badge>
+                  {project.tags.slice(0, 2).map((tag) => (
+                    <Badge key={tag} variant="outline" className="text-xs">
+                      {tag}
                     </Badge>
-                  </div>
-
-                  {/* Hover Action */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <Button 
-                      size="sm"
-                      onClick={() => handleCaseStudy(project.slug)}
-                      className="bg-white/95 text-slate-900 hover:bg-white font-medium shadow-lg border-0 backdrop-blur-sm"
-                    >
-                      View Details
-                      <ArrowUpRight className="ml-1.5 h-3.5 w-3.5" />
-                    </Button>
-                  </div>
+                  ))}
                 </div>
-
-                <CardContent className="p-5">
-                  {/* Project Title */}
-                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors text-lg leading-tight">
-                    {project.title}
-                  </h3>
-                  
-                  {/* Project Summary - exactly 1 line */}
-                  <p className="text-slate-600 mb-4 leading-relaxed text-sm line-clamp-2 min-h-[2.5rem]">
-                    {project.summary}
-                  </p>
-                  
-                  {/* Action Button */}
+                <div className="flex gap-2">
                   <Button 
+                    size="sm" 
                     onClick={() => handleCaseStudy(project.slug)}
-                    variant="outline"
-                    size="sm"
-                    className="w-full border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-primary/30 hover:text-primary transition-all duration-300 font-medium text-sm"
                   >
                     View Details
-                    <ArrowUpRight className="ml-1.5 h-3.5 w-3.5" />
                   </Button>
-                </CardContent>
-              </Card>
-            );
-          })}
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={() => handleQuickView(project)}
+                  >
+                    Quick View
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         {/* View All Projects CTA */}
