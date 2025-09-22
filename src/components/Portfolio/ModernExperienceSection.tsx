@@ -18,8 +18,7 @@ const ModernExperienceSection = () => {
         "Collaborating with international teams to deliver scalable business solutions"
       ],
       technologies: ["React", "Django", "Python", "JavaScript", "AI Integration", "Enterprise Solutions"],
-      icon: Briefcase,
-      side: "right"
+      icon: Briefcase
     },
     {
       type: "work", 
@@ -34,8 +33,7 @@ const ModernExperienceSection = () => {
         "Delivered custom web platforms, automation tools, and CMS solutions"
       ],
       technologies: ["React", "Django", "Tailwind", "APIs", "Cloud Deployment", "CMS Solutions"],
-      icon: Briefcase,
-      side: "left"
+      icon: Briefcase
     },
     {
       type: "education",
@@ -50,8 +48,7 @@ const ModernExperienceSection = () => {
         "Focused on modern web technologies and enterprise solutions"
       ],
       technologies: ["Full-Stack Development", "Cloud Computing", "Automation", "Web Technologies"],
-      icon: GraduationCap,
-      side: "right"
+      icon: GraduationCap
     }
   ];
 
@@ -79,26 +76,24 @@ const ModernExperienceSection = () => {
 
           {/* Premium Timeline */}
           <div className="relative">
-            {/* Central Timeline Line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 transform -translate-x-1/2 hidden lg:block" />
+            {/* Left Timeline Line */}
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary/20 hidden lg:block" />
             
             {/* Timeline Items */}
-            <div className="space-y-16 lg:space-y-24">
+            <div className="space-y-16 lg:space-y-20">
               {experiences.map((exp, index) => (
                 <div
                   key={index}
-                  className={`relative flex items-center animate-on-scroll ${
-                    exp.side === 'left' ? 'lg:flex-row-reverse' : ''
-                  }`}
+                  className="relative flex items-center animate-on-scroll"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   {/* Timeline Node */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-primary rounded-full shadow-lg shadow-primary/20 flex items-center justify-center z-10 hidden lg:flex">
+                  <div className="absolute left-4 transform -translate-x-1/2 w-16 h-16 bg-primary rounded-full shadow-lg shadow-primary/20 flex items-center justify-center z-10 hidden lg:flex">
                     <exp.icon className="w-8 h-8 text-white" />
                   </div>
 
                   {/* Content Card */}
-                  <div className={`w-full lg:w-7/12 ${exp.side === 'left' ? 'lg:pr-20' : 'lg:pl-20'}`}>
+                  <div className="w-full lg:ml-20">
                     <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-200 overflow-hidden hover:border-primary/30 hover:-translate-y-1">
                       
                       {/* Mobile Timeline Node */}
