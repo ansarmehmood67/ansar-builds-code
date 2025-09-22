@@ -49,8 +49,8 @@ const HeroSection = () => {
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/60 to-transparent" />
       
       {/* Content Container - Creative Left Layout Only */}
-      <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-16 flex items-center min-h-screen">
-        <div className="pt-20 max-w-2xl">
+      <div className="relative z-10 w-full pl-8 lg:pl-16 pr-4 flex items-center min-h-screen">
+        <div className="pt-20 max-w-2xl w-full">
           {/* Main Content Stack */}
           <div className="space-y-8">
             {/* Main Headline - Elegant Typography */}
