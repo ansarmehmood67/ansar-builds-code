@@ -1,15 +1,37 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Code } from "lucide-react";
+import { Code, Monitor, Settings, Database, Cloud, Zap } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const ModernSkillsSection = () => {
   const ref = useScrollAnimation();
 
-  const skills = [
-    "React.js", "TypeScript", "Next.js", "Tailwind CSS", "Node.js", 
-    "Python", "Django", "PostgreSQL", "MongoDB", "OpenAI API", 
-    "ChatGPT Integration", "Zapier/Make.com", "WhatsApp API", "Git/GitHub", 
-    "Docker", "AWS", "Vercel", "Figma"
+  const skillCategories = [
+    {
+      title: "Frontend",
+      icon: Monitor,
+      skills: ["React", "TypeScript", "Tailwind", "HTML", "CSS"]
+    },
+    {
+      title: "Backend", 
+      icon: Settings,
+      skills: ["Django", "REST APIs", "Python"]
+    },
+    {
+      title: "Databases",
+      icon: Database,
+      skills: ["MySQL", "PostgreSQL", "SQLite", "MongoDB (basic)"]
+    },
+    {
+      title: "Tools & Platforms",
+      icon: Cloud,
+      skills: ["Git", "AWS EC2", "Docker", "Vercel/Netlify/Render", "Shopify"]
+    },
+    {
+      title: "APIs & Integrations",
+      icon: Zap,
+      skills: ["WhatsApp Cloud API", "OpenAI API", "MailerLite"]
+    }
   ];
 
   return (
@@ -33,17 +55,36 @@ const ModernSkillsSection = () => {
           </p>
         </div>
 
-        {/* Skills Row */}
-        <div className="flex flex-wrap justify-center gap-4 animate-on-scroll">
-          {skills.map((skill, index) => (
-            <Badge 
-              key={skill}
-              variant="secondary"
-              className="px-6 py-3 text-lg font-semibold bg-white text-slate-800 border border-slate-200 hover:border-primary/50 hover:text-primary hover:bg-primary/5 transition-all duration-300 shadow-sm hover:shadow-md rounded-full"
+        {/* Skills Categories Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillCategories.map((category, index) => (
+            <Card 
+              key={category.title}
+              className="animate-on-scroll bg-white border border-slate-200 hover:border-primary/30 transition-all duration-300 hover:shadow-lg group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {skill}
-            </Badge>
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="p-2 bg-primary/10 rounded-lg mr-3 group-hover:bg-primary/20 transition-colors">
+                    <category.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-slate-800 group-hover:text-primary transition-colors">
+                    {category.title}
+                  </h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <Badge 
+                      key={skill}
+                      variant="secondary"
+                      className="text-xs bg-slate-100 text-slate-700 hover:bg-primary/10 hover:text-primary transition-colors border-0"
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
