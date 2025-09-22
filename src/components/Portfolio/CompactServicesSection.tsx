@@ -23,19 +23,19 @@ const CompactServicesSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-50 to-white">
+    <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="max-w-6xl mx-auto px-6">
         <div ref={ref as any} className="animate-on-scroll">
           {/* Premium Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center px-6 py-3 bg-white rounded-full shadow-lg border border-slate-200 mb-8">
-              <Sparkles className="h-5 w-5 text-slate-700 mr-3" />
-              <span className="text-slate-700 font-semibold text-sm tracking-wide uppercase">My Services</span>
+            <div className="inline-flex items-center justify-center px-6 py-3 bg-slate-800/80 backdrop-blur-sm rounded-full shadow-xl border border-slate-600/50 mb-8">
+              <Sparkles className="h-5 w-5 text-slate-300 mr-3" />
+              <span className="text-slate-300 font-semibold text-sm tracking-wide uppercase">My Services</span>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-              Professional <span className="text-slate-600">Solutions</span>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
+              Professional <span className="text-slate-300">Solutions</span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
               Specialized services designed to transform your ideas into powerful digital solutions
             </p>
           </div>
@@ -45,7 +45,7 @@ const CompactServicesSection = () => {
             {services.map((service, index) => (
               <div
                 key={service.title}
-                className="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-slate-100 overflow-hidden"
+                className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-slate-700/50 overflow-hidden hover:border-slate-600/70"
                 style={{
                   animationDelay: `${index * 0.1}s`
                 }}
@@ -53,24 +53,24 @@ const CompactServicesSection = () => {
                 <div className="text-center p-8">
                   {/* Premium Icon Container */}
                   <div className="relative mx-auto mb-6">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 text-slate-700 group-hover:from-primary/10 group-hover:to-primary/20 group-hover:text-primary transition-all duration-500 shadow-lg group-hover:shadow-xl">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-slate-700/80 text-slate-300 group-hover:bg-primary/20 group-hover:text-primary transition-all duration-500 shadow-lg group-hover:shadow-xl group-hover:shadow-primary/20">
                       <service.icon className="w-8 h-8" />
                     </div>
-                    {/* Glow Effect */}
-                    <div className="absolute inset-0 rounded-2xl bg-primary/20 blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                    {/* Enhanced Glow Effect */}
+                    <div className="absolute inset-0 rounded-2xl bg-primary/20 blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
                   </div>
 
                   {/* Enhanced Typography */}
-                  <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-slate-700 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-slate-600 leading-relaxed group-hover:text-slate-500 transition-colors duration-300">
+                  <p className="text-slate-300 leading-relaxed group-hover:text-slate-200 transition-colors duration-300">
                     {service.description}
                   </p>
                 </div>
 
                 {/* Premium Bottom Accent */}
-                <div className="h-1 bg-gradient-to-r from-slate-200 to-slate-300 group-hover:from-primary/40 group-hover:to-primary/60 transition-all duration-500"></div>
+                <div className="h-1 bg-gradient-to-r from-slate-700/50 to-slate-600/50 group-hover:from-primary/60 group-hover:to-primary/80 transition-all duration-500"></div>
               </div>
             ))}
           </div>
