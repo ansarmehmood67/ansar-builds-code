@@ -84,7 +84,7 @@ const ModernPortfolioSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-12">
           {featuredProjects.map((project, index) => {
             const typeStyle = projectTypes[project.type as keyof typeof projectTypes];
             
@@ -154,10 +154,6 @@ const ModernPortfolioSection = () => {
                   
                   {/* Key Results */}
                   <div className="mb-6 p-4 rounded-xl bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/20">
-                    <div className="flex items-center mb-2">
-                      <TrendingUp className="h-5 w-5 text-primary mr-2" />
-                      <span className="text-sm font-semibold text-slate-700">Key Results</span>
-                    </div>
                     <div className="text-primary font-bold text-lg">{project.outcome}</div>
                   </div>
                   
@@ -202,30 +198,8 @@ const ModernPortfolioSection = () => {
           })}
         </div>
 
-        {/* Portfolio Stats */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16 animate-on-scroll">
-          <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20 text-center">
-            <CardContent className="p-8">
-              <div className="text-4xl font-black text-primary mb-2">9+</div>
-              <div className="text-slate-700 font-semibold">Projects Delivered</div>
-            </CardContent>
-          </Card>
-          <Card className="bg-gradient-to-br from-blue-500/10 to-blue-500/5 border-blue-500/20 text-center">
-            <CardContent className="p-8">
-              <div className="text-4xl font-black text-blue-600 mb-2">$15K+</div>
-              <div className="text-slate-700 font-semibold">Revenue Generated</div>
-            </CardContent>
-          </Card>
-          <Card className="bg-gradient-to-br from-purple-500/10 to-purple-500/5 border-purple-500/20 text-center">
-            <CardContent className="p-8">
-              <div className="text-4xl font-black text-purple-600 mb-2">100%</div>
-              <div className="text-slate-700 font-semibold">Client Satisfaction</div>
-            </CardContent>
-          </Card>
-        </div>
-
         {/* View All Projects CTA */}
-        <div className="text-center animate-on-scroll">
+        <div className="text-center mt-16 animate-on-scroll">
           <div className="inline-flex flex-col items-center p-8 rounded-3xl bg-gradient-to-br from-slate-50 to-white border border-slate-200 shadow-xl">
             <div className="text-2xl font-bold text-slate-900 mb-4">
               Want to see more of my work?

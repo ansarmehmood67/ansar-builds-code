@@ -55,8 +55,8 @@ const ModernContactSection = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "alex@example.com",
-      href: "mailto:alex@example.com",
+      value: "ansar@example.com",
+      href: "mailto:ansar@example.com",
       description: "Best way to reach me"
     },
     {
@@ -79,14 +79,14 @@ const ModernContactSection = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/alexmehmood",
+      href: "https://github.com/ansarmehmood",
       followers: "50+ repositories",
       color: "hover:text-gray-900 hover:bg-gray-100"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/alexmehmood",
+      href: "https://linkedin.com/in/ansarmehmood",
       followers: "500+ connections",
       color: "hover:text-blue-600 hover:bg-blue-50"
     }
@@ -114,11 +114,10 @@ const ModernContactSection = () => {
     <section 
       id="contact"
       ref={ref as React.RefObject<HTMLElement>}
-      className="py-24 theme-dark relative overflow-hidden"
+      className="py-24 bg-white relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-background via-background/95 to-background"></div>
         <div className="absolute top-20 left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-20 right-20 w-80 h-80 bg-primary/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
@@ -130,11 +129,10 @@ const ModernContactSection = () => {
             <MessageCircle className="h-8 w-8 text-primary mr-3 animate-pulse" />
             <span className="text-primary font-semibold text-lg tracking-wide uppercase">Let's Connect</span>
           </div>
-          <h2 className="text-5xl lg:text-6xl font-black text-foreground mb-6 leading-tight">
-            Ready to Start Your{" "}
-            <span className="bg-hero-gradient bg-clip-text text-transparent">Next Project?</span>
+          <h2 className="text-5xl lg:text-6xl font-black text-slate-900 mb-6 leading-tight">
+            Ready to Start Your Next Project?
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             Let's discuss your vision and turn it into reality. From concept to deployment, 
             I'm here to help you succeed.
           </p>
@@ -143,13 +141,13 @@ const ModernContactSection = () => {
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Contact Form - Takes 2 columns */}
           <div className="lg:col-span-2">
-            <Card className="bg-card/50 backdrop-blur-xl border-border/50 shadow-2xl hover:shadow-glow transition-all duration-700 animate-on-scroll">
+            <Card className="bg-white border border-slate-200 shadow-xl hover:shadow-2xl transition-all duration-700 animate-on-scroll">
               <CardContent className="p-10">
                 <div className="mb-8">
-                  <h3 className="text-3xl font-bold text-foreground mb-3">
+                  <h3 className="text-3xl font-bold text-slate-900 mb-3">
                     Send me a message
                   </h3>
-                  <p className="text-muted-foreground text-lg">
+                  <p className="text-slate-600 text-lg">
                     Tell me about your project and let's create something amazing together.
                   </p>
                 </div>
@@ -157,18 +155,18 @@ const ModernContactSection = () => {
                 <form onSubmit={handleSubmit} className="space-y-8">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-foreground font-medium text-lg">Your Name</label>
+                      <label className="text-slate-900 font-medium text-lg">Your Name</label>
                       <Input
                         name="name"
                         placeholder="Enter your full name"
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="h-14 bg-background/50 border-border/50 text-foreground placeholder:text-muted-foreground focus:border-primary/50 focus:ring-primary/20 text-lg rounded-xl"
+                        className="h-14 bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-500 focus:border-primary focus:ring-primary/20 text-lg rounded-xl"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-foreground font-medium text-lg">Email Address</label>
+                      <label className="text-slate-900 font-medium text-lg">Email Address</label>
                       <Input
                         name="email"
                         type="email"
@@ -176,13 +174,13 @@ const ModernContactSection = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="h-14 bg-background/50 border-border/50 text-foreground placeholder:text-muted-foreground focus:border-primary/50 focus:ring-primary/20 text-lg rounded-xl"
+                        className="h-14 bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-500 focus:border-primary focus:ring-primary/20 text-lg rounded-xl"
                       />
                     </div>
                   </div>
                   
                   <div className="space-y-2">
-                    <label className="text-foreground font-medium text-lg">Project Details</label>
+                    <label className="text-slate-900 font-medium text-lg">Project Details</label>
                     <Textarea
                       name="message"
                       placeholder="Tell me about your project, timeline, budget, and any specific requirements..."
@@ -190,14 +188,14 @@ const ModernContactSection = () => {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      className="bg-background/50 border-border/50 text-foreground placeholder:text-muted-foreground focus:border-primary/50 focus:ring-primary/20 resize-none text-lg rounded-xl"
+                      className="bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-500 focus:border-primary focus:ring-primary/20 resize-none text-lg rounded-xl"
                     />
                   </div>
                   
                   <Button 
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full h-16 bg-hero-gradient hover:scale-105 text-white font-bold text-lg shadow-glow hover:shadow-xl transition-all duration-300 rounded-2xl"
+                    className="w-full h-16 bg-primary hover:scale-105 text-white font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl"
                   >
                     {isSubmitting ? (
                       <>
@@ -219,9 +217,9 @@ const ModernContactSection = () => {
           {/* Contact Info & Social - Takes 1 column */}
           <div className="space-y-8">
             {/* Contact Information */}
-            <Card className="bg-card/50 backdrop-blur-xl border-border/50 shadow-xl hover:shadow-glow transition-all duration-500 animate-on-scroll">
+            <Card className="bg-white border border-slate-200 shadow-xl hover:shadow-2xl transition-all duration-500 animate-on-scroll">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-foreground mb-8 flex items-center">
+                <h3 className="text-2xl font-bold text-slate-900 mb-8 flex items-center">
                   <Mail className="h-6 w-6 text-primary mr-3" />
                   Get in Touch
                 </h3>
@@ -229,24 +227,24 @@ const ModernContactSection = () => {
                   {contactInfo.map((item, index) => (
                     <div 
                       key={index} 
-                      className="group flex items-start space-x-4 p-4 rounded-xl hover:bg-background/50 transition-all duration-300"
+                      className="group flex items-start space-x-4 p-4 rounded-xl hover:bg-slate-50 transition-all duration-300"
                     >
-                      <div className="flex-shrink-0 w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                      <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                         <item.icon className="h-6 w-6 text-primary" />
                       </div>
                       <div className="flex-1">
-                        <div className="text-sm text-muted-foreground mb-1">{item.label}</div>
+                        <div className="text-sm text-slate-500 mb-1">{item.label}</div>
                         {item.href ? (
                           <a 
                             href={item.href}
-                            className="text-foreground font-semibold hover:text-primary transition-colors text-lg mb-1 block"
+                            className="text-slate-900 font-semibold hover:text-primary transition-colors text-lg mb-1 block"
                           >
                             {item.value}
                           </a>
                         ) : (
-                          <div className="text-foreground font-semibold text-lg mb-1">{item.value}</div>
+                          <div className="text-slate-900 font-semibold text-lg mb-1">{item.value}</div>
                         )}
-                        <div className="text-sm text-muted-foreground">{item.description}</div>
+                        <div className="text-sm text-slate-500">{item.description}</div>
                       </div>
                     </div>
                   ))}
@@ -255,9 +253,9 @@ const ModernContactSection = () => {
             </Card>
 
             {/* Social Links */}
-            <Card className="bg-card/50 backdrop-blur-xl border-border/50 shadow-xl hover:shadow-glow transition-all duration-500 animate-on-scroll">
+            <Card className="bg-white border border-slate-200 shadow-xl hover:shadow-2xl transition-all duration-500 animate-on-scroll">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-foreground mb-8 flex items-center">
+                <h3 className="text-2xl font-bold text-slate-900 mb-8 flex items-center">
                   <Github className="h-6 w-6 text-primary mr-3" />
                   Connect Online
                 </h3>
@@ -268,15 +266,15 @@ const ModernContactSection = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`flex items-center justify-between p-6 bg-background/50 rounded-2xl border border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group ${social.color}`}
+                      className={`flex items-center justify-between p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-primary hover:bg-primary/5 transition-all duration-300 group ${social.color}`}
                     >
                       <div className="flex items-center space-x-4">
-                        <social.icon className="h-7 w-7 text-muted-foreground group-hover:text-primary transition-colors" />
+                        <social.icon className="h-7 w-7 text-slate-600 group-hover:text-primary transition-colors" />
                         <div>
-                          <span className="text-foreground font-semibold text-lg group-hover:text-primary transition-colors block">
+                          <span className="text-slate-900 font-semibold text-lg group-hover:text-primary transition-colors block">
                             {social.label}
                           </span>
-                          <span className="text-sm text-muted-foreground">{social.followers}</span>
+                          <span className="text-sm text-slate-500">{social.followers}</span>
                         </div>
                       </div>
                       <div className="opacity-0 group-hover:opacity-100 transition-opacity">
@@ -289,9 +287,9 @@ const ModernContactSection = () => {
             </Card>
 
             {/* Why Work With Me */}
-            <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20 shadow-xl animate-on-scroll">
+            <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 shadow-xl animate-on-scroll">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center">
+                <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center">
                   <Star className="h-6 w-6 text-primary mr-3" />
                   Why Choose Me?
                 </h3>
@@ -300,8 +298,8 @@ const ModernContactSection = () => {
                     <div key={index} className="flex items-start space-x-3">
                       <item.icon className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                       <div>
-                        <div className="font-semibold text-foreground">{item.title}</div>
-                        <div className="text-sm text-muted-foreground">{item.description}</div>
+                        <div className="font-semibold text-slate-900">{item.title}</div>
+                        <div className="text-sm text-slate-600">{item.description}</div>
                       </div>
                     </div>
                   ))}

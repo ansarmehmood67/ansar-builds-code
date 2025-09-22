@@ -50,11 +50,11 @@ const Navigation = () => {
             onClick={() => scrollToSection('home')}
             className="group flex items-center space-x-2"
           >
-            <div className="w-10 h-10 bg-hero-gradient rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <span className="text-white font-bold text-lg">A</span>
             </div>
-            <span className="text-2xl font-bold bg-text-gradient bg-clip-text text-transparent">
-              Alex.dev
+            <span className="text-2xl font-bold text-primary">
+              Ansar.dev
             </span>
           </button>
 
@@ -67,7 +67,7 @@ const Navigation = () => {
                 className="text-foreground/80 hover:text-primary transition-all duration-300 relative group font-medium text-lg"
               >
                 {item.label}
-                <span className="absolute -bottom-2 left-0 w-0 h-1 bg-hero-gradient rounded-full transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-2 left-0 w-0 h-1 bg-primary rounded-full transition-all duration-300 group-hover:w-full" />
               </button>
             ))}
           </div>
@@ -77,7 +77,7 @@ const Navigation = () => {
             <Button 
               size="lg"
               onClick={() => scrollToSection('contact')}
-              className="bg-hero-gradient hover:scale-105 text-white shadow-glow hover:shadow-xl transition-all duration-300 font-semibold px-8 py-3 text-lg rounded-2xl"
+              className="bg-primary hover:scale-105 text-white shadow-glow hover:shadow-xl transition-all duration-300 font-semibold px-8 py-3 text-lg rounded-2xl"
             >
               Let's Talk
             </Button>
@@ -119,7 +119,7 @@ const Navigation = () => {
                     scrollToSection('contact');
                     setIsMobileMenuOpen(false);
                   }}
-                  className="w-full bg-hero-gradient hover:scale-105 text-white shadow-glow font-semibold py-4 text-lg rounded-2xl"
+                  className="w-full bg-primary hover:scale-105 text-white shadow-glow font-semibold py-4 text-lg rounded-2xl"
                 >
                   Let's Talk
                 </Button>

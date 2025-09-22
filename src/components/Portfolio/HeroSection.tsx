@@ -1,9 +1,36 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Github, Linkedin, Instagram, Facebook, ExternalLink } from "lucide-react";
 import heroBg from "@/assets/hero-bg.png";
 
 const HeroSection = () => {
+  const socialLinks = [
+    {
+      icon: Linkedin,
+      href: "https://linkedin.com/in/ansarmehmood",
+      label: "LinkedIn"
+    },
+    {
+      icon: ExternalLink,
+      href: "https://upwork.com/freelancers/ansarmehmood", 
+      label: "Upwork"
+    },
+    {
+      icon: Github,
+      href: "https://github.com/ansarmehmood",
+      label: "GitHub"
+    },
+    {
+      icon: Instagram,
+      href: "https://instagram.com/ansarmehmood",
+      label: "Instagram"
+    },
+    {
+      icon: Facebook,
+      href: "https://facebook.com/ansarmehmood",
+      label: "Facebook"
+    }
+  ];
+
   return (
     <section 
       className="min-h-screen relative flex items-center justify-start"
@@ -17,50 +44,53 @@ const HeroSection = () => {
       {/* Subtle overlay for text contrast */}
       <div className="absolute inset-0 bg-background/10" />
       
+      {/* Black fade at bottom only */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/60 to-transparent" />
+      
       {/* Content Container - Left side only */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex items-center min-h-screen">
         <div className="max-w-3xl pt-20">
-          {/* Main Headline - Personal and portfolio focused */}
+          {/* Main Headline */}
           <div className="mb-8">
             <h1 className="text-7xl lg:text-9xl font-black leading-none mb-4">
               <span className="block text-foreground drop-shadow-2xl animate-fade-in-up">Hi, I'm</span>
-              <span className="block bg-hero-gradient bg-clip-text text-transparent drop-shadow-2xl animate-fade-in-up animate-stagger-1">Alex</span>
+              <span className="block text-primary drop-shadow-2xl animate-fade-in-up animate-stagger-1">Ansar Mehmood</span>
             </h1>
-            <div className="h-2 w-32 bg-hero-gradient rounded-full animate-fade-in-up animate-stagger-2" />
           </div>
           
-          {/* Enhanced subcopy */}
-          <p className="text-2xl lg:text-3xl text-foreground/90 mb-4 font-light leading-relaxed drop-shadow-lg animate-fade-in-up animate-stagger-3 max-w-2xl">
-            Full-Stack Developer crafting
-          </p>
-          <p className="text-xl lg:text-2xl text-primary font-semibold mb-12 drop-shadow-lg animate-fade-in-up animate-stagger-4">
-            exceptional digital experiences with AI & modern web technologies
+          {/* Subheading */}
+          <p className="text-3xl lg:text-4xl text-foreground/90 mb-12 font-light leading-relaxed drop-shadow-lg animate-fade-in-up animate-stagger-2">
+            Full Stack Developer and Software Engineer
           </p>
           
-          {/* Enhanced CTAs */}
-          <div className="flex flex-col sm:flex-row gap-6 animate-fade-in-up animate-stagger-5">
+          {/* CTA */}
+          <div className="mb-12 animate-fade-in-up animate-stagger-3">
             <Button 
               size="lg" 
               onClick={() => {
                 const element = document.getElementById('contact');
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="group bg-hero-gradient hover:scale-110 text-white shadow-glow hover:shadow-xl transition-all duration-500 font-bold text-lg px-12 py-4 rounded-2xl"
+              className="group bg-primary hover:scale-110 text-white shadow-glow hover:shadow-xl transition-all duration-500 font-bold text-lg px-12 py-4 rounded-2xl"
             >
-              Let's Build Something Amazing
-              <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+              Contact
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              onClick={() => {
-                const element = document.getElementById('portfolio');
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="border-2 border-foreground/30 hover:border-primary/50 backdrop-blur-md text-foreground hover:text-primary hover:scale-105 transition-all duration-500 font-semibold text-lg px-8 py-4 rounded-2xl bg-background/10"
-            >
-              View My Work
-            </Button>
+          </div>
+
+          {/* Social Media Icons */}
+          <div className="flex items-center space-x-6 animate-fade-in-up animate-stagger-4">
+            {socialLinks.map((social, index) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group w-12 h-12 rounded-full bg-background/20 backdrop-blur-sm border border-foreground/20 flex items-center justify-center hover:bg-primary hover:border-primary hover:scale-110 transition-all duration-300"
+                aria-label={social.label}
+              >
+                <social.icon className="h-5 w-5 text-foreground group-hover:text-white transition-colors" />
+              </a>
+            ))}
           </div>
         </div>
       </div>
