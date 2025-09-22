@@ -56,9 +56,6 @@ const ModernSkillsSection = () => {
                     <h3 className="text-2xl font-bold text-white mb-1">
                       {column.title}
                     </h3>
-                    <p className="text-slate-300 text-sm">
-                      {column.skills.length} Technologies
-                    </p>
                   </div>
                 </div>
               </div>
@@ -94,15 +91,6 @@ const ModernSkillsSection = () => {
                 </div>
               </div>
               
-              {/* Premium Footer */}
-              <div className="px-8 pb-6">
-                <div className="text-center">
-                  <div className="inline-flex items-center px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-slate-600 hover:bg-slate-200 transition-colors duration-300 cursor-pointer">
-                    <span>Production Ready</span>
-                    <div className="ml-2 w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  </div>
-                </div>
-              </div>
             </div>
           ))}
         </div>
