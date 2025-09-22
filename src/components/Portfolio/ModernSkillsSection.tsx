@@ -17,7 +17,7 @@ const ModernSkillsSection = () => {
       skills: [
         "MySQL", "PostgreSQL", "SQLite", "MongoDB", 
         "Git", "Docker", "WordPress", "Vercel",
-        "Shopify", "AWS EC2", "Render"
+        "Shopify", "AWS EC2", "Firebase"
       ]
     }
   ];
