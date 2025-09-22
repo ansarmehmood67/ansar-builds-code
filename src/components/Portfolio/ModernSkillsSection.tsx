@@ -35,7 +35,7 @@ const ModernSkillsSection = () => {
             Professional <span className="text-slate-600">Skills</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Modern technologies and proven expertise for enterprise-grade solutions
+            Technologies I use to design, build, and deploy modern web & mobile applications.
           </p>
         </div>
 
@@ -107,18 +107,7 @@ const ModernSkillsSection = () => {
           ))}
         </div>
 
-        {/* Professional Summary */}
-        <div className="mt-16 text-center">
-          <div className="bg-white rounded-2xl shadow-xl p-8 border border-slate-100">
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">
-              Ready for Your Next Project
-            </h3>
-            <p className="text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed">
-              With extensive experience across modern web technologies, cloud platforms, and database systems, 
-              I deliver scalable solutions that drive business growth and user engagement.
-            </p>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
