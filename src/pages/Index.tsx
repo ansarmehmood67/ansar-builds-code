@@ -15,7 +15,6 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
-        <SectionDivider />
         <ModernAboutSection />
         <SectionDivider />
         <CompactServicesSection />

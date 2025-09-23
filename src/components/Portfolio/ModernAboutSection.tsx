@@ -21,10 +21,10 @@ const ModernAboutSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         {/* Consistent Header */}
         <div className="text-center mb-16 animate-on-scroll">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 relative">
-            About Me
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
-          </h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative">
+          About Me
+          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
+        </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Crafting digital solutions with <span className="text-primary font-semibold">precision</span> and <span className="text-primary font-semibold">passion</span>
           </p>

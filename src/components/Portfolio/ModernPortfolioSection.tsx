@@ -54,10 +54,10 @@ const ModernPortfolioSection = () => {
       <div className="relative z-10 container mx-auto px-6">
         {/* Consistent Header */}
         <div className="text-center mb-16 animate-on-scroll">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 relative">
-            Featured Projects
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
-          </h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative">
+          Featured Projects
+          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
+        </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             A showcase of recent work demonstrating expertise in <span className="text-primary font-semibold">web development</span>, 
             <span className="text-primary font-semibold">AI automation</span>, and <span className="text-primary font-semibold">chatbot solutions</span> with measurable business impact
