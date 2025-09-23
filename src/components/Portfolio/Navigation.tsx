@@ -48,111 +48,97 @@ const Navigation = () => {
   }, []);
 
   return (
-    <>
-      {/* Left-Aligned Horizontal Header */}
-      <nav className="absolute top-6 left-6 right-6 z-50 hidden lg:block">
-        <div className="p-4">
-          <div className="flex items-center justify-between">
-            {/* Left Side: Logo + Navigation */}
-            <div className="flex items-center space-x-8">
-              {/* Logo */}
-              <button
-                onClick={() => scrollToSection('home')}
-                className="group"
-              >
-                <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-lg">A</span>
-                </div>
-              </button>
-
-              {/* Horizontal Navigation */}
-              <div className="flex items-center space-x-6">
-                {navItems.map((item) => (
-                  <button
-                    key={item.label}
-                    onClick={() => scrollToSection(item.section)}
-                    className="text-foreground/80 hover:text-primary transition-all duration-300 relative group font-medium text-sm whitespace-nowrap py-2 px-3 rounded-lg hover:bg-primary/10"
-                  >
-                    {item.label}
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary rounded-full transition-all duration-300 group-hover:w-full" />
-                  </button>
-                ))}
-              </div>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      isScrolled 
+        ? "bg-background/20 backdrop-blur-xl border-b border-primary/20 shadow-glow" 
+        : "bg-transparent"
+    }`}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <button
+            onClick={() => scrollToSection('home')}
+            className="group flex items-center space-x-2"
+          >
+            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <span className="text-white font-bold text-lg">A</span>
             </div>
+            <span className="text-2xl font-bold text-primary">
+              Ansar.dev
+            </span>
+          </button>
 
-            {/* Right Side: Download Resume Button */}
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <button
+                key={item.label}
+                onClick={() => scrollToSection(item.section)}
+                className="text-foreground/80 hover:text-primary transition-all duration-300 relative group font-medium text-lg"
+              >
+                {item.label}
+                <span className="absolute -bottom-2 left-0 w-0 h-1 bg-primary rounded-full transition-all duration-300 group-hover:w-full" />
+              </button>
+            ))}
+          </div>
+
+          {/* Desktop CTA */}
+          <div className="hidden md:flex">
             <Button 
-              size="sm"
+              size="lg"
               onClick={downloadResume}
-              className="bg-primary hover:scale-105 text-white shadow-glow hover:shadow-xl transition-all duration-300 font-semibold px-4 py-2 text-sm rounded-xl whitespace-nowrap"
+              className="bg-primary hover:scale-105 text-white shadow-glow hover:shadow-xl transition-all duration-300 font-semibold px-8 py-3 text-lg rounded-2xl"
             >
               Download Resume
             </Button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-3 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 hover:bg-card transition-all duration-300"
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6 text-primary" />
+            ) : (
+              <Menu className="h-6 w-6 text-primary" />
+            )}
+          </button>
         </div>
-      </nav>
 
-      {/* Mobile Navigation - Top Bar */}
-      <nav className="lg:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-500">
-        <div className="bg-background/20 backdrop-blur-xl border-b border-primary/20 shadow-glow">
-          <div className="flex items-center justify-between h-16 px-6">
-            {/* Mobile Logo */}
-            <button
-              onClick={() => scrollToSection('home')}
-              className="group"
-            >
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <span className="text-white font-bold text-sm">A</span>
-              </div>
-            </button>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:bg-card transition-all duration-300"
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-5 w-5 text-primary" />
-              ) : (
-                <Menu className="h-5 w-5 text-primary" />
-              )}
-            </button>
-          </div>
-
-          {/* Mobile Menu */}
-          {isMobileMenuOpen && (
-            <div className="bg-background/95 backdrop-blur-xl border-b border-primary/20 shadow-glow">
-              <div className="px-6 py-6 space-y-4">
-                {navItems.map((item) => (
-                  <button
-                    key={item.label}
-                    onClick={() => {
-                      scrollToSection(item.section);
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="block w-full text-left transition-all duration-300 py-2 text-foreground hover:text-primary text-base font-medium"
-                  >
-                    {item.label}
-                  </button>
-                ))}
-                <div className="pt-4">
-                  <Button 
-                    size="sm"
-                    onClick={() => {
-                      downloadResume();
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full bg-primary hover:scale-105 text-white shadow-glow font-semibold py-3 text-base rounded-xl"
-                  >
-                    Download Resume
-                  </Button>
-                </div>
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-primary/20 shadow-glow">
+            <div className="px-6 py-8 space-y-6">
+              {navItems.map((item) => (
+                <button
+                  key={item.label}
+                  onClick={() => {
+                    scrollToSection(item.section);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="block w-full text-left transition-all duration-300 py-3 text-foreground hover:text-primary text-lg font-medium"
+                >
+                  {item.label}
+                </button>
+              ))}
+              <div className="pt-4">
+                <Button 
+                  size="lg"
+                  onClick={() => {
+                    downloadResume();
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="w-full bg-primary hover:scale-105 text-white shadow-glow font-semibold py-4 text-lg rounded-2xl"
+                >
+                  Download Resume
+                </Button>
               </div>
             </div>
-          )}
-        </div>
-      </nav>
-    </>
+          </div>
+        )}
+      </div>
+    </nav>
   );
 };
 
