@@ -118,6 +118,15 @@
   .animate-stagger-3 { animation-delay: 0.3s; }
   .animate-stagger-4 { animation-delay: 0.4s; }
   .animate-stagger-5 { animation-delay: 0.5s; }
+
+  /* Glassmorphism utilities for mobile */
+  .glass-mobile {
+    @apply backdrop-blur-lg bg-black/20 border border-white/10 rounded-3xl shadow-2xl;
+  }
+  
+  .glass-mobile-subtle {
+    @apply backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl;
+  }
 }
 
 /* Additional animations */
