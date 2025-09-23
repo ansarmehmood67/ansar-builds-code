@@ -19,7 +19,7 @@ const CaseStudy = () => {
       <div className="min-h-screen bg-background pt-24 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-foreground mb-4">Project not found</h1>
-          <Button onClick={() => navigate('/work')}>Back to Work</Button>
+          <Button onClick={() => navigate('/')}>Back to Home</Button>
         </div>
       </div>
     );
@@ -37,10 +37,10 @@ const CaseStudy = () => {
           <Button 
             variant="outline" 
             className="mb-8"
-            onClick={() => navigate('/work')}
+            onClick={() => navigate('/')}
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Work
+            Back to Home
           </Button>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
