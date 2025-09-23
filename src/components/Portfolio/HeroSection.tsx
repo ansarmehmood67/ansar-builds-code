@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Instagram, Facebook } from "lucide-react";
 import { UpworkIcon } from "@/components/ui/upwork-icon";
-import heroBg from "@/assets/hero-bg.png";
+import heroBg from "@/assets/new-hero-bg.png";
 
 const HeroSection = () => {
   const socialLinks = [
