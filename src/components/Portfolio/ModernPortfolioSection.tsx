@@ -1,174 +1,135 @@
-import React from 'react';
-import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { ArrowRight, ExternalLink, Github } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-import { projects } from '@/data/projects';
-import { useStaggerReveal, useScrollReveal, useProfessionalHover } from '@/hooks/useProfessionalAnimations';
+import { useState } from "react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, FolderOpen, ArrowUpRight, Star, TrendingUp } from "lucide-react";
+import { projects } from "@/data/projects";
+
+import { useNavigate } from "react-router-dom";
 
 const ModernPortfolioSection = () => {
+  const ref = useScrollAnimation();
   const navigate = useNavigate();
-  const sectionRef = useScrollReveal({ delay: 0.2 });
-  const projectsRef = useStaggerReveal(0.12);
+  // Get all 4 featured projects
+  const featuredProjects = projects;
 
   const handleCaseStudy = (slug: string) => {
-    navigate(`/project/${slug}`);
+    navigate(`/projects/${slug}`);
   };
 
-  const featuredProjects = projects.slice(0, 6);
+  const projectTypes = {
+    "Website": { 
+      color: "from-blue-500 to-cyan-500", 
+      bgColor: "bg-blue-500/10", 
+      textColor: "text-blue-600",
+      icon: "🌐"
+    },
+    "Chatbot": { 
+      color: "from-purple-500 to-pink-500", 
+      bgColor: "bg-purple-500/10", 
+      textColor: "text-purple-600",
+      icon: "🤖"
+    },
+    "Automation": { 
+      color: "from-orange-500 to-red-500", 
+      bgColor: "bg-orange-500/10", 
+      textColor: "text-orange-600",
+      icon: "⚡"
+    }
+  };
 
   return (
     <section 
-      id="portfolio" 
-      ref={sectionRef}
-      className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-card/30 to-background"
+      id="portfolio"
+      ref={ref as React.RefObject<HTMLElement>}
+      className="py-24 theme-light relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16 animate-child">
-          <h2 className="text-4xl lg:text-5xl font-bold gradient-text mb-6">
-            Featured Projects
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A showcase of recent work spanning web applications, mobile apps, 
-            and innovative digital solutions that drive real business results.
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-20 left-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      <div className="relative z-10 container mx-auto px-6">
+        {/* Consistent Header */}
+        <div className="text-center mb-16 animate-on-scroll">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative">
+          Featured Projects
+          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
+        </h2>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            A showcase of recent work demonstrating expertise in <span className="text-primary font-semibold">web development</span>, 
+            <span className="text-primary font-semibold">AI automation</span>, and <span className="text-primary font-semibold">chatbot solutions</span> with measurable business impact
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div ref={projectsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {featuredProjects.map((project) => (
-            <ProjectCard 
+        {/* Stylish Single Row Projects Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featuredProjects.map((project, index) => (
+            <Card 
               key={project.slug} 
-              project={project} 
-              onViewDetails={handleCaseStudy}
-            />
-          ))}
-        </div>
-
-        {/* View All CTA */}
-        <div className="text-center animate-child">
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="hover-scale group"
-            onClick={() => navigate('/work')}
-          >
-            View All Projects
-            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const ProjectCard = ({ 
-  project, 
-  onViewDetails 
-}: { 
-  project: any; 
-  onViewDetails: (slug: string) => void; 
-}) => {
-  const cardRef = useProfessionalHover();
-
-  return (
-    <Card 
-      ref={cardRef}
-      className="stagger-item glass-card p-0 overflow-hidden cursor-pointer group"
-      onClick={() => onViewDetails(project.slug)}
-    >
-      {/* Project Image */}
-      <div className="relative h-48 overflow-hidden">
-        <img
-          src={project.coverImage}
-          alt={project.title}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-        
-        {/* Project Type Badge */}
-        <Badge 
-          className="absolute top-4 left-4 bg-primary/90 text-primary-foreground"
-        >
-          {project.type}
-        </Badge>
-      </div>
-
-      {/* Project Content */}
-      <div className="p-6 space-y-4">
-        <div>
-          <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-            {project.title}
-          </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            {project.summary}
-          </p>
-        </div>
-
-        {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2">
-          {project.tags.slice(0, 3).map((tech: string) => (
-            <span 
-              key={tech}
-              className="px-2 py-1 bg-muted rounded text-xs font-medium"
+              className="group hover:shadow-2xl transition-all duration-300 bg-white border border-slate-200/50 animate-on-scroll"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
-              {tech}
-            </span>
+              <div className="relative overflow-hidden rounded-t-xl">
+                <img
+                  src={project.coverImage}
+                  alt={project.title}
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-slate-600 mb-4">
+                  {project.summary}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <Badge variant="secondary">{project.type}</Badge>
+                  {project.tags.slice(0, 2).map((tag) => (
+                    <Badge key={tag} variant="default" className="text-xs">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+                <div className="flex gap-2">
+                  <Button 
+                    size="sm" 
+                    onClick={() => handleCaseStudy(project.slug)}
+                  >
+                    View Details
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           ))}
-          {project.tags.length > 3 && (
-            <span className="px-2 py-1 bg-muted rounded text-xs font-medium">
-              +{project.tags.length - 3} more
-            </span>
-          )}
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex items-center justify-between pt-2">
-          <div className="flex space-x-2">
-            {project.liveUrl && (
-              <Button 
-                size="sm" 
-                variant="ghost" 
-                className="hover-scale p-2"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  window.open(project.liveUrl, '_blank');
-                }}
-              >
-                <ExternalLink className="h-4 w-4" />
-              </Button>
-            )}
-            {project.githubUrl && (
-              <Button 
-                size="sm" 
-                variant="ghost" 
-                className="hover-scale p-2"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  window.open(project.githubUrl, '_blank');
-                }}
-              >
-                <Github className="h-4 w-4" />
-              </Button>
-            )}
+        {/* View All Projects CTA */}
+        <div className="text-center mt-16 animate-on-scroll">
+          <div className="inline-flex flex-col items-center p-8 rounded-3xl bg-gradient-to-br from-slate-50 to-white border border-slate-200 shadow-xl">
+            <div className="text-2xl font-bold text-slate-900 mb-4">
+              Want to see more of my work?
+            </div>
+            <p className="text-slate-600 mb-8 max-w-md">
+              Explore my complete portfolio with detailed case studies, live demos, and technical deep-dives.
+            </p>
+            <Button 
+              size="lg"
+              onClick={() => navigate('/work')}
+              className="bg-gradient-to-r from-primary to-primary-hover text-white font-bold px-12 py-4 text-lg rounded-2xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              View All Projects
+              <ArrowUpRight className="ml-3 h-5 w-5" />
+            </Button>
           </div>
-          
-          <Button 
-            size="sm" 
-            className="hover-scale group/btn"
-            onClick={(e) => {
-              e.stopPropagation();
-              onViewDetails(project.slug);
-            }}
-          >
-            View Details
-            <ArrowRight className="ml-1 h-3 w-3 group-hover/btn:translate-x-1 transition-transform" />
-          </Button>
         </div>
       </div>
-    </Card>
+
+    </section>
   );
 };
 

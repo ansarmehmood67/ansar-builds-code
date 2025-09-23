@@ -1,126 +1,98 @@
-import React from 'react';
-import { Card } from '@/components/ui/card';
-import { Code, Database, Palette, Zap, Globe, Smartphone } from 'lucide-react';
-import { useStaggerReveal, useScrollReveal } from '@/hooks/useProfessionalAnimations';
+import { Code, Cloud } from "lucide-react";
 
 const ModernSkillsSection = () => {
-  const sectionRef = useScrollReveal({ delay: 0.1 });
-  const skillsRef = useStaggerReveal(0.1);
-
   const skillColumns = [
     {
-      title: "Frontend Development",
-      icon: <Code className="h-6 w-6" />,
+      title: "Frontend & Backend",
+      icon: Code,
       skills: [
-        { name: "React/Next.js", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Tailwind CSS", level: 95 },
-        { name: "Vue.js", level: 85 },
-        { name: "JavaScript ES6+", level: 95 },
-        { name: "CSS/SASS", level: 90 }
+        "JavaScript", "TypeScript", "React", "Next.js", 
+        "Tailwind CSS", "HTML", "CSS", "Flutter", 
+        "Django", "Python", "REST APIs"
       ]
     },
     {
-      title: "Backend Development", 
-      icon: <Database className="h-6 w-6" />,
+      title: "Cloud & Infrastructure", 
+      icon: Cloud,
       skills: [
-        { name: "Node.js", level: 90 },
-        { name: "Python/Django", level: 85 },
-        { name: "PostgreSQL", level: 88 },
-        { name: "MongoDB", level: 82 },
-        { name: "GraphQL", level: 80 },
-        { name: "REST APIs", level: 95 }
-      ]
-    },
-    {
-      title: "Design & Tools",
-      icon: <Palette className="h-6 w-6" />,
-      skills: [
-        { name: "Figma/Adobe XD", level: 85 },
-        { name: "UI/UX Design", level: 80 },
-        { name: "Git/GitHub", level: 95 },
-        { name: "Docker", level: 75 },
-        { name: "AWS/Vercel", level: 80 },
-        { name: "Testing (Jest)", level: 85 }
+        "MySQL", "PostgreSQL", "SQLite", "MongoDB", 
+        "Git", "Docker", "WordPress", "Vercel",
+        "Shopify", "AWS EC2", "Firebase"
       ]
     }
   ];
 
   return (
-    <section 
-      id="skills" 
-      ref={sectionRef}
-      className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-card/30"
-    >
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16 animate-child">
-          <h2 className="text-4xl lg:text-5xl font-bold gradient-text mb-6">
-            Professional Skills
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Expertise across the full development stack with a focus on modern technologies 
-            and best practices that deliver exceptional user experiences.
+    <section id="skills" className="py-24 bg-gradient-to-br from-slate-50 to-white">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Consistent Header */}
+        <div className="text-center mb-16 animate-on-scroll">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative">
+          Professional Skills
+          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
+        </h2>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            Technologies I use to design, build, and deploy modern <span className="text-primary font-semibold">web & mobile applications</span>.
           </p>
         </div>
 
-        {/* Skills Grid */}
-        <div ref={skillsRef} className="grid lg:grid-cols-3 gap-8">
+        {/* Premium Skills Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {skillColumns.map((column, columnIndex) => (
-            <Card 
-              key={column.title} 
-              className="stagger-item glass-card p-8 hover-lift"
+            <div
+              key={column.title}
+              className="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-slate-100 overflow-hidden"
             >
-              {/* Column Header */}
-              <div className="flex items-center space-x-3 mb-8">
-                <div className="p-3 rounded-lg bg-primary/10 text-primary">
-                  {column.icon}
-                </div>
-                <h3 className="text-xl font-semibold">{column.title}</h3>
-              </div>
-
-              {/* Skills List */}
-              <div className="space-y-6">
-                {column.skills.map((skill, skillIndex) => (
-                  <div key={skill.name} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="font-medium text-sm">{skill.name}</span>
-                      <span className="text-xs text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <div className="h-2 bg-muted rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-gradient-to-r from-primary to-primary/70 rounded-full transition-all duration-1000 ease-out"
-                        style={{ 
-                          width: `${skill.level}%`,
-                          transitionDelay: `${columnIndex * 200 + skillIndex * 100}ms`
-                        }}
-                      />
-                    </div>
+              {/* Premium Column Header */}
+              <div className="bg-gradient-to-r from-slate-900 to-slate-700 px-8 py-6">
+                <div className="flex items-center">
+                  <div className="p-3 bg-white/10 rounded-xl mr-4 backdrop-blur-sm">
+                    <column.icon className="h-7 w-7 text-white" />
                   </div>
-                ))}
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-1">
+                      {column.title}
+                    </h3>
+                  </div>
+                </div>
               </div>
-            </Card>
+              
+              {/* Premium Skills Grid */}
+              <div className="p-8">
+                <div className="grid grid-cols-2 gap-4">
+                  {column.skills.map((skill, skillIndex) => (
+                    <div 
+                      key={skill}
+                      className="group/skill relative bg-slate-50 hover:bg-slate-100 rounded-xl p-4 transition-all duration-300 hover:scale-105 hover:shadow-lg border border-slate-200 hover:border-slate-300"
+                      style={{
+                        animationDelay: `${(columnIndex * 0.1) + (skillIndex * 0.05)}s`
+                      }}
+                    >
+                      {/* Skill Indicator */}
+                      <div className="absolute top-3 right-3 w-2 h-2 bg-green-500 rounded-full opacity-70 group-hover/skill:opacity-100 transition-opacity duration-300"></div>
+                      
+                      {/* Skill Name */}
+                      <div className="font-semibold text-slate-900 text-sm mb-1 group-hover/skill:text-slate-700 transition-colors duration-300">
+                        {skill}
+                      </div>
+                      
+                      {/* Proficiency Indicator */}
+                      <div className="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
+                        <div 
+                          className="bg-gradient-to-r from-slate-600 to-slate-400 h-full rounded-full transition-all duration-700 group-hover/skill:from-slate-700 group-hover/skill:to-slate-500"
+                          style={{ width: '85%' }}
+                        ></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+            </div>
           ))}
         </div>
 
-        {/* Additional Skills */}
-        <div className="mt-16 text-center animate-child">
-          <h3 className="text-2xl font-semibold mb-8">Additional Expertise</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              'Agile/Scrum', 'CI/CD', 'Performance Optimization', 
-              'SEO', 'Accessibility', 'Progressive Web Apps',
-              'Mobile Development', 'API Design', 'Database Design'
-            ].map((skill) => (
-              <span 
-                key={skill}
-                className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium hover-scale"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
+        
       </div>
     </section>
   );
