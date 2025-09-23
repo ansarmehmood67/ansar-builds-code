@@ -82,20 +82,20 @@ const ModernContactSection = () => {
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Contact Form - 2/3 width */}
           <div className="lg:col-span-2">
-            <div className="bg-white border border-gray-200 rounded-2xl p-8 lg:p-12 shadow-sm">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="w-full min-w-0">
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 lg:p-12 shadow-sm overflow-hidden">
+              <form onSubmit={handleSubmit} className="space-y-6 w-full">
+                <div className="grid md:grid-cols-2 gap-6 overflow-hidden">
+                  <div className="w-full min-w-0 max-w-full">
                     <Input
                       name="name"
                       placeholder="Your Name"
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full h-14 text-base md:text-lg bg-white border-gray-200 focus:border-primary focus:ring-primary/20"
+                      className="w-full max-w-full h-14 text-base bg-white border-gray-200 focus:border-primary focus:ring-primary/20 box-border"
                     />
                   </div>
-                  <div className="w-full min-w-0">
+                  <div className="w-full min-w-0 max-w-full">
                     <Input
                       name="email"
                       type="email"
@@ -103,7 +103,7 @@ const ModernContactSection = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full h-14 text-base md:text-lg bg-white border-gray-200 focus:border-primary focus:ring-primary/20"
+                      className="w-full max-w-full h-14 text-base bg-white border-gray-200 focus:border-primary focus:ring-primary/20 box-border"
                     />
                   </div>
                 </div>
