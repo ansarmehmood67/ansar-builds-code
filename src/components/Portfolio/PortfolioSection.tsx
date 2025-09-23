@@ -3,16 +3,14 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Eye } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { projects } from "@/data/projects";
-import { ProjectQuickViewModal } from "./ProjectQuickViewModal";
+
 import { useNavigate } from "react-router-dom";
 
 const PortfolioSection = () => {
   const ref = useScrollAnimation();
   const navigate = useNavigate();
-  const [selectedProject, setSelectedProject] = useState<any>(null);
-
   // Get featured projects - one of each type
   const featuredProjects = [
     projects.find(p => p.type === "Website"),
@@ -20,14 +18,6 @@ const PortfolioSection = () => {
     projects.find(p => p.type === "Automation"),
     projects[3] // Get one more for 4 total
   ].filter(Boolean);
-
-  const handleQuickView = (project: any) => {
-    setSelectedProject(project);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedProject(null);
-  };
 
   const handleCaseStudy = (slug: string) => {
     navigate(`/work/${slug}`);
@@ -106,13 +96,6 @@ const PortfolioSection = () => {
                     Case Study
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
-                  <Button 
-                    variant="outline" 
-                    onClick={() => handleQuickView(project)}
-                    className="border-slate-200 hover:border-primary hover:text-primary"
-                  >
-                    <Eye className="h-4 w-4" />
-                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -133,13 +116,6 @@ const PortfolioSection = () => {
         </div>
       </div>
 
-      {/* Quick View Modal */}
-      {selectedProject && (
-        <ProjectQuickViewModal 
-          project={selectedProject} 
-          onClose={handleCloseModal} 
-        />
-      )}
     </section>
   );
 };

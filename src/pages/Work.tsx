@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { projects } from "@/data/projects";
-import { ProjectQuickViewModal } from "@/components/Portfolio/ProjectQuickViewModal";
+
 import Navigation from "@/components/Portfolio/Navigation";
 import Footer from "@/components/Portfolio/Footer";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +11,6 @@ import { FolderOpen } from "lucide-react";
 
 const Work = () => {
   const navigate = useNavigate();
-  const [selectedProject, setSelectedProject] = useState(null);
   const [activeFilter, setActiveFilter] = useState("All");
 
   const projectTypes = ["All", "Website", "Chatbot", "Automation"];
@@ -19,14 +18,6 @@ const Work = () => {
   const filteredProjects = activeFilter === "All" 
     ? projects 
     : projects.filter(project => project.type === activeFilter);
-
-  const handleQuickView = (project: any) => {
-    setSelectedProject(project);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedProject(null);
-  };
 
   return (
     <>
@@ -112,13 +103,6 @@ const Work = () => {
                     >
                       Case Study
                     </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      onClick={() => handleQuickView(project)}
-                    >
-                      Quick View
-                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -127,13 +111,6 @@ const Work = () => {
         </div>
       </div>
 
-      {/* Quick View Modal */}
-      {selectedProject && (
-        <ProjectQuickViewModal
-          project={selectedProject}
-          onClose={handleCloseModal}
-        />
-      )}
       
       <Footer />
     </>

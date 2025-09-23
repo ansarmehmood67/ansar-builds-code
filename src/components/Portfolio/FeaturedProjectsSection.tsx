@@ -2,29 +2,19 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Eye } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { projects } from "@/data/projects";
-import { ProjectQuickViewModal } from "@/components/Portfolio/ProjectQuickViewModal";
+
 
 const FeaturedProjectsSection = () => {
   const ref = useScrollAnimation();
-  const [selectedProject, setSelectedProject] = useState(null);
-
   // Get one project of each type for featured display
   const featuredProjects = [
     projects.find(p => p.type === "Website"),
     projects.find(p => p.type === "Chatbot"),
     projects.find(p => p.type === "Automation")
   ].filter(Boolean);
-
-  const handleQuickView = (project: any) => {
-    setSelectedProject(project);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedProject(null);
-  };
 
   return (
     <section ref={ref} className="py-24 bg-background">
@@ -81,15 +71,6 @@ const FeaturedProjectsSection = () => {
                   >
                     Case study
                   </Button>
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    onClick={() => handleQuickView(project)}
-                    className="group/btn"
-                  >
-                    <Eye className="w-4 h-4 mr-2" />
-                    Quick view
-                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -109,13 +90,6 @@ const FeaturedProjectsSection = () => {
         </div>
       </div>
 
-      {/* Quick View Modal */}
-      {selectedProject && (
-        <ProjectQuickViewModal
-          project={selectedProject}
-          onClose={handleCloseModal}
-        />
-      )}
     </section>
   );
 };

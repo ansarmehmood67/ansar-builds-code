@@ -3,26 +3,16 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Eye, FolderOpen, ArrowUpRight, Star, TrendingUp } from "lucide-react";
+import { ExternalLink, FolderOpen, ArrowUpRight, Star, TrendingUp } from "lucide-react";
 import { projects } from "@/data/projects";
-import { ProjectQuickViewModal } from "./ProjectQuickViewModal";
+
 import { useNavigate } from "react-router-dom";
 
 const ModernPortfolioSection = () => {
   const ref = useScrollAnimation();
   const navigate = useNavigate();
-  const [selectedProject, setSelectedProject] = useState<any>(null);
-
   // Get all 4 featured projects
   const featuredProjects = projects;
-
-  const handleQuickView = (project: any) => {
-    setSelectedProject(project);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedProject(null);
-  };
 
   const handleCaseStudy = (slug: string) => {
     navigate(`/projects/${slug}`);
@@ -116,13 +106,6 @@ const ModernPortfolioSection = () => {
                   >
                     View Details
                   </Button>
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    onClick={() => handleQuickView(project)}
-                  >
-                    Quick View
-                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -150,13 +133,6 @@ const ModernPortfolioSection = () => {
         </div>
       </div>
 
-      {/* Quick View Modal */}
-      {selectedProject && (
-        <ProjectQuickViewModal 
-          project={selectedProject} 
-          onClose={handleCloseModal} 
-        />
-      )}
     </section>
   );
 };
