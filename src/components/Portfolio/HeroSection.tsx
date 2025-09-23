@@ -4,31 +4,11 @@ import { UpworkIcon } from "@/components/ui/upwork-icon";
 
 const HeroSection = () => {
   const socialLinks = [
-    {
-      icon: Linkedin,
-      href: "https://linkedin.com/in/ansarmehmood",
-      label: "LinkedIn",
-    },
-    {
-      icon: UpworkIcon,
-      href: "https://upwork.com/freelancers/ansarmehmood",
-      label: "Upwork",
-    },
-    {
-      icon: Github,
-      href: "https://github.com/ansarmehmood",
-      label: "GitHub",
-    },
-    {
-      icon: Instagram,
-      href: "https://instagram.com/ansarmehmood",
-      label: "Instagram",
-    },
-    {
-      icon: Facebook,
-      href: "https://facebook.com/ansarmehmood",
-      label: "Facebook",
-    },
+    { icon: Linkedin, href: "https://linkedin.com/in/ansarmehmood", label: "LinkedIn" },
+    { icon: UpworkIcon, href: "https://upwork.com/freelancers/ansarmehmood", label: "Upwork" },
+    { icon: Github, href: "https://github.com/ansarmehmood", label: "GitHub" },
+    { icon: Instagram, href: "https://instagram.com/ansarmehmood", label: "Instagram" },
+    { icon: Facebook, href: "https://facebook.com/ansarmehmood", label: "Facebook" },
   ];
 
   return (
