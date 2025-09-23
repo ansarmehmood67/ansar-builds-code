@@ -51,7 +51,7 @@ const Navigation = () => {
     <>
       {/* Left-Aligned Horizontal Header */}
       <nav className="fixed top-6 left-6 right-6 z-50 hidden lg:block">
-        <div className="bg-background/10 backdrop-blur-xl border border-primary/20 rounded-2xl p-4 shadow-glow">
+        <div className="p-4">
           <div className="flex items-center justify-between">
             {/* Left Side: Logo + Navigation */}
             <div className="flex items-center space-x-8">
