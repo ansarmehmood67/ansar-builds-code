@@ -25,7 +25,7 @@ const ModernAboutSection = () => {
           About Me
           <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
         </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Crafting digital solutions with <span className="text-primary font-semibold">precision</span> and <span className="text-primary font-semibold">passion</span>
           </p>
         </div>

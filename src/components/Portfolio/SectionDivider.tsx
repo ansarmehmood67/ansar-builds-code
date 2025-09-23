@@ -1,7 +1,7 @@
 const SectionDivider = () => {
   return (
-    <div className="py-6">
-      <div className="w-full border-t border-gray-200"></div>
+    <div className="w-full max-w-4xl mx-auto">
+      <div className="h-px bg-primary/30"></div>
     </div>
   );
 };

@@ -31,7 +31,7 @@ const ModernSkillsSection = () => {
           Professional Skills
           <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
         </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Technologies I use to design, build, and deploy modern <span className="text-primary font-semibold">web & mobile applications</span>.
           </p>
         </div>
