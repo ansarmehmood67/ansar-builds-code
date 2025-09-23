@@ -1,5 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { MapPin, Mail, Download } from "lucide-react";
+import { MapPin, Mail, Download, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import aboutImage from "@/assets/ansar-about-image.png";
 
@@ -10,68 +10,110 @@ const ModernAboutSection = () => {
     <section 
       id="about"
       ref={ref as React.RefObject<HTMLElement>}
-      className="py-24 theme-light relative overflow-hidden"
+      className="py-32 theme-light relative overflow-hidden"
     >
+      {/* Background Decorative Elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-secondary rounded-full blur-2xl"></div>
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
-        {/* Section Header */}
-        <div className="text-center mb-20 animate-on-scroll">
-          <h2 className="text-5xl lg:text-6xl font-black text-slate-900 mb-6 leading-tight">
+        {/* Minimalist Header */}
+        <div className="text-center mb-24 animate-on-scroll">
+          <h2 className="text-6xl lg:text-7xl font-black bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent mb-4 leading-tight">
             About Me
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Full-Stack Developer | React • Django • TypeScript
-          </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Image Side */}
-          <div className="relative animate-on-scroll">
-            <div className="relative">
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
+        <div className="grid lg:grid-cols-2 gap-20 items-center min-h-[600px]">
+          {/* Circular Image - Left Side */}
+          <div className="flex items-center justify-center animate-on-scroll">
+            <div className="relative group">
+              {/* Outer glow ring */}
+              <div className="absolute inset-0 w-80 h-80 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-700"></div>
+              
+              {/* Image container */}
+              <div className="relative w-72 h-72 rounded-full overflow-hidden shadow-2xl border-4 border-white/50 group-hover:scale-105 transition-transform duration-500">
                 <img 
                   src={aboutImage} 
                   alt="Ansar Mehmood - Full Stack Developer"
-                  className="w-full h-[500px] object-cover"
+                  className="w-full h-full object-cover filter brightness-110 saturate-110"
                 />
+              </div>
+              
+              {/* Floating accent */}
+              <div className="absolute -top-4 -right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg animate-float">
+                <Sparkles className="w-6 h-6 text-white" />
               </div>
             </div>
           </div>
 
-          {/* Content Side */}
-          <div className="space-y-8 animate-on-scroll">
+          {/* Sophisticated Content - Right Side */}
+          <div className="flex flex-col justify-center space-y-10 animate-on-scroll">
+            {/* Main Content Block */}
+            <div className="relative">
+              <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-primary to-secondary rounded-full"></div>
+              <div className="pl-8 space-y-6">
+                <div className="inline-flex items-center space-x-2 text-sm font-semibold text-primary uppercase tracking-wider">
+                  <div className="w-8 h-px bg-primary"></div>
+                  <span>Software Engineer</span>
+                </div>
+                
+                <h3 className="text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">
+                  Crafting Digital Solutions with{" "}
+                  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    Precision & Passion
+                  </span>
+                </h3>
+                
+                <p className="text-xl text-slate-700 leading-relaxed font-medium">
+                  I'm Ansar Mehmood, a full-stack developer specializing in React and Django ecosystems. 
+                  With experience serving international clients and contributing to enterprise solutions at SalesOnDemand, 
+                  I bridge frontend elegance with backend robustness to create applications that deliver measurable business impact.
+                </p>
+              </div>
+            </div>
+
+            {/* Enhanced Stats Grid */}
+            <div className="grid grid-cols-3 gap-6">
+              <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 hover:shadow-lg transition-all duration-300">
+                <div className="text-3xl font-black text-primary mb-2">15k+</div>
+                <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">Earned</div>
+              </div>
+              <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 hover:shadow-lg transition-all duration-300">
+                <div className="text-3xl font-black text-primary mb-2">30+</div>
+                <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">Projects</div>
+              </div>
+              <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 hover:shadow-lg transition-all duration-300">
+                <div className="text-3xl font-black text-primary mb-2">3+</div>
+                <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">Years</div>
+              </div>
+            </div>
+
+            {/* Contact & CTA Section */}
             <div className="space-y-6">
-              <p className="text-xl text-slate-800 leading-relaxed">
-                I'm Ansar Mehmood, a software engineer passionate about building user-friendly interfaces and scalable backend systems. Over the last few years, I've worked with clients internationally as a freelance full-stack developer and currently contribute to enterprise projects at SalesOnDemand, where I build modern React + Django solutions.
-              </p>
-              
-              <p className="text-lg text-slate-600 leading-relaxed">
-                My experience includes deploying live applications, integrating APIs, and managing cloud infrastructure on AWS EC2. I enjoy bridging the gap between frontend and backend, ensuring products are not only technically strong but also deliver real business value.
-              </p>
-
-              <p className="text-lg text-slate-600 leading-relaxed">
-                I'm continuously learning, refining my craft, and always open to exciting opportunities where I can grow, collaborate, and make an impact.
-              </p>
-            </div>
-
-            {/* Contact Info */}
-            <div className="flex flex-wrap gap-6 pt-6">
-              <div className="flex items-center space-x-3 text-slate-600">
-                <MapPin className="h-5 w-5 text-primary" />
-                <span>Available Remotely</span>
+              <div className="flex flex-wrap gap-8">
+                <div className="flex items-center space-x-3 text-slate-600 group">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <MapPin className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="font-medium">Available Remotely</span>
+                </div>
+                <div className="flex items-center space-x-3 text-slate-600 group">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <Mail className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="font-medium">ansar@example.com</span>
+                </div>
               </div>
-              <div className="flex items-center space-x-3 text-slate-600">
-                <Mail className="h-5 w-5 text-primary" />
-                <span>ansar@example.com</span>
-              </div>
-            </div>
 
-            {/* CTA Button */}
-            <div className="pt-6">
               <Button 
                 size="lg"
-                className="bg-primary hover:scale-105 text-white shadow-lg hover:shadow-xl transition-all duration-300 font-semibold px-8 py-4 text-lg rounded-2xl"
+                className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 font-bold px-10 py-4 text-lg rounded-2xl group"
               >
-                <Download className="mr-2 h-5 w-5" />
+                <Download className="mr-3 h-5 w-5 group-hover:animate-bounce" />
                 Download Resume
               </Button>
             </div>
