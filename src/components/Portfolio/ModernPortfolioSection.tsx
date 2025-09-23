@@ -82,7 +82,7 @@ const ProjectCard = ({
       {/* Project Image */}
       <div className="relative h-48 overflow-hidden">
         <img
-          src={project.image}
+          src={project.coverImage}
           alt={project.title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
@@ -92,7 +92,7 @@ const ProjectCard = ({
         <Badge 
           className="absolute top-4 left-4 bg-primary/90 text-primary-foreground"
         >
-          {project.category}
+          {project.type}
         </Badge>
       </div>
 
@@ -103,13 +103,13 @@ const ProjectCard = ({
             {project.title}
           </h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            {project.description}
+            {project.summary}
           </p>
         </div>
 
         {/* Tech Stack */}
         <div className="flex flex-wrap gap-2">
-          {project.tech.slice(0, 3).map((tech: string) => (
+          {project.tags.slice(0, 3).map((tech: string) => (
             <span 
               key={tech}
               className="px-2 py-1 bg-muted rounded text-xs font-medium"
@@ -117,9 +117,9 @@ const ProjectCard = ({
               {tech}
             </span>
           ))}
-          {project.tech.length > 3 && (
+          {project.tags.length > 3 && (
             <span className="px-2 py-1 bg-muted rounded text-xs font-medium">
-              +{project.tech.length - 3} more
+              +{project.tags.length - 3} more
             </span>
           )}
         </div>
