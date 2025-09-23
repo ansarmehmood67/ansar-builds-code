@@ -1,129 +1,102 @@
-import { useMagneticScroll, useTextAnimation, useParticleEffect } from "@/hooks/useAdvancedAnimations";
-import { MapPin, Mail, Download, Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import aboutImage from "@/assets/ansar-about-image.png";
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { ArrowRight, MapPin, Mail, Calendar } from 'lucide-react';
+import aboutImage from '@/assets/ansar-about-image.png';
+import { useScrollReveal, useParallaxImage } from '@/hooks/useProfessionalAnimations';
 
 const ModernAboutSection = () => {
-  const magneticRef = useMagneticScroll();
-  const textRef = useTextAnimation();
-  const { ref: particleRef, particles } = useParticleEffect();
+  const sectionRef = useScrollReveal({ delay: 0.2, stagger: 0.08 });
+  const imageRef = useParallaxImage(0.3);
 
   return (
     <section 
-      id="about"
-      ref={magneticRef as React.RefObject<HTMLElement>}
-      className="py-32 theme-light relative overflow-hidden perspective-container"
+      id="about" 
+      ref={sectionRef}
+      className="relative min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-background to-card/50"
     >
-      {/* Interactive Particle Layer */}
-      <div ref={particleRef as React.RefObject<HTMLDivElement>} className="absolute inset-0 pointer-events-none">
-        {particles.map((particle) => (
-          <div
-            key={particle.id}
-            className="absolute w-1 h-1 bg-primary rounded-full animate-particle"
-            style={{
-              left: particle.x,
-              top: particle.y,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Liquid Morphing Background */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary liquid-bg blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-secondary liquid-bg blur-2xl" style={{ animationDelay: '10s' }}></div>
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
-        {/* Animated Header */}
-        <div ref={textRef as React.RefObject<HTMLDivElement>} className="text-center mb-16 magnetic-child">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative animate-text">
-          About Me
-          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full animate-glow-pulse"></div>
-        </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto animate-text">
-            Crafting digital solutions with <span className="text-primary font-semibold">precision</span> and <span className="text-primary font-semibold">passion</span>
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-20 items-center min-h-[600px]">
-          {/* Sophisticated Content - Left Side */}
-          <div className="flex flex-col justify-center space-y-10 magnetic-child card-3d advanced-hover">
-            {/* Main Content Block */}
-            <div className="relative">
-              <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-primary to-secondary rounded-full"></div>
-              <div className="pl-8 space-y-6">
-                <div className="inline-flex items-center space-x-2 text-sm font-semibold text-primary uppercase tracking-wider">
-                  <div className="w-8 h-px bg-primary"></div>
-                  <span>Software Engineer</span>
-                </div>
-                
-                <h3 className="text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">
-                  Crafting Digital Solutions with{" "}
-                  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                    Precision & Passion
-                  </span>
-                </h3>
-                
-                <p className="text-xl text-slate-700 leading-relaxed font-medium mb-6">
-                  I'm <span className="text-primary font-semibold">Ansar Mehmood</span>, a full-stack developer specializing in <span className="text-primary font-semibold">React</span> and <span className="text-primary font-semibold">Django</span> ecosystems. 
-                  With experience serving <span className="text-primary font-semibold">international clients</span> and contributing to <span className="text-primary font-semibold">enterprise solutions</span> at SalesOnDemand.
+      {/* Content Grid */}
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
+          {/* Content Column */}
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <div className="animate-child">
+                <h2 className="text-4xl lg:text-5xl font-bold gradient-text leading-tight">
+                  About Me
+                </h2>
+                <div className="h-1 w-20 bg-gradient-to-r from-primary to-primary/50 mt-4"></div>
+              </div>
+              
+              <div className="animate-child space-y-4 text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  I'm a passionate full-stack developer with 5+ years of experience creating 
+                  digital experiences that make a difference. I specialize in modern web 
+                  technologies and have a keen eye for detail and user experience.
                 </p>
-                
-                <p className="text-xl text-slate-700 leading-relaxed font-medium">
-                  I bridge frontend elegance with backend robustness to create applications that deliver <span className="text-primary font-semibold">measurable business impact</span>.
+                <p>
+                  My journey in tech started with a curiosity about how things work, 
+                  and it has evolved into a career where I get to solve complex problems 
+                  and build innovative solutions every day.
                 </p>
               </div>
             </div>
 
-
-            {/* Contact & CTA Section */}
-            <div className="space-y-6">
-              <div className="flex flex-wrap gap-8">
-                <div className="flex items-center space-x-3 text-slate-600 group">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <MapPin className="h-4 w-4 text-primary" />
+            {/* Info Cards */}
+            <div className="grid sm:grid-cols-2 gap-4">
+              <Card className="glass-card p-6 hover-lift animate-child">
+                <div className="flex items-center space-x-3">
+                  <MapPin className="h-5 w-5 text-primary" />
+                  <div>
+                    <p className="font-medium">Location</p>
+                    <p className="text-sm text-muted-foreground">San Francisco, CA</p>
                   </div>
-                  <span className="font-medium">Available Remotely</span>
                 </div>
-                <div className="flex items-center space-x-3 text-slate-600 group">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <Mail className="h-4 w-4 text-primary" />
+              </Card>
+              
+              <Card className="glass-card p-6 hover-lift animate-child">
+                <div className="flex items-center space-x-3">
+                  <Calendar className="h-5 w-5 text-primary" />
+                  <div>
+                    <p className="font-medium">Experience</p>
+                    <p className="text-sm text-muted-foreground">5+ Years</p>
                   </div>
-                  <span className="font-medium">ansarmehmood.dev@gmail.com</span>
                 </div>
-              </div>
+              </Card>
+            </div>
 
+            {/* CTA */}
+            <div className="animate-child">
               <Button 
-                size="lg"
-                className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white advanced-hover transition-all duration-300 font-bold px-10 py-4 text-lg rounded-2xl group animate-glow-pulse"
+                size="lg" 
+                className="hover-scale group"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                <Download className="mr-3 h-5 w-5 group-hover:animate-bounce" />
-                Download Resume
+                <Mail className="mr-2 h-4 w-4" />
+                Get In Touch
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
           </div>
 
-          {/* Circular Image - Right Side */}
-          <div className="flex items-center justify-center magnetic-child">
-            <div className="relative group advanced-hover">
-              {/* Morphing glow ring */}
-              <div className="absolute inset-0 w-88 h-88 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-700 liquid-bg"></div>
-              
-              {/* Image container with 3D effect */}
-              <div className="relative w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-primary/30 card-3d glass-advanced">
-                <img 
-                  src={aboutImage} 
-                  alt="Ansar Mehmood - Full Stack Developer"
-                  className="w-full h-full object-cover filter brightness-110 saturate-110"
-                />
-              </div>
-              
-              {/* Floating accent with advanced animation */}
-              <div className="absolute -top-4 -right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg animate-advanced-float animate-glow-pulse">
-                <Sparkles className="w-6 h-6 text-white" />
-              </div>
+          {/* Image Column */}
+          <div className="relative">
+            <div 
+              ref={imageRef}
+              className="relative rounded-2xl overflow-hidden glass-card animate-child"
+            >
+              <img
+                src={aboutImage}
+                alt="Professional headshot"
+                className="w-full h-auto hover-scale"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent"></div>
             </div>
+            
+            {/* Floating accent */}
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
+            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
           </div>
         </div>
       </div>

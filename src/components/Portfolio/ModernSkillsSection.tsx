@@ -1,26 +1,47 @@
-import { use3DTransform, useMagneticScroll } from "@/hooks/useAdvancedAnimations";
-import { Code, Cloud } from "lucide-react";
+import React from 'react';
+import { Card } from '@/components/ui/card';
+import { Code, Database, Palette, Zap, Globe, Smartphone } from 'lucide-react';
+import { useStaggerReveal, useScrollReveal } from '@/hooks/useProfessionalAnimations';
 
 const ModernSkillsSection = () => {
-  const transformRef = use3DTransform();
-  const magneticRef = useMagneticScroll();
+  const sectionRef = useScrollReveal({ delay: 0.1 });
+  const skillsRef = useStaggerReveal(0.1);
+
   const skillColumns = [
     {
-      title: "Frontend & Backend",
-      icon: Code,
+      title: "Frontend Development",
+      icon: <Code className="h-6 w-6" />,
       skills: [
-        "JavaScript", "TypeScript", "React", "Next.js", 
-        "Tailwind CSS", "HTML", "CSS", "Flutter", 
-        "Django", "Python", "REST APIs"
+        { name: "React/Next.js", level: 95 },
+        { name: "TypeScript", level: 90 },
+        { name: "Tailwind CSS", level: 95 },
+        { name: "Vue.js", level: 85 },
+        { name: "JavaScript ES6+", level: 95 },
+        { name: "CSS/SASS", level: 90 }
       ]
     },
     {
-      title: "Cloud & Infrastructure", 
-      icon: Cloud,
+      title: "Backend Development", 
+      icon: <Database className="h-6 w-6" />,
       skills: [
-        "MySQL", "PostgreSQL", "SQLite", "MongoDB", 
-        "Git", "Docker", "WordPress", "Vercel",
-        "Shopify", "AWS EC2", "Firebase"
+        { name: "Node.js", level: 90 },
+        { name: "Python/Django", level: 85 },
+        { name: "PostgreSQL", level: 88 },
+        { name: "MongoDB", level: 82 },
+        { name: "GraphQL", level: 80 },
+        { name: "REST APIs", level: 95 }
+      ]
+    },
+    {
+      title: "Design & Tools",
+      icon: <Palette className="h-6 w-6" />,
+      skills: [
+        { name: "Figma/Adobe XD", level: 85 },
+        { name: "UI/UX Design", level: 80 },
+        { name: "Git/GitHub", level: 95 },
+        { name: "Docker", level: 75 },
+        { name: "AWS/Vercel", level: 80 },
+        { name: "Testing (Jest)", level: 85 }
       ]
     }
   ];
@@ -28,79 +49,78 @@ const ModernSkillsSection = () => {
   return (
     <section 
       id="skills" 
-      ref={transformRef as React.RefObject<HTMLElement>}
-      className="py-24 bg-gradient-to-br from-slate-50 to-white perspective-container"
+      ref={sectionRef}
+      className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-card/30"
     >
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Header with magnetic animation */}
-        <div ref={magneticRef as React.RefObject<HTMLDivElement>} className="text-center mb-16 magnetic-child">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative animate-text">
-          Professional Skills
-          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full animate-glow-pulse"></div>
-        </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto animate-text">
-            Technologies I use to design, build, and deploy modern <span className="text-primary font-semibold">web & mobile applications</span>.
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16 animate-child">
+          <h2 className="text-4xl lg:text-5xl font-bold gradient-text mb-6">
+            Professional Skills
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Expertise across the full development stack with a focus on modern technologies 
+            and best practices that deliver exceptional user experiences.
           </p>
         </div>
 
-        {/* 3D Skills Grid with Advanced Animations */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        {/* Skills Grid */}
+        <div ref={skillsRef} className="grid lg:grid-cols-3 gap-8">
           {skillColumns.map((column, columnIndex) => (
-            <div
-              key={column.title}
-              className="group card-3d glass-advanced advanced-hover magnetic-child transition-all duration-500 overflow-hidden"
-              style={{ animationDelay: `${columnIndex * 0.3}s` }}
+            <Card 
+              key={column.title} 
+              className="stagger-item glass-card p-8 hover-lift"
             >
-              {/* Premium Column Header with Liquid Effect */}
-              <div className="bg-gradient-to-r from-slate-900 to-slate-700 px-8 py-6 liquid-bg">
-                <div className="flex items-center">
-                  <div className="p-3 bg-white/10 rounded-xl mr-4 backdrop-blur-sm advanced-hover">
-                    <column.icon className="h-7 w-7 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-1">
-                      {column.title}
-                    </h3>
-                  </div>
+              {/* Column Header */}
+              <div className="flex items-center space-x-3 mb-8">
+                <div className="p-3 rounded-lg bg-primary/10 text-primary">
+                  {column.icon}
                 </div>
+                <h3 className="text-xl font-semibold">{column.title}</h3>
               </div>
-              
-              {/* Skills Grid with 3D Effects */}
-              <div className="p-8">
-                <div className="grid grid-cols-2 gap-4">
-                  {column.skills.map((skill, skillIndex) => (
-                    <div 
-                      key={skill}
-                      className="group/skill relative card-3d advanced-hover glass-advanced magnetic-child transition-all duration-300 p-4 border border-primary/20"
-                      style={{
-                        animationDelay: `${(columnIndex * 0.1) + (skillIndex * 0.05)}s`
-                      }}
-                    >
-                      {/* Animated Skill Indicator */}
-                      <div className="absolute top-3 right-3 w-2 h-2 bg-green-500 rounded-full animate-glow-pulse"></div>
-                      
-                      {/* Skill Name */}
-                      <div className="font-semibold text-slate-900 text-sm mb-1 group-hover/skill:text-slate-700 transition-colors duration-300">
-                        {skill}
-                      </div>
-                      
-                      {/* Animated Proficiency Indicator */}
-                      <div className="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
-                        <div 
-                          className="bg-gradient-to-r from-primary to-primary-glow h-full rounded-full transition-all duration-700 animate-glow-pulse"
-                          style={{ width: '85%' }}
-                        ></div>
-                      </div>
+
+              {/* Skills List */}
+              <div className="space-y-6">
+                {column.skills.map((skill, skillIndex) => (
+                  <div key={skill.name} className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="font-medium text-sm">{skill.name}</span>
+                      <span className="text-xs text-muted-foreground">{skill.level}%</span>
                     </div>
-                  ))}
-                </div>
+                    <div className="h-2 bg-muted rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-gradient-to-r from-primary to-primary/70 rounded-full transition-all duration-1000 ease-out"
+                        style={{ 
+                          width: `${skill.level}%`,
+                          transitionDelay: `${columnIndex * 200 + skillIndex * 100}ms`
+                        }}
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
-              
-            </div>
+            </Card>
           ))}
         </div>
 
-        
+        {/* Additional Skills */}
+        <div className="mt-16 text-center animate-child">
+          <h3 className="text-2xl font-semibold mb-8">Additional Expertise</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              'Agile/Scrum', 'CI/CD', 'Performance Optimization', 
+              'SEO', 'Accessibility', 'Progressive Web Apps',
+              'Mobile Development', 'API Design', 'Database Design'
+            ].map((skill) => (
+              <span 
+                key={skill}
+                className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium hover-scale"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

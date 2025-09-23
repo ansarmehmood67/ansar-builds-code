@@ -203,276 +203,103 @@
   }
 }
 
-/* ADVANCED ANIMATIONS SYSTEM */
+/* PROFESSIONAL ANIMATIONS SYSTEM */
 
-/* Magnetic Entrance Effects */
-@keyframes magneticEntrance {
+/* Professional reveal animations */
+@keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: perspective(1000px) rotateX(45deg) rotateY(-45deg) translateZ(-200px) scale(0.8);
-    filter: blur(10px);
-  }
-  30% {
-    opacity: 0.3;
-    transform: perspective(1000px) rotateX(20deg) rotateY(-20deg) translateZ(-100px) scale(0.9);
-    filter: blur(5px);
-  }
-  60% {
-    opacity: 0.7;
-    transform: perspective(1000px) rotateX(-5deg) rotateY(10deg) translateZ(20px) scale(1.05);
-    filter: blur(2px);
+    transform: translateY(30px);
   }
   100% {
     opacity: 1;
-    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px) scale(1);
-    filter: blur(0px);
+    transform: translateY(0);
   }
 }
 
-@keyframes magneticChild {
+@keyframes scaleIn {
   0% {
     opacity: 0;
-    transform: translateY(80px) translateX(-40px) rotateZ(-15deg) scale(0.7);
-  }
-  40% {
-    opacity: 0.6;
-    transform: translateY(-10px) translateX(10px) rotateZ(5deg) scale(1.1);
+    transform: scale(0.95);
   }
   100% {
     opacity: 1;
-    transform: translateY(0px) translateX(0px) rotateZ(0deg) scale(1);
+    transform: scale(1);
   }
 }
 
-/* 3D Transform Effects */
-@keyframes cardFlip3D {
+@keyframes slideUp {
   0% {
     opacity: 0;
-    transform: perspective(1200px) rotateY(-180deg) rotateX(30deg) translateZ(-300px);
-  }
-  50% {
-    opacity: 0.5;
-    transform: perspective(1200px) rotateY(-90deg) rotateX(15deg) translateZ(-150px);
+    transform: translateY(50px);
   }
   100% {
     opacity: 1;
-    transform: perspective(1200px) rotateY(0deg) rotateX(0deg) translateZ(0px);
+    transform: translateY(0);
   }
 }
 
-@keyframes depth3DEntrance {
-  0% {
-    opacity: 0;
-    transform: perspective(2000px) rotateX(90deg) translateZ(-500px) scale(0.5);
-  }
-  30% {
-    opacity: 0.3;
-    transform: perspective(2000px) rotateX(60deg) translateZ(-300px) scale(0.7);
-  }
-  70% {
-    opacity: 0.8;
-    transform: perspective(2000px) rotateX(15deg) translateZ(-50px) scale(1.1);
-  }
-  100% {
-    opacity: 1;
-    transform: perspective(2000px) rotateX(0deg) translateZ(0px) scale(1);
-  }
-}
-
-/* Text Letter Animation */
-@keyframes letterReveal {
-  0% {
-    opacity: 0;
-    transform: translateY(100px) rotateX(90deg);
-  }
-  50% {
-    opacity: 0.5;
-    transform: translateY(-10px) rotateX(-15deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px) rotateX(0deg);
-  }
-}
-
-/* Particle Effects */
-@keyframes particleFloat {
-  0% {
-    opacity: 1;
-    transform: translateY(0px) scale(0);
-  }
-  50% {
-    opacity: 0.7;
-    transform: translateY(-100px) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-200px) scale(0);
-  }
-}
-
-/* Morphing Effects */
-@keyframes morphEntrance {
-  0% {
-    opacity: 0;
-    border-radius: 0% 100% 0% 100% / 100% 0% 100% 0%;
-    transform: scale(0) rotate(-180deg);
-  }
-  25% {
-    opacity: 0.3;
-    border-radius: 100% 0% 100% 0% / 0% 100% 0% 100%;
-    transform: scale(0.5) rotate(-90deg);
-  }
-  50% {
-    opacity: 0.6;
-    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
-    transform: scale(1.2) rotate(0deg);
-  }
-  75% {
-    opacity: 0.9;
-    border-radius: 30% 70% 70% 30% / 70% 30% 30% 70%;
-    transform: scale(0.9) rotate(45deg);
-  }
-  100% {
-    opacity: 1;
-    border-radius: 8px;
-    transform: scale(1) rotate(0deg);
-  }
-}
-
-/* Liquid Morphing Background */
-@keyframes liquidMorphBg {
+@keyframes float {
   0%, 100% {
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    transform: translateX(0px) translateY(0px);
-  }
-  25% {
-    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-    transform: translateX(50px) translateY(-30px);
+    transform: translateY(0px);
   }
   50% {
-    border-radius: 70% 30% 40% 60% / 70% 40% 60% 30%;
-    transform: translateX(-30px) translateY(50px);
-  }
-  75% {
-    border-radius: 40% 60% 60% 40% / 30% 70% 30% 70%;
-    transform: translateX(30px) translateY(-20px);
+    transform: translateY(-10px);
   }
 }
 
-/* Advanced Hover Effects */
-@keyframes magneticHover {
-  0% {
-    transform: scale(1) rotate(0deg);
-  }
-  50% {
-    transform: scale(1.1) rotate(2deg);
-  }
-  100% {
-    transform: scale(1.05) rotate(0deg);
-  }
-}
-
-@keyframes glowPulse {
+@keyframes gradient-shift {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+    background-position: 0% 50%;
   }
   50% {
-    box-shadow: 0 0 40px rgba(16, 185, 129, 0.6);
+    background-position: 100% 50%;
   }
 }
 
-/* Floating Animation */
-@keyframes advancedFloat {
-  0%, 100% {
-    transform: translateY(0px) rotateZ(0deg);
-  }
-  33% {
-    transform: translateY(-15px) rotateZ(1deg);
-  }
-  66% {
-    transform: translateY(-5px) rotateZ(-1deg);
-  }
+/* Professional utility classes */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Utility Animation Classes */
-.animate-magnetic-entrance {
-  animation: magneticEntrance 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.animate-magnetic-child {
-  animation: magneticChild 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+.hover-scale {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.animate-3d-entrance {
-  animation: depth3DEntrance 2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+.hover-scale:hover {
+  transform: scale(1.05);
 }
 
-.animate-card-flip {
-  animation: cardFlip3D 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+.animate-child {
+  opacity: 0;
+  transform: translateY(20px);
 }
 
-.animate-letter {
-  animation: letterReveal 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+.stagger-item {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
 }
 
-.animate-morph-entrance {
-  animation: morphEntrance 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-.animate-particle {
-  animation: particleFloat 2s ease-out forwards;
-}
-
-.animate-advanced-float {
-  animation: advancedFloat 6s ease-in-out infinite;
-}
-
-.animate-glow-pulse {
-  animation: glowPulse 2s ease-in-out infinite;
-}
-
-/* Advanced Hover States */
-.advanced-hover {
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  cursor: pointer;
-}
-
-.hover-magnetic-active {
-  animation: magneticHover 0.3s ease-out forwards;
-}
-
-/* Liquid Background */
-.liquid-bg {
-  animation: liquidMorphBg 20s ease-in-out infinite;
-}
-
-/* Glass Morphism Enhanced */
-.glass-advanced {
-  backdrop-filter: blur(20px) saturate(180%);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.glass-card {
+  backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
-.glass-advanced:hover {
-  backdrop-filter: blur(30px) saturate(200%);
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-5px);
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Perspective Containers */
-.perspective-container {
-  perspective: 1000px;
-  transform-style: preserve-3d;
-}
-
-/* 3D Card Hover */
-.card-3d {
-  transform-style: preserve-3d;
-  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.card-3d:hover {
-  transform: rotateY(10deg) rotateX(10deg) translateZ(20px);
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--foreground)), hsl(var(--primary)));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
