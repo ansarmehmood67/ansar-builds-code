@@ -1,8 +1,6 @@
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { GraduationCap, Briefcase, MapPin, Calendar, Sparkles } from "lucide-react";
 
 const ModernExperienceSection = () => {
-  const ref = useScrollAnimation();
 
   const experiences = [
     {
@@ -55,13 +53,12 @@ const ModernExperienceSection = () => {
   return (
     <section 
       id="experience"
-      ref={ref as React.RefObject<HTMLElement>}
       className="py-24 theme-light"
     >
       <div className="max-w-7xl mx-auto px-6">
-        <div ref={ref as any} className="animate-on-scroll">
+        <div>
           {/* Consistent Header */}
-          <div className="text-center mb-16 animate-on-scroll">
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative">
               Experience & Education
               <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
@@ -81,8 +78,7 @@ const ModernExperienceSection = () => {
               {experiences.map((exp, index) => (
                 <div
                   key={index}
-                  className="relative flex items-center animate-on-scroll"
-                  style={{ animationDelay: `${index * 0.2}s` }}
+                  className="relative flex items-center"
                 >
                   {/* Timeline Node */}
                   <div className="absolute left-8 transform -translate-x-1/2 w-16 h-16 bg-primary rounded-full shadow-lg shadow-primary/20 flex items-center justify-center z-10 hidden lg:flex">
