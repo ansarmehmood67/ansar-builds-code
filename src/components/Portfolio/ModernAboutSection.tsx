@@ -28,29 +28,7 @@ const ModernAboutSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-20 items-center min-h-[600px]">
-          {/* Circular Image - Left Side */}
-          <div className="flex items-center justify-center animate-on-scroll">
-            <div className="relative group">
-              {/* Outer glow ring */}
-              <div className="absolute inset-0 w-88 h-88 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-700"></div>
-              
-              {/* Image container */}
-              <div className="relative w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-primary/30 group-hover:scale-105 transition-transform duration-500">
-                <img 
-                  src={aboutImage} 
-                  alt="Ansar Mehmood - Full Stack Developer"
-                  className="w-full h-full object-cover filter brightness-110 saturate-110"
-                />
-              </div>
-              
-              {/* Floating accent */}
-              <div className="absolute -top-4 -right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg animate-float">
-                <Sparkles className="w-6 h-6 text-white" />
-              </div>
-            </div>
-          </div>
-
-          {/* Sophisticated Content - Right Side */}
+          {/* Sophisticated Content - Left Side */}
           <div className="flex flex-col justify-center space-y-10 animate-on-scroll">
             {/* Main Content Block */}
             <div className="relative">
@@ -104,6 +82,28 @@ const ModernAboutSection = () => {
                 <Download className="mr-3 h-5 w-5 group-hover:animate-bounce" />
                 Download Resume
               </Button>
+            </div>
+          </div>
+
+          {/* Circular Image - Right Side */}
+          <div className="flex items-center justify-center animate-on-scroll">
+            <div className="relative group">
+              {/* Outer glow ring */}
+              <div className="absolute inset-0 w-88 h-88 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-700"></div>
+              
+              {/* Image container */}
+              <div className="relative w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-primary/30 group-hover:scale-105 transition-transform duration-500">
+                <img 
+                  src={aboutImage} 
+                  alt="Ansar Mehmood - Full Stack Developer"
+                  className="w-full h-full object-cover filter brightness-110 saturate-110"
+                />
+              </div>
+              
+              {/* Floating accent */}
+              <div className="absolute -top-4 -right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg animate-float">
+                <Sparkles className="w-6 h-6 text-white" />
+              </div>
             </div>
           </div>
         </div>
