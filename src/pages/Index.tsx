@@ -4,7 +4,6 @@ import HeroSection from "@/components/Portfolio/HeroSection";
 import ModernAboutSection from "@/components/Portfolio/ModernAboutSection";
 import CompactServicesSection from "@/components/Portfolio/CompactServicesSection";
 import ModernSkillsSection from "@/components/Portfolio/ModernSkillsSection";
-import CreativeDivider from "@/components/Portfolio/CreativeDivider";
 import ModernExperienceSection from "@/components/Portfolio/ModernExperienceSection";
 import ModernPortfolioSection from "@/components/Portfolio/ModernPortfolioSection";
 import ModernContactSection from "@/components/Portfolio/ModernContactSection";
@@ -18,7 +17,6 @@ const Index = () => {
         <ModernAboutSection />
         <CompactServicesSection />
         <ModernSkillsSection />
-        <CreativeDivider />
         <ModernExperienceSection />
         <ModernPortfolioSection />
         <ModernContactSection />
