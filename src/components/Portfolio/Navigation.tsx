@@ -49,45 +49,47 @@ const Navigation = () => {
 
   return (
     <>
-      {/* Floating Vertical Sidebar */}
-      <nav className="fixed top-6 left-6 z-50 hidden lg:flex flex-col items-center space-y-8">
-        {/* Logo */}
-        <button
-          onClick={() => scrollToSection('home')}
-          className="group flex flex-col items-center space-y-2 bg-background/10 backdrop-blur-xl border border-primary/20 rounded-2xl p-4 shadow-glow hover:shadow-xl transition-all duration-300"
-        >
-          <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <span className="text-white font-bold text-xl">A</span>
-          </div>
-          <span className="text-sm font-bold text-primary whitespace-nowrap">
-            Ansar.dev
-          </span>
-        </button>
-
-        {/* Vertical Navigation */}
+      {/* Left-Aligned Horizontal Header */}
+      <nav className="fixed top-6 left-6 right-6 z-50 hidden lg:block">
         <div className="bg-background/10 backdrop-blur-xl border border-primary/20 rounded-2xl p-4 shadow-glow">
-          <div className="flex flex-col space-y-6">
-            {navItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => scrollToSection(item.section)}
-                className="text-foreground/80 hover:text-primary transition-all duration-300 relative group font-medium text-sm text-center whitespace-nowrap py-2 px-3 rounded-lg hover:bg-primary/10"
-              >
-                {item.label}
-                <span className="absolute -right-1 top-1/2 -translate-y-1/2 w-0 h-6 bg-primary rounded-full transition-all duration-300 group-hover:w-1" />
-              </button>
-            ))}
+          <div className="flex items-center justify-start space-x-8">
+            {/* Logo */}
+            <button
+              onClick={() => scrollToSection('home')}
+              className="group flex items-center space-x-3"
+            >
+              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white font-bold text-lg">A</span>
+              </div>
+              <span className="text-lg font-bold text-primary whitespace-nowrap">
+                Ansar.dev
+              </span>
+            </button>
+
+            {/* Horizontal Navigation */}
+            <div className="flex items-center space-x-6">
+              {navItems.map((item) => (
+                <button
+                  key={item.label}
+                  onClick={() => scrollToSection(item.section)}
+                  className="text-foreground/80 hover:text-primary transition-all duration-300 relative group font-medium text-sm whitespace-nowrap py-2 px-3 rounded-lg hover:bg-primary/10"
+                >
+                  {item.label}
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary rounded-full transition-all duration-300 group-hover:w-full" />
+                </button>
+              ))}
+            </div>
+
+            {/* Download Resume Button */}
+            <Button 
+              size="sm"
+              onClick={downloadResume}
+              className="bg-primary hover:scale-105 text-white shadow-glow hover:shadow-xl transition-all duration-300 font-semibold px-4 py-2 text-sm rounded-xl whitespace-nowrap ml-4"
+            >
+              Download Resume
+            </Button>
           </div>
         </div>
-
-        {/* Download Resume Button */}
-        <Button 
-          size="sm"
-          onClick={downloadResume}
-          className="bg-primary hover:scale-105 text-white shadow-glow hover:shadow-xl transition-all duration-300 font-semibold px-4 py-2 text-sm rounded-xl whitespace-nowrap"
-        >
-          Download Resume
-        </Button>
       </nav>
 
       {/* Mobile Navigation - Top Bar */}
