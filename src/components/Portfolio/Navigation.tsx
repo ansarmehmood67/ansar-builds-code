@@ -54,7 +54,7 @@ const Navigation = () => {
         <div className="p-4">
           <div className="flex items-center justify-between">
             {/* Left Side: Logo + Navigation */}
-            <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-12">
               {/* Logo */}
               <button
                 onClick={() => scrollToSection('home')}
@@ -71,7 +71,7 @@ const Navigation = () => {
                   <button
                     key={item.label}
                     onClick={() => scrollToSection(item.section)}
-                    className="text-foreground/80 hover:text-primary transition-all duration-300 relative group font-medium text-sm whitespace-nowrap py-2 px-3 rounded-lg hover:bg-primary/10"
+                    className="text-foreground/80 hover:text-primary transition-all duration-300 relative group font-medium text-base whitespace-nowrap py-2 px-3 rounded-lg hover:bg-primary/10"
                   >
                     {item.label}
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary rounded-full transition-all duration-300 group-hover:w-full" />

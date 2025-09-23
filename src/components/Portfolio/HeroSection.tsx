@@ -89,7 +89,7 @@ const HeroSection = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group w-11 h-11 rounded-lg bg-background/20 backdrop-blur-sm border border-foreground/10 flex items-center justify-center hover:bg-primary hover:border-primary hover:scale-110 hover:-translate-y-0.5 transition-all duration-300"
+                      className="group w-11 h-11 rounded-lg flex items-center justify-center hover:bg-primary hover:scale-110 hover:-translate-y-0.5 transition-all duration-300"
                       style={{ animationDelay: `${index * 50}ms` }}
                       aria-label={social.label}
                     >
@@ -101,14 +101,14 @@ const HeroSection = () => {
 
               {/* Mobile: Bottom Fixed Panel */}
               <div className="lg:hidden fixed bottom-6 left-6 right-6 flex justify-center">
-                <div className="flex items-center space-x-3 bg-background/20 backdrop-blur-md rounded-2xl p-3 border border-foreground/10 shadow-lg">
+                <div className="flex items-center space-x-3 rounded-2xl p-3 shadow-lg">
                   {socialLinks.map((social, index) => (
                     <a
                       key={social.label}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group w-10 h-10 rounded-lg bg-background/20 backdrop-blur-sm border border-foreground/20 flex items-center justify-center hover:bg-primary hover:border-primary hover:scale-110 transition-all duration-300"
+                      className="group w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary hover:scale-110 transition-all duration-300"
                       aria-label={social.label}
                     >
                       <social.icon className="h-4 w-4 text-foreground group-hover:text-white transition-colors" />
