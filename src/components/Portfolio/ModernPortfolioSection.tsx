@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useElementAnimation } from "@/hooks/useElementAnimation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -9,7 +9,7 @@ import { projects } from "@/data/projects";
 import { useNavigate } from "react-router-dom";
 
 const ModernPortfolioSection = () => {
-  const ref = useScrollAnimation();
+  const ref = useElementAnimation();
   const navigate = useNavigate();
   // Get all 4 featured projects
   const featuredProjects = projects;
@@ -53,12 +53,12 @@ const ModernPortfolioSection = () => {
 
       <div className="relative z-10 container mx-auto px-6">
         {/* Consistent Header */}
-        <div className="text-center mb-16 animate-on-scroll">
+        <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative">
           Featured Projects
           <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
         </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto animate-text">
             A showcase of recent work demonstrating expertise in <span className="text-primary font-semibold">web development</span>, 
             <span className="text-primary font-semibold">AI automation</span>, and <span className="text-primary font-semibold">chatbot solutions</span> with measurable business impact
           </p>
@@ -69,8 +69,7 @@ const ModernPortfolioSection = () => {
           {featuredProjects.map((project, index) => (
             <Card 
               key={project.slug} 
-              className="group hover:shadow-2xl transition-all duration-300 bg-white border border-slate-200/50 animate-on-scroll"
-              style={{ animationDelay: `${index * 0.15}s` }}
+              className="card group hover:shadow-2xl transition-all duration-300 bg-white border border-slate-200/50"
             >
               <div className="relative overflow-hidden rounded-t-xl">
                 <img
@@ -109,7 +108,7 @@ const ModernPortfolioSection = () => {
         </div>
 
         {/* View All Projects CTA */}
-        <div className="text-center mt-16 animate-on-scroll">
+        <div className="text-center mt-16">
           <div className="inline-flex flex-col items-center p-8 rounded-3xl bg-gradient-to-br from-slate-50 to-white border border-slate-200 shadow-xl">
             <div className="text-2xl font-bold text-slate-900 mb-4">
               Want to see more of my work?

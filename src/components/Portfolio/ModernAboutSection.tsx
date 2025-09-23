@@ -1,10 +1,10 @@
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useElementAnimation } from "@/hooks/useElementAnimation";
 import { MapPin, Mail, Download, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import aboutImage from "@/assets/ansar-about-image.png";
 
 const ModernAboutSection = () => {
-  const ref = useScrollAnimation();
+  const ref = useElementAnimation();
 
   return (
     <section 
@@ -20,19 +20,19 @@ const ModernAboutSection = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         {/* Consistent Header */}
-        <div className="text-center mb-16 animate-on-scroll">
+        <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative">
           About Me
           <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
         </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto animate-text">
             Crafting digital solutions with <span className="text-primary font-semibold">precision</span> and <span className="text-primary font-semibold">passion</span>
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-20 items-center min-h-[600px]">
           {/* Sophisticated Content - Left Side */}
-          <div className="flex flex-col justify-center space-y-10 animate-on-scroll">
+          <div className="flex flex-col justify-center space-y-10">
             {/* Main Content Block */}
             <div className="relative">
               <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-primary to-secondary rounded-full"></div>
@@ -89,7 +89,7 @@ const ModernAboutSection = () => {
           </div>
 
           {/* Circular Image - Right Side */}
-          <div className="flex items-center justify-center animate-on-scroll">
+          <div className="flex items-center justify-center">
             <div className="relative group">
               {/* Outer glow ring */}
               <div className="absolute inset-0 w-88 h-88 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-700"></div>
