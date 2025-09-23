@@ -71,7 +71,7 @@ const HeroSection = () => {
                   const element = document.getElementById('contact');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="group relative bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white shadow-glow hover:shadow-xl hover:scale-105 transition-all duration-500 font-bold text-lg px-12 py-4 rounded-2xl overflow-hidden"
+                className="group relative bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white hover:shadow-xl hover:scale-105 transition-all duration-500 font-bold text-lg px-12 py-4 rounded-2xl overflow-hidden"
               >
                 <span className="relative z-10">Work With Me</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
