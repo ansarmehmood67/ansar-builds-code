@@ -52,19 +52,15 @@ const ModernPortfolioSection = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-6">
-        {/* Section Header */}
-        <div className="text-center mb-20 animate-on-scroll">
-          <div className="flex items-center justify-center mb-6">
-            <FolderOpen className="h-8 w-8 text-primary mr-3" />
-            <span className="text-primary font-semibold text-lg tracking-wide uppercase">My Work</span>
-          </div>
-          <h2 className="text-5xl lg:text-6xl font-black text-slate-900 mb-6 leading-tight">
-            Featured{" "}
-            <span className="bg-gradient-to-r from-primary to-emerald-500 bg-clip-text text-transparent">Projects</span>
+        {/* Consistent Header */}
+        <div className="text-center mb-16 animate-on-scroll">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 relative">
+            Featured Projects
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            A showcase of recent work demonstrating expertise in web development, 
-            AI automation, and chatbot solutions with measurable business impact
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            A showcase of recent work demonstrating expertise in <span className="text-primary font-semibold">web development</span>, 
+            <span className="text-primary font-semibold">AI automation</span>, and <span className="text-primary font-semibold">chatbot solutions</span> with measurable business impact
           </p>
         </div>
 

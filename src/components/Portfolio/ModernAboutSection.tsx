@@ -19,12 +19,15 @@ const ModernAboutSection = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
-        {/* Minimalist Header */}
-        <div className="text-center mb-24 animate-on-scroll">
-          <h2 className="text-6xl lg:text-7xl font-black bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent mb-4 leading-tight">
+        {/* Consistent Header */}
+        <div className="text-center mb-16 animate-on-scroll">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 relative">
             About Me
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Crafting digital solutions with <span className="text-primary font-semibold">precision</span> and <span className="text-primary font-semibold">passion</span>
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-20 items-center min-h-[600px]">
@@ -47,12 +50,12 @@ const ModernAboutSection = () => {
                 </h3>
                 
                 <p className="text-xl text-slate-700 leading-relaxed font-medium mb-6">
-                  I'm Ansar Mehmood, a full-stack developer specializing in React and Django ecosystems. 
-                  With experience serving international clients and contributing to enterprise solutions at SalesOnDemand.
+                  I'm <span className="text-primary font-semibold">Ansar Mehmood</span>, a full-stack developer specializing in <span className="text-primary font-semibold">React</span> and <span className="text-primary font-semibold">Django</span> ecosystems. 
+                  With experience serving <span className="text-primary font-semibold">international clients</span> and contributing to <span className="text-primary font-semibold">enterprise solutions</span> at SalesOnDemand.
                 </p>
                 
                 <p className="text-xl text-slate-700 leading-relaxed font-medium">
-                  I bridge frontend elegance with backend robustness to create applications that deliver measurable business impact.
+                  I bridge frontend elegance with backend robustness to create applications that deliver <span className="text-primary font-semibold">measurable business impact</span>.
                 </p>
               </div>
             </div>

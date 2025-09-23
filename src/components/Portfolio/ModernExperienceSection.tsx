@@ -60,17 +60,14 @@ const ModernExperienceSection = () => {
     >
       <div className="max-w-7xl mx-auto px-6">
         <div ref={ref as any} className="animate-on-scroll">
-          {/* Premium Section Header */}
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center justify-center px-6 py-3 bg-white backdrop-blur-sm rounded-full shadow-lg border border-gray-200 mb-8">
-              <Sparkles className="h-5 w-5 text-primary mr-3" />
-              <span className="text-gray-700 font-semibold text-sm tracking-wide uppercase">Professional Journey</span>
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
-              Experience & <span className="text-primary">Education</span>
+          {/* Consistent Header */}
+          <div className="text-center mb-16 animate-on-scroll">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 relative">
+              Experience & Education
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              A timeline of professional growth, technical expertise, and continuous learning
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              A timeline of <span className="text-primary font-semibold">professional growth</span>, <span className="text-primary font-semibold">technical expertise</span>, and continuous learning
             </p>
           </div>
 

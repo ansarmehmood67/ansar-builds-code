@@ -25,17 +25,14 @@ const ModernSkillsSection = () => {
   return (
     <section id="skills" className="py-24 bg-gradient-to-br from-slate-50 to-white">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Premium Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center px-6 py-3 bg-white rounded-full shadow-lg border border-slate-200 mb-8">
-            <Code className="h-5 w-5 text-slate-700 mr-3" />
-            <span className="text-slate-700 font-semibold text-sm tracking-wide uppercase">Technical Expertise</span>
-          </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-            Professional <span className="text-slate-600">Skills</span>
+        {/* Consistent Header */}
+        <div className="text-center mb-16 animate-on-scroll">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 relative">
+            Professional Skills
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
           </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Technologies I use to design, build, and deploy modern web & mobile applications.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Technologies I use to design, build, and deploy modern <span className="text-primary font-semibold">web & mobile applications</span>.
           </p>
         </div>
 

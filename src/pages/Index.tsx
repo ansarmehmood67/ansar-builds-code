@@ -7,6 +7,7 @@ import ModernSkillsSection from "@/components/Portfolio/ModernSkillsSection";
 import ModernExperienceSection from "@/components/Portfolio/ModernExperienceSection";
 import ModernPortfolioSection from "@/components/Portfolio/ModernPortfolioSection";
 import ModernContactSection from "@/components/Portfolio/ModernContactSection";
+import SectionDivider from "@/components/Portfolio/SectionDivider";
 
 const Index = () => {
   return (
@@ -14,11 +15,17 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
+        <SectionDivider />
         <ModernAboutSection />
+        <SectionDivider />
         <CompactServicesSection />
+        <SectionDivider />
         <ModernSkillsSection />
+        <SectionDivider />
         <ModernExperienceSection />
+        <SectionDivider />
         <ModernPortfolioSection />
+        <SectionDivider />
         <ModernContactSection />
       </main>
       <Footer />

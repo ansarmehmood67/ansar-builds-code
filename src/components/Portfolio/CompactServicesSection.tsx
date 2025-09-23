@@ -26,17 +26,14 @@ const CompactServicesSection = () => {
     <section className="py-24 bg-black">
       <div className="max-w-6xl mx-auto px-6">
         <div ref={ref as any} className="animate-on-scroll">
-          {/* Premium Section Header */}
+          {/* Consistent Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center px-6 py-3 bg-slate-900/80 backdrop-blur-sm rounded-full shadow-xl border border-primary/20 mb-8">
-              <Sparkles className="h-5 w-5 text-primary mr-3" />
-              <span className="text-slate-200 font-semibold text-sm tracking-wide uppercase">My Services</span>
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
-              Professional <span className="text-primary">Solutions</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 relative">
+              Professional Solutions
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
             </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              Specialized services designed to transform your ideas into powerful digital solutions
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Specialized services designed to transform your ideas into <span className="text-primary font-semibold">powerful digital solutions</span>
             </p>
           </div>
 
