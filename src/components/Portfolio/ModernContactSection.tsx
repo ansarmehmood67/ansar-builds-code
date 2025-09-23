@@ -85,17 +85,17 @@ const ModernContactSection = () => {
             <div className="bg-white border border-gray-200 rounded-2xl p-8 lg:p-12 shadow-sm">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div>
+                  <div className="w-full min-w-0">
                     <Input
                       name="name"
                       placeholder="Your Name"
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="h-14 text-lg bg-white border-gray-200 focus:border-primary focus:ring-primary/20"
+                      className="w-full h-14 text-base md:text-lg bg-white border-gray-200 focus:border-primary focus:ring-primary/20"
                     />
                   </div>
-                  <div>
+                  <div className="w-full min-w-0">
                     <Input
                       name="email"
                       type="email"
@@ -103,7 +103,7 @@ const ModernContactSection = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="h-14 text-lg bg-white border-gray-200 focus:border-primary focus:ring-primary/20"
+                      className="w-full h-14 text-base md:text-lg bg-white border-gray-200 focus:border-primary focus:ring-primary/20"
                     />
                   </div>
                 </div>
