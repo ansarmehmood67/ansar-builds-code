@@ -50,7 +50,7 @@ const Navigation = () => {
   return (
     <>
       {/* Left-Aligned Horizontal Header */}
-      <nav className="fixed top-6 left-6 right-6 z-50 hidden lg:block">
+      <nav className="absolute top-6 left-6 right-6 z-50 hidden lg:block">
         <div className="p-4">
           <div className="flex items-center justify-between">
             {/* Left Side: Logo + Navigation */}
@@ -58,14 +58,11 @@ const Navigation = () => {
               {/* Logo */}
               <button
                 onClick={() => scrollToSection('home')}
-                className="group flex items-center space-x-3"
+                className="group"
               >
                 <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <span className="text-white font-bold text-lg">A</span>
                 </div>
-                <span className="text-lg font-bold text-primary whitespace-nowrap">
-                  Ansar.dev
-                </span>
               </button>
 
               {/* Horizontal Navigation */}
@@ -102,14 +99,11 @@ const Navigation = () => {
             {/* Mobile Logo */}
             <button
               onClick={() => scrollToSection('home')}
-              className="group flex items-center space-x-2"
+              className="group"
             >
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <span className="text-white font-bold text-sm">A</span>
               </div>
-              <span className="text-lg font-bold text-primary">
-                Ansar.dev
-              </span>
             </button>
 
             {/* Mobile Menu Button */}
