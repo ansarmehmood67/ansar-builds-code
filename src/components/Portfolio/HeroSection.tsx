@@ -51,13 +51,13 @@ const HeroSection = () => {
             {/* Main Headline - Improved Typography */}
             <div className="mb-4">
               <h1 className="text-5xl lg:text-7xl font-black leading-tight">
-                <span className="block text-foreground drop-shadow-2xl animate-fade-in-up tracking-tight">Ansar Mehmood</span>
+                <span className="block text-foreground animate-fade-in-up tracking-tight">Ansar Mehmood</span>
               </h1>
             </div>
             
             {/* Enhanced Role with Better Hierarchy */}
             <div className="ml-4 lg:ml-8 mb-6">
-              <p className="text-3xl lg:text-5xl font-semibold leading-relaxed drop-shadow-lg animate-fade-in-up animate-stagger-1">
+              <p className="text-3xl lg:text-5xl font-semibold leading-relaxed animate-fade-in-up animate-stagger-1">
                 <span className="bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">Full Stack Developer</span><br />
                 <span className="bg-gradient-to-r from-primary via-primary to-primary-glow bg-clip-text text-transparent font-bold">& Software Engineer</span>
               </p>
@@ -101,7 +101,7 @@ const HeroSection = () => {
 
               {/* Mobile: Bottom Fixed Panel */}
               <div className="lg:hidden fixed bottom-6 left-6 right-6 flex justify-center">
-                <div className="flex items-center space-x-3 rounded-2xl p-3 shadow-lg">
+                <div className="flex items-center space-x-3 rounded-2xl p-3">
                   {socialLinks.map((social, index) => (
                     <a
                       key={social.label}
