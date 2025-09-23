@@ -1,38 +1,54 @@
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useMagneticScroll, useTextAnimation, useParticleEffect } from "@/hooks/useAdvancedAnimations";
 import { MapPin, Mail, Download, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import aboutImage from "@/assets/ansar-about-image.png";
 
 const ModernAboutSection = () => {
-  const ref = useScrollAnimation();
+  const magneticRef = useMagneticScroll();
+  const textRef = useTextAnimation();
+  const { ref: particleRef, particles } = useParticleEffect();
 
   return (
     <section 
       id="about"
-      ref={ref as React.RefObject<HTMLElement>}
-      className="py-32 theme-light relative overflow-hidden"
+      ref={magneticRef as React.RefObject<HTMLElement>}
+      className="py-32 theme-light relative overflow-hidden perspective-container"
     >
-      {/* Background Decorative Elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-secondary rounded-full blur-2xl"></div>
+      {/* Interactive Particle Layer */}
+      <div ref={particleRef as React.RefObject<HTMLDivElement>} className="absolute inset-0 pointer-events-none">
+        {particles.map((particle) => (
+          <div
+            key={particle.id}
+            className="absolute w-1 h-1 bg-primary rounded-full animate-particle"
+            style={{
+              left: particle.x,
+              top: particle.y,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Liquid Morphing Background */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary liquid-bg blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-secondary liquid-bg blur-2xl" style={{ animationDelay: '10s' }}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
-        {/* Consistent Header */}
-        <div className="text-center mb-16 animate-on-scroll">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative">
+        {/* Animated Header */}
+        <div ref={textRef as React.RefObject<HTMLDivElement>} className="text-center mb-16 magnetic-child">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative animate-text">
           About Me
-          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
+          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full animate-glow-pulse"></div>
         </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto animate-text">
             Crafting digital solutions with <span className="text-primary font-semibold">precision</span> and <span className="text-primary font-semibold">passion</span>
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-20 items-center min-h-[600px]">
           {/* Sophisticated Content - Left Side */}
-          <div className="flex flex-col justify-center space-y-10 animate-on-scroll">
+          <div className="flex flex-col justify-center space-y-10 magnetic-child card-3d advanced-hover">
             {/* Main Content Block */}
             <div className="relative">
               <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-primary to-secondary rounded-full"></div>
@@ -80,7 +96,7 @@ const ModernAboutSection = () => {
 
               <Button 
                 size="lg"
-                className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white hover:scale-105 transition-all duration-300 font-bold px-10 py-4 text-lg rounded-2xl group"
+                className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white advanced-hover transition-all duration-300 font-bold px-10 py-4 text-lg rounded-2xl group animate-glow-pulse"
               >
                 <Download className="mr-3 h-5 w-5 group-hover:animate-bounce" />
                 Download Resume
@@ -89,13 +105,13 @@ const ModernAboutSection = () => {
           </div>
 
           {/* Circular Image - Right Side */}
-          <div className="flex items-center justify-center animate-on-scroll">
-            <div className="relative group">
-              {/* Outer glow ring */}
-              <div className="absolute inset-0 w-88 h-88 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-700"></div>
+          <div className="flex items-center justify-center magnetic-child">
+            <div className="relative group advanced-hover">
+              {/* Morphing glow ring */}
+              <div className="absolute inset-0 w-88 h-88 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-700 liquid-bg"></div>
               
-              {/* Image container */}
-              <div className="relative w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-primary/30 group-hover:scale-105 transition-transform duration-500">
+              {/* Image container with 3D effect */}
+              <div className="relative w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-primary/30 card-3d glass-advanced">
                 <img 
                   src={aboutImage} 
                   alt="Ansar Mehmood - Full Stack Developer"
@@ -103,8 +119,8 @@ const ModernAboutSection = () => {
                 />
               </div>
               
-              {/* Floating accent */}
-              <div className="absolute -top-4 -right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg animate-float">
+              {/* Floating accent with advanced animation */}
+              <div className="absolute -top-4 -right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg animate-advanced-float animate-glow-pulse">
                 <Sparkles className="w-6 h-6 text-white" />
               </div>
             </div>

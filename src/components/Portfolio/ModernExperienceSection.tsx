@@ -1,8 +1,10 @@
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useMagneticScroll, useMorphingAnimation, useTextAnimation } from "@/hooks/useAdvancedAnimations";
 import { GraduationCap, Briefcase, MapPin, Calendar, Sparkles } from "lucide-react";
 
 const ModernExperienceSection = () => {
-  const ref = useScrollAnimation();
+  const magneticRef = useMagneticScroll();
+  const morphRef = useMorphingAnimation();
+  const textRef = useTextAnimation();
 
   const experiences = [
     {
@@ -55,47 +57,47 @@ const ModernExperienceSection = () => {
   return (
     <section 
       id="experience"
-      ref={ref as React.RefObject<HTMLElement>}
-      className="py-24 theme-light"
+      ref={magneticRef as React.RefObject<HTMLElement>}
+      className="py-24 theme-light perspective-container"
     >
       <div className="max-w-7xl mx-auto px-6">
-        <div ref={ref as any} className="animate-on-scroll">
-          {/* Consistent Header */}
-          <div className="text-center mb-16 animate-on-scroll">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative">
+        <div ref={morphRef as any} className="magnetic-child">
+          {/* Animated Header */}
+          <div ref={textRef as React.RefObject<HTMLDivElement>} className="text-center mb-16 magnetic-child">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative animate-text">
               Experience & Education
-              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full animate-glow-pulse"></div>
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto animate-text">
               A timeline of <span className="text-primary font-semibold">professional growth</span>, <span className="text-primary font-semibold">technical expertise</span>, and continuous learning
             </p>
           </div>
 
-          {/* Premium Timeline */}
+          {/* Advanced 3D Timeline */}
           <div className="relative">
-            {/* Left Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary/20 hidden lg:block" />
+            {/* Animated Timeline Line */}
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary/20 hidden lg:block animate-glow-pulse" />
             
-            {/* Timeline Items */}
+            {/* Timeline Items with Advanced Animations */}
             <div className="space-y-16 lg:space-y-20">
               {experiences.map((exp, index) => (
                 <div
                   key={index}
-                  className="relative flex items-center animate-on-scroll"
+                  className="relative flex items-center card-3d magnetic-child"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  {/* Timeline Node */}
-                  <div className="absolute left-8 transform -translate-x-1/2 w-16 h-16 bg-primary rounded-full shadow-lg shadow-primary/20 flex items-center justify-center z-10 hidden lg:flex">
+                  {/* Morphing Timeline Node */}
+                  <div className="absolute left-8 transform -translate-x-1/2 w-16 h-16 bg-primary rounded-full shadow-lg shadow-primary/20 flex items-center justify-center z-10 hidden lg:flex liquid-bg animate-glow-pulse">
                     <exp.icon className="w-8 h-8 text-white" />
                   </div>
 
-                  {/* Content Card */}
+                  {/* Glass Morphism Content Card */}
                   <div className="w-full lg:ml-20">
-                    <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-200 overflow-hidden hover:border-primary/30 hover:-translate-y-1">
+                    <div className="group glass-advanced advanced-hover card-3d transition-all duration-500 border border-gray-200/50 overflow-hidden">
                       
                       {/* Mobile Timeline Node */}
                       <div className="lg:hidden flex items-center p-8 pb-0">
-                        <div className="w-12 h-12 bg-primary rounded-full shadow-lg shadow-primary/20 flex items-center justify-center mr-4">
+                        <div className="w-12 h-12 bg-primary rounded-full shadow-lg shadow-primary/20 flex items-center justify-center mr-4 animate-glow-pulse">
                           <exp.icon className="w-6 h-6 text-white" />
                         </div>
                         <div>
@@ -154,12 +156,12 @@ const ModernExperienceSection = () => {
                           </ul>
                         </div>
 
-                        {/* Technologies */}
+                        {/* Technologies with Advanced Hover */}
                         <div className="flex flex-wrap gap-3">
                           {exp.technologies.map((tech, techIndex) => (
                             <span 
                               key={techIndex}
-                              className="px-4 py-2 bg-primary/5 text-primary rounded-full text-sm lg:text-base font-medium border border-primary/20 hover:bg-primary/10 transition-colors"
+                              className="px-4 py-2 bg-primary/5 text-primary rounded-full text-sm lg:text-base font-medium border border-primary/20 advanced-hover glass-advanced transition-colors"
                             >
                               {tech}
                             </span>
@@ -167,8 +169,8 @@ const ModernExperienceSection = () => {
                         </div>
                       </div>
 
-                      {/* Premium Bottom Accent */}
-                      <div className="h-1 bg-gradient-to-r from-primary/20 to-primary/40 group-hover:from-primary/40 group-hover:to-primary/60 transition-all duration-500"></div>
+                      {/* Liquid Morphing Bottom Accent */}
+                      <div className="h-1 bg-gradient-to-r from-primary/20 to-primary/40 group-hover:from-primary/40 group-hover:to-primary/60 transition-all duration-500 liquid-bg"></div>
                     </div>
                   </div>
                 </div>
