@@ -184,7 +184,7 @@ const Contact = () => {
                 <Button 
                   variant="outline" 
                   className="w-full justify-start"
-                  onClick={() => window.open('mailto:ansar@example.com', '_blank')}
+                  onClick={() => window.open('mailto:ansarmehmood.dev@gmail.com', '_blank')}
                 >
                   <Mail className="w-4 h-4 mr-2" />
                   Send Email

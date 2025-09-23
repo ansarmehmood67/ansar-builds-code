@@ -55,8 +55,8 @@ const ModernContactSection = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "ansar@example.com",
-      href: "mailto:ansar@example.com",
+      value: "ansarmehmood.dev@gmail.com",
+      href: "mailto:ansarmehmood.dev@gmail.com",
       description: "Best way to reach me"
     },
     {

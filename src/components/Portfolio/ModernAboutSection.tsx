@@ -32,10 +32,10 @@ const ModernAboutSection = () => {
           <div className="flex items-center justify-center animate-on-scroll">
             <div className="relative group">
               {/* Outer glow ring */}
-              <div className="absolute inset-0 w-80 h-80 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-700"></div>
+              <div className="absolute inset-0 w-88 h-88 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-700"></div>
               
               {/* Image container */}
-              <div className="relative w-72 h-72 rounded-full overflow-hidden shadow-2xl border-4 border-white/50 group-hover:scale-105 transition-transform duration-500">
+              <div className="relative w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-primary/30 group-hover:scale-105 transition-transform duration-500">
                 <img 
                   src={aboutImage} 
                   alt="Ansar Mehmood - Full Stack Developer"
@@ -68,29 +68,17 @@ const ModernAboutSection = () => {
                   </span>
                 </h3>
                 
-                <p className="text-xl text-slate-700 leading-relaxed font-medium">
+                <p className="text-xl text-slate-700 leading-relaxed font-medium mb-6">
                   I'm Ansar Mehmood, a full-stack developer specializing in React and Django ecosystems. 
-                  With experience serving international clients and contributing to enterprise solutions at SalesOnDemand, 
+                  With experience serving international clients and contributing to enterprise solutions at SalesOnDemand.
+                </p>
+                
+                <p className="text-xl text-slate-700 leading-relaxed font-medium">
                   I bridge frontend elegance with backend robustness to create applications that deliver measurable business impact.
                 </p>
               </div>
             </div>
 
-            {/* Enhanced Stats Grid */}
-            <div className="grid grid-cols-3 gap-6">
-              <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 hover:shadow-lg transition-all duration-300">
-                <div className="text-3xl font-black text-primary mb-2">15k+</div>
-                <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">Earned</div>
-              </div>
-              <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 hover:shadow-lg transition-all duration-300">
-                <div className="text-3xl font-black text-primary mb-2">30+</div>
-                <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">Projects</div>
-              </div>
-              <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 hover:shadow-lg transition-all duration-300">
-                <div className="text-3xl font-black text-primary mb-2">3+</div>
-                <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">Years</div>
-              </div>
-            </div>
 
             {/* Contact & CTA Section */}
             <div className="space-y-6">
@@ -105,13 +93,13 @@ const ModernAboutSection = () => {
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                     <Mail className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="font-medium">ansar@example.com</span>
+                  <span className="font-medium">ansarmehmood.dev@gmail.com</span>
                 </div>
               </div>
 
               <Button 
                 size="lg"
-                className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 font-bold px-10 py-4 text-lg rounded-2xl group"
+                className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white hover:scale-105 transition-all duration-300 font-bold px-10 py-4 text-lg rounded-2xl group"
               >
                 <Download className="mr-3 h-5 w-5 group-hover:animate-bounce" />
                 Download Resume
