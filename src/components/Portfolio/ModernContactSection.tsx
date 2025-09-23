@@ -84,7 +84,7 @@ const ModernContactSection = () => {
           <div className="lg:col-span-2">
             <div className="bg-white border border-gray-200 rounded-2xl p-8 lg:p-12 shadow-sm">
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(0, 1fr))'}}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 overflow-hidden">
                   <div className="min-w-0">
                     <Input
                       name="name"
@@ -92,8 +92,7 @@ const ModernContactSection = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="!w-full !max-w-none h-14 !text-sm bg-white border-gray-200 focus:border-primary focus:ring-primary/20 !box-border"
-                      style={{width: '100%', maxWidth: '100%'}}
+                      className="h-14 bg-white border-gray-200 focus:border-primary focus:ring-primary/20"
                     />
                   </div>
                   <div className="min-w-0">
@@ -104,8 +103,7 @@ const ModernContactSection = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="!w-full !max-w-none h-14 !text-sm bg-white border-gray-200 focus:border-primary focus:ring-primary/20 !box-border"
-                      style={{width: '100%', maxWidth: '100%'}}
+                      className="h-14 bg-white border-gray-200 focus:border-primary focus:ring-primary/20"
                     />
                   </div>
                 </div>
