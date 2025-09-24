@@ -56,7 +56,7 @@ const HeroSection = () => {
               {/* Enhanced Role with Better Hierarchy */}
               <div className="ml-0 sm:ml-4 lg:ml-8 mb-4 sm:mb-6">
                 <p className="text-xl sm:text-3xl lg:text-5xl font-semibold leading-relaxed animate-text animate-delay-200">
-                  <span className="bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">Software Engineer – React • TypeScript • Django</span>
+                  <span className="bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">Software engineer and full stack developer</span>
                 </p>
               </div>
               
