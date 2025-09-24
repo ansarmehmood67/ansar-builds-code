@@ -1,115 +1,98 @@
-import { Code, Database, Bot } from "lucide-react";
+import { Code, Cloud } from "lucide-react";
 
 const ModernSkillsSection = () => {
-  const skillCategories = [
+  const skillColumns = [
     {
-      title: "Frontend & UI/UX",
+      title: "Frontend & Backend",
       icon: Code,
       skills: [
-        { name: "React", years: 4 },
-        { name: "TypeScript", years: 3 },
-        { name: "Next.js", years: 3 },
-        { name: "Tailwind CSS", years: 4 },
-        { name: "JavaScript", years: 5 },
-        { name: "HTML/CSS", years: 5 }
+        "JavaScript", "TypeScript", "React", "Next.js", 
+        "Tailwind CSS", "HTML", "CSS", "Flutter", 
+        "Django", "Python", "REST APIs"
       ]
     },
     {
-      title: "Backend & Infrastructure",
-      icon: Database,
+      title: "Cloud & Infrastructure", 
+      icon: Cloud,
       skills: [
-        { name: "Python", years: 4 },
-        { name: "Django", years: 3 },
-        { name: "PostgreSQL", years: 3 },
-        { name: "MySQL", years: 4 },
-        { name: "REST APIs", years: 4 },
-        { name: "Node.js", years: 2 },
-        { name: "Git", years: 5 },
-        { name: "Docker", years: 2 },
-        { name: "AWS", years: 2 }
-      ]
-    },
-    {
-      title: "AI & Automation",
-      icon: Bot,
-      skills: [
-        { name: "OpenAI API", years: 2 },
-        { name: "Chatbot Development", years: 3 },
-        { name: "Workflow Automation", years: 3 },
-        { name: "Zapier/Make.com", years: 2 },
-        { name: "WhatsApp API", years: 2 }
+        "MySQL", "PostgreSQL", "SQLite", "MongoDB", 
+        "Git", "Docker", "WordPress", "Vercel",
+        "Shopify", "AWS EC2", "Firebase"
       ]
     }
   ];
 
   return (
-    <section id="skills" className="py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-light text-foreground mb-4">
-            Technical Skills
-          </h2>
-          <div className="w-16 h-px bg-border mx-auto mb-8"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Core technologies and frameworks for building modern digital solutions
+    <section id="skills" className="py-24 bg-gradient-to-br from-slate-50 to-white">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Consistent Header */}
+        <div className="text-center mb-16 animate-on-scroll">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative">
+          Professional Skills
+          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
+        </h2>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            Technologies I use to design, build, and deploy modern <span className="text-primary font-semibold">web & mobile applications</span>.
           </p>
         </div>
 
-        {/* Three Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {skillCategories.map((category, categoryIndex) => (
-            <div 
-              key={category.title}
-              className="group"
+        {/* Premium Skills Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {skillColumns.map((column, columnIndex) => (
+            <div
+              key={column.title}
+              className="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-slate-100 overflow-hidden"
             >
-              {/* Category Header */}
-              <div className="flex items-center gap-3 mb-8">
-                <category.icon className="h-5 w-5 text-muted-foreground" />
-                <h3 className="text-xl font-medium text-foreground">
-                  {category.title}
-                </h3>
-              </div>
-
-              {/* Skills List */}
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div
-                    key={skill.name}
-                    className="flex items-center justify-between py-3 px-4 rounded-lg bg-card border border-border/50 hover:border-border transition-colors duration-200"
-                  >
-                    <span className="font-medium text-foreground text-sm">
-                      {skill.name}
-                    </span>
-                    <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">
-                      {skill.years}y
-                    </span>
+              {/* Premium Column Header */}
+              <div className="bg-gradient-to-r from-slate-900 to-slate-700 px-8 py-6">
+                <div className="flex items-center">
+                  <div className="p-3 bg-white/10 rounded-xl mr-4 backdrop-blur-sm">
+                    <column.icon className="h-7 w-7 text-white" />
                   </div>
-                ))}
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-1">
+                      {column.title}
+                    </h3>
+                  </div>
+                </div>
               </div>
+              
+              {/* Premium Skills Grid */}
+              <div className="p-8">
+                <div className="grid grid-cols-2 gap-4">
+                  {column.skills.map((skill, skillIndex) => (
+                    <div 
+                      key={skill}
+                      className="group/skill relative bg-slate-50 hover:bg-slate-100 rounded-xl p-4 transition-all duration-300 hover:scale-105 hover:shadow-lg border border-slate-200 hover:border-slate-300"
+                      style={{
+                        animationDelay: `${(columnIndex * 0.1) + (skillIndex * 0.05)}s`
+                      }}
+                    >
+                      {/* Skill Indicator */}
+                      <div className="absolute top-3 right-3 w-2 h-2 bg-green-500 rounded-full opacity-70 group-hover/skill:opacity-100 transition-opacity duration-300"></div>
+                      
+                      {/* Skill Name */}
+                      <div className="font-semibold text-slate-900 text-sm mb-1 group-hover/skill:text-slate-700 transition-colors duration-300">
+                        {skill}
+                      </div>
+                      
+                      {/* Proficiency Indicator */}
+                      <div className="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
+                        <div 
+                          className="bg-gradient-to-r from-slate-600 to-slate-400 h-full rounded-full transition-all duration-700 group-hover/skill:from-slate-700 group-hover/skill:to-slate-500"
+                          style={{ width: '85%' }}
+                        ></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
             </div>
           ))}
         </div>
 
-        {/* Simple Footer Stats */}
-        <div className="mt-20 pt-12 border-t border-border">
-          <div className="grid grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-2xl font-light text-foreground mb-2">
-                {skillCategories.reduce((acc, cat) => acc + cat.skills.length, 0)}
-              </div>
-              <div className="text-sm text-muted-foreground">Technologies</div>
-            </div>
-            <div>
-              <div className="text-2xl font-light text-foreground mb-2">5+</div>
-              <div className="text-sm text-muted-foreground">Years Experience</div>
-            </div>
-            <div>
-              <div className="text-2xl font-light text-foreground mb-2">3</div>
-              <div className="text-sm text-muted-foreground">Core Areas</div>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
