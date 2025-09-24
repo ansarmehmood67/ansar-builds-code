@@ -7,6 +7,9 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  
+  // Check if we're on a project detail page
+  const isProjectDetailPage = location.pathname.startsWith('/projects/');
 
   const scrollToSection = (sectionId: string) => {
     if (sectionId === 'home') {
@@ -71,7 +74,7 @@ const Navigation = () => {
                   <button
                     key={item.label}
                     onClick={() => scrollToSection(item.section)}
-                    className="text-foreground/80 hover:text-primary transition-all duration-300 relative group font-medium text-base whitespace-nowrap py-2 px-3 rounded-lg hover:bg-primary/10"
+                    className={`${isProjectDetailPage ? 'text-slate-800/80' : 'text-foreground/80'} hover:text-primary transition-all duration-300 relative group font-medium text-base whitespace-nowrap py-2 px-3 rounded-lg hover:bg-primary/10`}
                   >
                     {item.label}
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary rounded-full transition-all duration-300 group-hover:w-full" />
@@ -130,7 +133,7 @@ const Navigation = () => {
                       scrollToSection(item.section);
                       setIsMobileMenuOpen(false);
                     }}
-                    className="block w-full text-left transition-all duration-300 py-2 text-foreground hover:text-primary text-base font-medium"
+                    className={`block w-full text-left transition-all duration-300 py-2 ${isProjectDetailPage ? 'text-slate-800' : 'text-foreground'} hover:text-primary text-base font-medium`}
                   >
                     {item.label}
                   </button>
