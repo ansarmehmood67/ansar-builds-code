@@ -1,4 +1,4 @@
-import ContactInfo from "./ContactInfo";
+import { Phone, Mail, Globe, Linkedin } from "lucide-react";
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -22,10 +22,30 @@ const Footer = () => {
     { label: "Contact", section: "contact" }
   ];
 
+  const contactLinks = [
+    { icon: Phone, href: "tel:+923227555459", display: "+92 322 755 5459" },
+    { icon: Mail, href: "mailto:ansarmehmoodpm@gmail.com", display: "ansarmehmoodpm@gmail.com" },
+    { icon: Globe, href: "https://ansarmehmood.dev", display: "ansarmehmood.dev" },
+    { icon: Linkedin, href: "https://linkedin.com/in/ansarmehmood67", display: "LinkedIn" }
+  ];
+
   return (
     <footer className="py-8 border-t border-border/50 theme-dark">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-6">
-        <ContactInfo className="justify-center" />
+        <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
+          {contactLinks.map((contact) => (
+            <a
+              key={contact.display}
+              href={contact.href}
+              target={contact.href.startsWith('http') ? '_blank' : undefined}
+              rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
+            >
+              <contact.icon className="h-4 w-4 group-hover:scale-110 transition-transform" />
+              <span>{contact.display}</span>
+            </a>
+          ))}
+        </div>
         <nav className="flex flex-wrap items-center justify-center gap-6">
           {navItems.map((item) => (
             <button
