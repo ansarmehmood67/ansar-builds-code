@@ -1,3 +1,5 @@
+import ContactInfo from "./ContactInfo";
+
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
     if (sectionId === 'home') {
@@ -22,7 +24,8 @@ const Footer = () => {
 
   return (
     <footer className="py-8 border-t border-border/50 theme-dark">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-6">
+        <ContactInfo className="justify-center" />
         <nav className="flex flex-wrap items-center justify-center gap-6">
           {navItems.map((item) => (
             <button

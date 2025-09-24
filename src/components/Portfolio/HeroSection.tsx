@@ -7,28 +7,23 @@ const HeroSection = () => {
   const socialLinks = [
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/ansarmehmood",
+      href: "https://linkedin.com/in/ansarmehmood67",
       label: "LinkedIn"
     },
     {
       icon: UpworkIcon,
-      href: "https://upwork.com/freelancers/ansarmehmood", 
+      href: "https://www.upwork.com/freelancers/~0110e6741c38776712", 
       label: "Upwork"
     },
     {
       icon: Github,
-      href: "https://github.com/ansarmehmood",
+      href: "https://github.com/ansarmehmood67",
       label: "GitHub"
     },
     {
       icon: Instagram,
-      href: "https://instagram.com/ansarmehmood",
+      href: "https://www.instagram.com/ansar_mehmood67/",
       label: "Instagram"
-    },
-    {
-      icon: Facebook,
-      href: "https://facebook.com/ansarmehmood",
-      label: "Facebook"
     }
   ];
 
@@ -41,6 +36,7 @@ const HeroSection = () => {
         backgroundPosition: 'right center',
         backgroundRepeat: 'no-repeat'
       }}
+      aria-label="Ansar Mehmood - Software Engineer"
     >
       
       {/* Content Container - Responsive Layout */}
@@ -60,8 +56,7 @@ const HeroSection = () => {
               {/* Enhanced Role with Better Hierarchy */}
               <div className="ml-0 sm:ml-4 lg:ml-8 mb-4 sm:mb-6">
                 <p className="text-xl sm:text-3xl lg:text-5xl font-semibold leading-relaxed animate-text animate-delay-200">
-                  <span className="bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">Full Stack Developer</span><br />
-                  <span className="bg-gradient-to-r from-primary via-primary to-primary-glow bg-clip-text text-transparent font-bold">& Software Engineer</span>
+                  <span className="bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">Software Engineer – React • TypeScript • Django</span>
                 </p>
               </div>
               

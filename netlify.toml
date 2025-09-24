@@ -10,6 +10,18 @@
 [build.environment]
   NODE_VERSION = "18"
 
+[[redirects]]
+  from = "https://ansarmehmood.com/*"
+  to = "https://ansarmehmood.dev/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.ansarmehmood.dev/*"
+  to = "https://ansarmehmood.dev/:splat"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/assets/*"
   [headers.values]
