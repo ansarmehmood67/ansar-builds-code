@@ -107,7 +107,7 @@ const ModernPortfolioSection = () => {
           ))}
         </div>
 
-        {/* View All Projects CTA */}
+        {/* View All Projects CTA 
         <div className="text-center mt-16">
           <div className="inline-flex flex-col items-center p-8 rounded-3xl bg-gradient-to-br from-slate-50 to-white border border-slate-200 shadow-xl">
             <div className="text-2xl font-bold text-slate-900 mb-4">
@@ -124,7 +124,7 @@ const ModernPortfolioSection = () => {
               View All Projects
               <ArrowUpRight className="ml-3 h-5 w-5" />
             </Button>
-          </div>
+          </div> */}
         </div>
       </div>
 
