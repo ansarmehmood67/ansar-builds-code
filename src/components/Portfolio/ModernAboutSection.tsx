@@ -51,7 +51,7 @@ const ModernAboutSection = () => {
                 
                 <p className="text-xl text-slate-700 leading-relaxed font-medium mb-6">
                   I'm <span className="text-primary font-semibold">Ansar Mehmood</span>, a full-stack developer specializing in <span className="text-primary font-semibold">React</span> and <span className="text-primary font-semibold">Django</span> ecosystems. 
-                  With experience serving <span className="text-primary font-semibold">international clients</span> and contributing to <span className="text-primary font-semibold">enterprise solutions</span> at SalesOnDemand.
+                  With experience serving <span className="text-primary font-semibold">international clients</span> and contributing to <span className="text-primary font-semibold">enterprise solutions.</span>
                 </p>
                 
                 <p className="text-xl text-slate-700 leading-relaxed font-medium">
