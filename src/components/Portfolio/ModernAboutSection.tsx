@@ -80,6 +80,15 @@ const ModernAboutSection = () => {
 
               <Button 
                 size="lg"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = 'https://docs.google.com/document/d/17tDKq2ws2IGmVVYxUOiqOj6mAm-lJMAtwZ8WWnuJoPQ/export?format=pdf';
+                  link.download = 'Ansar_Mehmood_Resume.pdf';
+                  link.target = '_blank';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
                 className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white hover:scale-105 transition-all duration-300 font-bold px-10 py-4 text-lg rounded-2xl group"
               >
                 <Download className="mr-3 h-5 w-5 group-hover:animate-bounce" />

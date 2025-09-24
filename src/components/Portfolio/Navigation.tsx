@@ -26,8 +26,9 @@ const Navigation = () => {
   const downloadResume = () => {
     // Create a link element and trigger download
     const link = document.createElement('a');
-    link.href = '/resume.pdf'; // Assumes resume.pdf is in public folder
+    link.href = 'https://docs.google.com/document/d/17tDKq2ws2IGmVVYxUOiqOj6mAm-lJMAtwZ8WWnuJoPQ/export?format=pdf';
     link.download = 'Ansar_Mehmood_Resume.pdf';
+    link.target = '_blank';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
