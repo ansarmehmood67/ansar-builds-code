@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Bot, Globe, ShoppingCart } from "lucide-react";
+import { ExternalLink, Bot, Globe, ShoppingCart } from "lucide-react";
 
 const ProjectsSection = () => {
   const projects = [
@@ -136,10 +136,6 @@ const ProjectsSection = () => {
                       <ExternalLink className="mr-2 h-4 w-4" />
                       View Details
                     </Button>
-                    <Button variant="outline" size="sm" className="border-border/50 hover:border-primary/50">
-                      <Github className="mr-2 h-4 w-4" />
-                      Source Code
-                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -162,12 +158,8 @@ const ProjectsSection = () => {
                 size="lg"
                 className="bg-hero-gradient hover:bg-hero-gradient/90 text-white shadow-glow"
               >
-                <Github className="mr-2 h-4 w-4" />
-                View All Projects
-              </Button>
-              <Button variant="outline" size="lg" className="border-border/50 hover:border-primary/50">
                 <ExternalLink className="mr-2 h-4 w-4" />
-                Visit My GitHub
+                View All Projects
               </Button>
             </div>
           </div>

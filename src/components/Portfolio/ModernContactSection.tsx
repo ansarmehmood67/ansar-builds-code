@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Github, Linkedin, Send, Clock } from "lucide-react";
+import { Mail, Linkedin, Send, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const ModernContactSection = () => {
@@ -48,7 +48,6 @@ const ModernContactSection = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, label: "GitHub", href: "https://github.com/ansarmehmood" },
     { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/ansarmehmood" }
   ];
 

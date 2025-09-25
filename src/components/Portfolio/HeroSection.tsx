@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Instagram, Facebook } from "lucide-react";
+import { Linkedin, Instagram, Facebook } from "lucide-react";
 import { UpworkIcon } from "@/components/ui/upwork-icon";
 import heroBg from "@/assets/new-hero-bg.png";
 
@@ -14,11 +14,6 @@ const HeroSection = () => {
       icon: UpworkIcon,
       href: "https://www.upwork.com/freelancers/~0110e6741c38776712", 
       label: "Upwork"
-    },
-    {
-      icon: Github,
-      href: "https://github.com/ansarmehmood67",
-      label: "GitHub"
     },
     {
       icon: Instagram,

@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, ArrowRight, ExternalLink, Github, Calendar, User, Clock } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink, Calendar, User, Clock } from "lucide-react";
 import { projects } from "@/data/projects";
 
 const CaseStudy = () => {
@@ -83,13 +83,6 @@ const CaseStudy = () => {
                 <Button className="w-full" onClick={() => window.open(project.liveUrl, '_blank')}>
                   <ExternalLink className="w-4 h-4 mr-2" />
                   View Live Site
-                </Button>
-              )}
-              
-              {project.githubUrl && (
-                <Button variant="outline" className="w-full" onClick={() => window.open(project.githubUrl, '_blank')}>
-                  <Github className="w-4 h-4 mr-2" />
-                  View Source
                 </Button>
               )}
             </div>

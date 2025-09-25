@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, MapPin, Github, Linkedin, Send } from "lucide-react";
+import { Mail, MapPin, Linkedin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
@@ -47,11 +47,6 @@ const ContactSection = () => {
   ];
 
   const socialLinks = [
-    {
-      icon: Github,
-      label: "GitHub",
-      href: "https://github.com/ansarmehmood"
-    },
     {
       icon: Linkedin,
       label: "LinkedIn", 
